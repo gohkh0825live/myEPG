@@ -1,0 +1,9 @@
+#epg链接，一行一个
+
+https://raw.githubusercontent.com/fanmingming/live/main/e.xml
+https://epg.pw/xmltv/epg_MY.xml
+https://raw.githubusercontent.com/AqFad2811/epg/main/astro.xml
+https://raw.githubusercontent.com/AqFad2811/epg/main/unifitv.xml
+https://raw.githubusercontent.com/AqFad2811/epg/main/epg.xml
+https://raw.githubusercontent.com/azimabid00/epg/main/unifi_epg.xml
+https://raw.githubusercontent.com/azimabid00/epg/main/astro_epg.xml
