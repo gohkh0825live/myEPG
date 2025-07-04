@@ -32,8 +32,12 @@ def merge_epg(urls):
     return merged_tv
 
 def main():
-    with open("config.txt") as f:
-        urls = [line.strip() for line in f if line.strip()]
+    with open("config.txt", "r", encoding="utf-8") as f:
+        urls = [
+            line.strip()
+            for line in f
+            if line.strip() and not line.strip().startswith("#")
+        ]
 
     merged = merge_epg(urls)
     os.makedirs("output", exist_ok=True)
