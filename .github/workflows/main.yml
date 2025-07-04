@@ -1,45 +1,35 @@
-name: 'Update schedule'
+name: Update EPG
 
 on:
   schedule:
-    - cron: '0 4,16 * * *'
+    - cron: '0 8,20 * * *' # 每天 08:00 和 20:00（UTC）
   workflow_dispatch:
   push:
     branches:
       - master
 
 jobs:
-  push:
+  update:
     runs-on: ubuntu-latest
-    timeout-minutes: 240
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
-      - name: Set up Python 3.13
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.13'
-          cache: 'pipenv'
-
-      - name: Install pipenv
-        run: pip install --user pipenv
+          python-version: '3.11'
 
       - name: Install dependencies
-        run: |
-          pipenv install --deploy --python 3.13
+        run: pip install requests
 
-      - name: Update EPG
-        run: pipenv run epg
+      - name: Merge EPG XMLs
+        run: python merge_epg.py
 
-      - name: Commit and push if changed
+      - name: Commit and push changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add -f output/epg.xml output/epg.gz || true
+          git add -f output/epg.xml || true
           if ! git diff --staged --quiet; then
-            git commit -m "Github Action Auto Updated"
-            git pull --rebase
+            git commit -m "Auto: EPG updated on $(date -u +'%Y-%m-%d %H:%M:%S')"
             git push
-          fi
