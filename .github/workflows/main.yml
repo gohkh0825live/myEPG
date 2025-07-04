@@ -2,7 +2,7 @@ name: Update EPG
 
 on:
   schedule:
-    - cron: '0 8,20 * * *'  # 每天 08:00 和 20:00 UTC
+    - cron: '0 8,20 * * *'  # 每天 08:00 和 20:00（UTC）
   workflow_dispatch:
   push:
     branches:
@@ -11,8 +11,10 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -29,7 +31,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add -f output/epg.xml || true
+          git add -f output/epg.xml output/epg.xml.gz || true
           if ! git diff --staged --quiet; then
             git commit -m "Auto: EPG updated on $(date -u +'%Y-%m-%d %H:%M:%S')"
             git push
