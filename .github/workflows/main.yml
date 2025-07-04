@@ -2,7 +2,7 @@ name: Update EPG
 
 on:
   schedule:
-    - cron: '0 8,20 * * *' # 每天 08:00 和 20:00（UTC）
+    - cron: '0 8,20 * * *'  # 每天 08:00 和 20:00 UTC
   workflow_dispatch:
   push:
     branches:
@@ -33,3 +33,4 @@ jobs:
           if ! git diff --staged --quiet; then
             git commit -m "Auto: EPG updated on $(date -u +'%Y-%m-%d %H:%M:%S')"
             git push
+          fi
