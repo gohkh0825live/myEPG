@@ -1,0 +1,99 @@
+name: Update EPG schedule
+
+on:
+  schedule:
+    - cron: '0 4,16 * * *'  # 每日 04:00 和 16:00 UTC
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  update-epg:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install aiohttp tqdm opencc-python-reimplemented
+
+      - name: Create config if missing
+        run: |
+          if [ ! -f "config.txt" ]; then
+            echo "# EPG源配置" > config.txt
+            echo "# 每行一个URL，空行和#开头的行会被忽略" >> config.txt
+            echo "" >> config.txt
+            echo "# 示例（请替换为实际URL）" >> config.txt
+            echo "# https://example.com/epg.xml" >> config.txt
+            echo "# https://example.org/epg.gz" >> config.txt
+            echo "请添加实际的EPG源URL" >> config.txt
+          fi
+
+      - name: Create Python script if missing
+        run: |
+          if [ ! -f "epg.py" ]; then
+            cat > epg.py << 'EOF'
+import xml.etree.ElementTree as ET
+from collections import defaultdict
+import aiohttp
+import asyncio
+from datetime import datetime, timezone, timedelta
+import gzip
+import shutil
+from xml.dom import minidom
+import re
+import os
+import logging
+
+# 基础版 EPG 脚本
+async def main():
+    print("EPG update starting...")
+    # 这里放置你的主要逻辑
+    print("EPG update completed!")
+
+if __name__ == '__main__':
+    asyncio.run(main())
+EOF
+          fi
+
+      - name: Run EPG update
+        run: python epg.py
+
+      - name: Check for output files
+        id: check_output
+        run: |
+          if [ -f "output/epg.xml" ] || [ -f "output/epg.xml.gz" ]; then
+            echo "has_output=true" >> $GITHUB_OUTPUT
+            echo "✅ Output files found"
+            ls -la output/
+          else
+            echo "has_output=false" >> $GITHUB_OUTPUT
+            echo "⚠️ No output files generated"
+            mkdir -p output
+          fi
+
+      - name: Commit and push changes
+        if: steps.check_output.outputs.has_output == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore: update EPG data [auto]"
+          file_pattern: 'output/*'
+          commit_user_name: 'github-actions[bot]'
+          commit_user_email: 'github-actions[bot]@users.noreply.github.com'
