@@ -1,0 +1,66 @@
+name: Update EPG
+
+on:
+  schedule:
+    - cron: '0 4,16 * * *'  # 每天 UTC 4:00 和 16:00
+  workflow_dispatch:  # 允许手动触发
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  update-epg:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      
+      - name: Install dependencies
+        run: |
+          pip install aiohttp tqdm opencc-python-reimplemented
+      
+      - name: Check for required files
+        run: |
+          echo "Checking repository files..."
+          ls -la
+          if [ -f "epg.py" ]; then
+            echo "✅ epg.py found"
+          else
+            echo "❌ epg.py not found"
+            exit 1
+          fi
+      
+      - name: Run EPG update
+        run: python epg.py
+      
+      - name: Check for output
+        id: check_output
+        run: |
+          if [ -d "output" ] && (ls output/*.xml 2>/dev/null || ls output/*.gz 2>/dev/null); then
+            echo "✅ Output files generated"
+            echo "has_output=true" >> $GITHUB_OUTPUT
+            ls -la output/
+          else
+            echo "❌ No output files"
+            echo "has_output=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Commit changes
+        if: steps.check_output.outputs.has_output == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update EPG data [auto]"
+          file_pattern: 'output/*'
+          commit_user_name: 'github-actions[bot]'
+          commit_user_email: 'github-actions[bot]@users.noreply.github.com'
