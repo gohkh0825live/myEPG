@@ -1,9 +1,9 @@
-name: Update EPG
+Vname: Update EPG with pipenv
 
 on:
   schedule:
-    - cron: '0 4,16 * * *'  # 每天 UTC 4:00 和 16:00
-  workflow_dispatch:  # 允许手动触发
+    - cron: '0 4,16 * * *'
+  workflow_dispatch:
   push:
     branches:
       - master
@@ -26,34 +26,40 @@ jobs:
         with:
           python-version: '3.13'
       
+      - name: Install pipenv
+        run: pip install pipenv
+      
       - name: Install dependencies
-        run: |
-          pip install aiohttp tqdm opencc-python-reimplemented
+        run: pipenv install
       
-      - name: Check for required files
-        run: |
-          echo "Checking repository files..."
-          ls -la
-          if [ -f "epg.py" ]; then
-            echo "✅ epg.py found"
-          else
-            echo "❌ epg.py not found"
-            exit 1
-          fi
-      
-      - name: Run EPG update
-        run: python epg.py
+      - name: Run EPG update with pipenv
+        run: pipenv run python merge.py
       
       - name: Check for output
         id: check_output
         run: |
           if [ -d "output" ] && (ls output/*.xml 2>/dev/null || ls output/*.gz 2>/dev/null); then
-            echo "✅ Output files generated"
             echo "has_output=true" >> $GITHUB_OUTPUT
-            ls -la output/
+            echo "Output files:"
+            find output/ -type f -name "*.xml" -o -name "*.gz"
           else
-            echo "❌ No output files"
             echo "has_output=false" >> $GITHUB_OUTPUT
+            echo "No output files found"
+          fi
+      
+      - name: Prepare files for commit
+        if: steps.check_output.outputs.has_output == 'true'
+        run: |
+          # 重命名最新文件为固定名称
+          if ls output/epg_*.xml 1> /dev/null 2>&1; then
+            latest=$(ls -t output/epg_*.xml | head -1)
+            cp "$latest" output/epg.xml
+            echo "Copied $latest to epg.xml"
+          fi
+          
+          # 创建压缩文件
+          if [ -f "output/epg.xml" ] && [ ! -f "output/epg.gz" ]; then
+            gzip -c output/epg.xml > output/epg.gz
           fi
       
       - name: Commit changes
@@ -61,6 +67,21 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: update EPG data [auto]"
-          file_pattern: 'output/*'
+          file_pattern: |
+            output/epg.xml
+            output/epg.gz
+            output/epg_*.xml
           commit_user_name: 'github-actions[bot]'
           commit_user_email: 'github-actions[bot]@users.noreply.github.com'
+      
+      - name: Clean up old files
+        if: always()
+        run: |
+          # 保留最近5个历史文件
+          if ls output/epg_*.xml 1> /dev/null 2>&1; then
+            count=$(ls output/epg_*.xml | wc -l)
+            if [ $count -gt 5 ]; then
+              echo "Cleaning up old files (keeping latest 5)"
+              ls -t output/epg_*.xml | tail -n +6 | xargs rm -f
+            fi
+          fi
