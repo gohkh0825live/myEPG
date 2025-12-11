@@ -42,7 +42,7 @@ jobs:
           fi
       
       - name: Run EPG update
-        run: python epg.py
+        run: python merge.py
       
       - name: Check for output
         id: check_output
