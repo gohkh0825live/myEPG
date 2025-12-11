@@ -12,9 +12,7 @@ from opencc import OpenCC
 import os
 from tqdm import tqdm
 import logging
-import json
-from typing import Dict, List, Set, Tuple, Optional
-import hashlib
+from typing import Dict, List, Tuple, Optional
 
 # 配置日志
 logging.basicConfig(
@@ -391,11 +389,31 @@ async def main():
     logger.info("生成压缩文件...")
     compress_to_gz(xml_filename, gz_filename)
     
-    # 生成最新文件的软链接（可选）
+    # 生成最新文件的软链接
     latest_link = os.path.join(output_dir, 'epg_latest.xml')
-    if os.path.exists(latest_link):
-        os.remove(latest_link)
-    os.symlink(xml_filename, latest_link)
+    
+    # 检查并移除已存在的链接或文件
+    if os.path.exists(latest_link) or os.path.islink(latest_link):
+        try:
+            os.remove(latest_link)
+            logger.info(f"已移除旧的软链接: {latest_link}")
+        except Exception as e:
+            logger.warning(f"移除软链接失败: {e}")
+    
+    # 创建新的软链接（使用相对路径）
+    try:
+        # 使用相对路径创建软链接
+        os.symlink(os.path.basename(xml_filename), latest_link)
+        logger.info(f"创建软链接: {os.path.basename(xml_filename)} -> {latest_link}")
+    except OSError as e:
+        # Windows系统可能需要管理员权限才能创建软链接
+        logger.warning(f"创建软链接失败: {e}")
+        logger.info("尝试创建文件副本...")
+        try:
+            shutil.copy2(xml_filename, latest_link)
+            logger.info(f"创建文件副本: {xml_filename} -> {latest_link}")
+        except Exception as copy_error:
+            logger.warning(f"创建文件副本失败: {copy_error}")
     
     # 统计信息
     total_programs = sum(len(progs) for progs in all_programmes.values())
@@ -404,6 +422,7 @@ async def main():
     logger.info(f"   节目数: {total_programs}")
     logger.info(f"   XML文件: {xml_filename}")
     logger.info(f"   压缩文件: {gz_filename}")
+    logger.info(f"   最新文件链接: {latest_link}")
 
 if __name__ == '__main__':
     try:
