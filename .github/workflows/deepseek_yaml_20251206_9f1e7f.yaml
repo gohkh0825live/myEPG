@@ -34,10 +34,10 @@ jobs:
         run: |
           echo "Checking repository files..."
           ls -la
-          if [ -f "epg.py" ]; then
-            echo "✅ epg.py found"
+          if [ -f "merge.py" ]; then
+            echo "✅ merge.py found"
           else
-            echo "❌ epg.py not found"
+            echo "❌ merge.py not found"
             exit 1
           fi
       
