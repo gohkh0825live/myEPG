@@ -1,117 +1,93 @@
-name: Update EPG Schedule
+name: EPG Auto Update
 
 on:
   schedule:
-    - cron: '0 4,16 * * *'  # 每日 04:00 和 16:00 UTC
+    - cron: '0 4,16 * * *'
   workflow_dispatch:
-  push:
-    branches:
-      - master
 
 permissions:
   contents: write
 
 jobs:
-  update-epg:
+  update:
     runs-on: ubuntu-latest
-    timeout-minutes: 30  # 根据你的运行时间调整
     
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v4
       
-      - name: Setup Python 3.13
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-          cache: 'pip'
+          # 不配置缓存，避免错误
       
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
           pip install aiohttp tqdm opencc-python-reimplemented
       
-      - name: Create required directories
+      - name: Fix the softlink issue temporarily
         run: |
-          mkdir -p output
-          echo "当前目录结构:"
-          ls -la
-      
-      - name: Fix softlink issue in merge.py
-        run: |
-          # 自动修复软链接问题
-          sed -i "s/if os.path.exists(latest_link):/if os.path.exists(latest_link) or os.path.islink(latest_link):/" merge.py
-          sed -i "s/os.remove(latest_link)/try:\n        os.remove(latest_link)\n        logger.debug(f\"已删除旧链接: {latest_link}\")\n    except Exception as e:\n        logger.warning(f\"删除旧链接失败: {e}\")/" merge.py
-          sed -i "s/os.symlink(xml_filename, latest_link)/try:\n        os.symlink(os.path.basename(xml_filename), latest_link)\n        logger.info(f\"创建软链接: {xml_filename} -> {latest_link}\")\n    except Exception as e:\n        logger.warning(f\"创建软链接失败: {e}\")/" merge.py
-          echo "已自动修复软链接问题"
+          # 临时修复：用 sed 修改 merge.py 中的问题行
+          if grep -q "os.symlink(xml_filename, latest_link)" merge.py; then
+            echo "修复软链接问题..."
+            # 备份原文件
+            cp merge.py merge.py.backup
+            # 修改代码：添加异常处理
+            python3 -c "
+import re
+with open('merge.py', 'r', encoding='utf-8') as f:
+    content = f.read()
+
+# 替换软链接部分
+old_code = '''    # 生成最新文件的软链接（可选）
+    latest_link = os.path.join(output_dir, 'epg_latest.xml')
+    if os.path.exists(latest_link):
+        os.remove(latest_link)
+    os.symlink(xml_filename, latest_link)'''
+
+new_code = '''    # 生成最新文件的软链接（可选）
+    latest_link = os.path.join(output_dir, 'epg_latest.xml')
+    if os.path.exists(latest_link) or os.path.islink(latest_link):
+        try:
+            os.remove(latest_link)
+            logger.debug(f\"已删除旧链接: {latest_link}\")
+        except Exception as e:
+            logger.warning(f\"删除旧链接失败: {e}\")
+    try:
+        os.symlink(os.path.basename(xml_filename), latest_link)
+        logger.info(f\"创建软链接: {xml_filename} -> {latest_link}\")
+    except Exception as e:
+        logger.warning(f\"创建软链接失败: {e}\")'''
+
+content = content.replace(old_code, new_code)
+
+with open('merge.py', 'w', encoding='utf-8') as f:
+    f.write(content)
+print('修复完成')
+"
+          fi
       
       - name: Run EPG update
-        id: run_epg
-        run: |
-          python merge.py
-          echo "EPG更新完成时间: $(date)"
+        run: python merge.py
       
-      - name: Prepare standard files
+      - name: Create standard output files
         run: |
-          # 创建标准命名的文件便于访问
-          echo "输出目录内容:"
-          ls -lh output/
-          
-          # 找到最新的XML文件并复制为epg.xml
+          # 确保有标准命名的文件
+          mkdir -p output
           if ls output/epg_*.xml 1> /dev/null 2>&1; then
-            latest_xml=$(ls -t output/epg_*.xml | head -1)
-            cp "$latest_xml" output/epg.xml
-            echo "✅ 主XML文件: epg.xml (来自 $latest_xml)"
-          else
-            echo "❌ 未找到XML文件"
-            exit 1
+            latest=$(ls -t output/epg_*.xml | head -1)
+            cp "$latest" output/epg.xml
+            echo "📄 主文件: epg.xml"
           fi
           
-          # 确保压缩文件存在且名称标准
-          if [ -f "output/epg.xml.gz" ]; then
-            echo "✅ 压缩文件已存在: epg.xml.gz"
-          else
-            gzip -k -f output/epg.xml
-            echo "✅ 创建压缩文件: epg.xml.gz"
+          if [ -f "output/epg.xml" ]; then
+            gzip -c output/epg.xml > output/epg.xml.gz
+            echo "📦 压缩文件: epg.xml.gz"
           fi
-          
-          # 文件大小信息
-          echo "文件大小统计:"
-          du -h output/epg.xml output/epg.xml.gz 2>/dev/null || true
       
-      - name: Commit and push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: |
-            chore: auto-update EPG data
-            
-            - 更新于 $(date -u '+%Y-%m-%d %H:%M:%S UTC')
-            - 自动生成
-          file_pattern: |
-            output/epg.xml
-            output/epg.xml.gz
-            output/epg_*.xml
-          commit_user_name: 'github-actions[bot]'
-          commit_user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_options: '--no-verify'
-      
-      - name: Clean up old files
-        if: always()
-        run: |
-          echo "清理旧文件..."
-          # 保留最近3天的文件
-          find output/ -name "epg_*.xml" -type f -mtime +3 -delete 2>/dev/null || true
-          
-          echo "剩余文件:"
-          ls -lt output/ 2>/dev/null | head -10 || echo "输出目录为空"
-      
-      - name: Upload artifacts (optional)
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: epg-files
-          path: output/
-          retention-days: 7
+          commit_message: "chore: update EPG data"
+          file_pattern: output/*
+          commit_user_name: github-actions[bot]
+          commit_user_email: github-actions[bot]@users.noreply.github.com
