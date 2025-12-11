@@ -1,93 +1,66 @@
-name: EPG Auto Update
+name: Update EPG
 
 on:
   schedule:
-    - cron: '0 4,16 * * *'
-  workflow_dispatch:
+    - cron: '0 4,16 * * *'  # 每天 UTC 4:00 和 16:00
+  workflow_dispatch:  # 允许手动触发
+  push:
+    branches:
+      - master
 
 permissions:
   contents: write
 
 jobs:
-  update:
+  update-epg:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-          # 不配置缓存，避免错误
       
       - name: Install dependencies
         run: |
           pip install aiohttp tqdm opencc-python-reimplemented
       
-      - name: Fix the softlink issue temporarily
+      - name: Check for required files
         run: |
-          # 临时修复：用 sed 修改 merge.py 中的问题行
-          if grep -q "os.symlink(xml_filename, latest_link)" merge.py; then
-            echo "修复软链接问题..."
-            # 备份原文件
-            cp merge.py merge.py.backup
-            # 修改代码：添加异常处理
-            python3 -c "
-import re
-with open('merge.py', 'r', encoding='utf-8') as f:
-    content = f.read()
-
-# 替换软链接部分
-old_code = '''    # 生成最新文件的软链接（可选）
-    latest_link = os.path.join(output_dir, 'epg_latest.xml')
-    if os.path.exists(latest_link):
-        os.remove(latest_link)
-    os.symlink(xml_filename, latest_link)'''
-
-new_code = '''    # 生成最新文件的软链接（可选）
-    latest_link = os.path.join(output_dir, 'epg_latest.xml')
-    if os.path.exists(latest_link) or os.path.islink(latest_link):
-        try:
-            os.remove(latest_link)
-            logger.debug(f\"已删除旧链接: {latest_link}\")
-        except Exception as e:
-            logger.warning(f\"删除旧链接失败: {e}\")
-    try:
-        os.symlink(os.path.basename(xml_filename), latest_link)
-        logger.info(f\"创建软链接: {xml_filename} -> {latest_link}\")
-    except Exception as e:
-        logger.warning(f\"创建软链接失败: {e}\")'''
-
-content = content.replace(old_code, new_code)
-
-with open('merge.py', 'w', encoding='utf-8') as f:
-    f.write(content)
-print('修复完成')
-"
+          echo "Checking repository files..."
+          ls -la
+          if [ -f "epg.py" ]; then
+            echo "✅ epg.py found"
+          else
+            echo "❌ epg.py not found"
+            exit 1
           fi
       
       - name: Run EPG update
-        run: python merge.py
+        run: python epg.py
       
-      - name: Create standard output files
+      - name: Check for output
+        id: check_output
         run: |
-          # 确保有标准命名的文件
-          mkdir -p output
-          if ls output/epg_*.xml 1> /dev/null 2>&1; then
-            latest=$(ls -t output/epg_*.xml | head -1)
-            cp "$latest" output/epg.xml
-            echo "📄 主文件: epg.xml"
-          fi
-          
-          if [ -f "output/epg.xml" ]; then
-            gzip -c output/epg.xml > output/epg.xml.gz
-            echo "📦 压缩文件: epg.xml.gz"
+          if [ -d "output" ] && (ls output/*.xml 2>/dev/null || ls output/*.gz 2>/dev/null); then
+            echo "✅ Output files generated"
+            echo "has_output=true" >> $GITHUB_OUTPUT
+            ls -la output/
+          else
+            echo "❌ No output files"
+            echo "has_output=false" >> $GITHUB_OUTPUT
           fi
       
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Commit changes
+        if: steps.check_output.outputs.has_output == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: update EPG data"
-          file_pattern: output/*
-          commit_user_name: github-actions[bot]
-          commit_user_email: github-actions[bot]@users.noreply.github.com
+          commit_message: "chore: update EPG data [auto]"
+          file_pattern: 'output/*'
+          commit_user_name: 'github-actions[bot]'
+          commit_user_email: 'github-actions[bot]@users.noreply.github.com'
