@@ -13,6 +13,7 @@ import os
 from tqdm import tqdm
 import logging
 from typing import Dict, List, Tuple, Optional
+import hashlib
 
 # 配置日志
 logging.basicConfig(
@@ -179,7 +180,10 @@ def merge_channels(all_channels: Dict[str, str], new_channels: Dict[str, str]) -
     for ch_id, name in new_channels.items():
         if ch_id not in merged:
             merged[ch_id] = name
-        # 可选：如果已存在，可以选择保留更长的名称等策略
+        else:
+            # 如果已存在，选择更长的名称（通常包含更多信息）
+            if len(name) > len(merged[ch_id]):
+                merged[ch_id] = name
     
     return merged
 
@@ -277,7 +281,8 @@ def compress_to_gz(input_file: str, output_file: str):
         # 验证文件大小
         input_size = os.path.getsize(input_file)
         output_size = os.path.getsize(output_file)
-        logger.info(f"压缩率: {output_size/input_size:.1%}")
+        compression_ratio = output_size / input_size if input_size > 0 else 0
+        logger.info(f"压缩率: {compression_ratio:.1%}")
     except Exception as e:
         logger.error(f"压缩失败: {e}")
 
@@ -319,8 +324,75 @@ def get_urls(config_path: str = 'config.txt') -> List[str]:
     logger.info(f"从配置读取 {len(urls)} 个EPG源")
     return urls
 
+def cleanup_old_files(output_dir: str, keep_count: int = 5):
+    """
+    清理旧的EPG文件，保留最新的几个文件
+    
+    Args:
+        output_dir: 输出目录
+        keep_count: 保留的文件数量
+    """
+    try:
+        if not os.path.exists(output_dir):
+            return 0
+            
+        # 获取所有epg_开头的XML文件
+        epg_files = []
+        for file in os.listdir(output_dir):
+            if file.startswith('epg_') and file.endswith('.xml'):
+                file_path = os.path.join(output_dir, file)
+                # 排除软链接
+                if not os.path.islink(file_path):
+                    try:
+                        mtime = os.path.getmtime(file_path)
+                        epg_files.append((file_path, mtime, file))
+                    except OSError:
+                        continue
+        
+        if len(epg_files) <= keep_count:
+            return 0
+        
+        # 按修改时间排序（最新的在前面）
+        epg_files.sort(key=lambda x: x[1], reverse=True)
+        
+        # 删除旧文件，保留指定数量的最新文件
+        files_to_remove = epg_files[keep_count:]
+        removed_count = 0
+        
+        for file_path, mtime, filename in files_to_remove:
+            try:
+                os.remove(file_path)
+                logger.info(f"清理旧文件: {filename}")
+                removed_count += 1
+            except Exception as e:
+                logger.warning(f"删除文件失败 {filename}: {e}")
+        
+        logger.info(f"文件清理完成: 保留 {keep_count} 个最新文件，删除了 {removed_count} 个旧文件")
+        return removed_count
+        
+    except Exception as e:
+        logger.error(f"清理文件失败: {e}")
+        return 0
+
+def get_file_md5(filename: str) -> Optional[str]:
+    """计算文件的MD5哈希值"""
+    try:
+        hash_md5 = hashlib.md5()
+        with open(filename, "rb") as f:
+            for chunk in iter(lambda: f.read(4096), b""):
+                hash_md5.update(chunk)
+        return hash_md5.hexdigest()
+    except Exception as e:
+        logger.warning(f"计算MD5失败 {filename}: {e}")
+        return None
+
 async def main():
     """主函数"""
+    start_time = datetime.now()
+    logger.info("=" * 60)
+    logger.info("开始EPG合并处理")
+    logger.info("=" * 60)
+    
     # 读取配置
     urls = get_urls()
     if not urls:
@@ -331,32 +403,49 @@ async def main():
     output_dir = 'output'
     os.makedirs(output_dir, exist_ok=True)
     
+    # 清理旧文件（在开始前清理，避免占用空间）
+    cleanup_old_files(output_dir, keep_count=3)
+    
     # 创建HTTP会话
     connector = aiohttp.TCPConnector(limit=10, ssl=False)
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     }
+    
+    # 记录获取的EPG源数量
+    successful_sources = 0
+    failed_sources = 0
     
     async with aiohttp.ClientSession(
         connector=connector, 
         headers=headers,
-        timeout=aiohttp.ClientTimeout(total=60)
+        timeout=aiohttp.ClientTimeout(total=120)
     ) as session:
         # 并行获取所有EPG数据
-        logger.info("开始获取EPG数据...")
+        logger.info(f"开始从 {len(urls)} 个源获取EPG数据...")
         tasks = [fetch_epg(url, session) for url in urls]
         epg_contents = await tqdm_asyncio.gather(
             *tasks, 
             desc="获取EPG", 
-            unit="源"
+            unit="源",
+            leave=False
         )
+    
+    # 统计获取结果
+    for url, content in zip(urls, epg_contents):
+        if content:
+            successful_sources += 1
+        else:
+            failed_sources += 1
+    
+    logger.info(f"EPG获取完成: {successful_sources} 成功, {failed_sources} 失败")
     
     # 解析和合并数据
     all_channels = {}
     all_programmes = defaultdict(list)
     
     logger.info("开始解析EPG数据...")
-    with tqdm(total=len(epg_contents), desc="解析EPG", unit="文件") as pbar:
+    with tqdm(total=len(epg_contents), desc="解析EPG", unit="文件", leave=False) as pbar:
         for url, content in zip(urls, epg_contents):
             if not content:
                 pbar.update(1)
@@ -371,6 +460,7 @@ async def main():
                 
             except Exception as e:
                 logger.error(f"处理 {url} 时出错: {e}")
+                failed_sources += 1
             finally:
                 pbar.update(1)
     
@@ -411,24 +501,94 @@ async def main():
         logger.info("尝试创建文件副本...")
         try:
             shutil.copy2(xml_filename, latest_link)
-            logger.info(f"创建文件副本: {xml_filename} -> {latest_link}")
+            logger.info(f"创建文件副本: {os.path.basename(xml_filename)} -> {latest_link}")
         except Exception as copy_error:
             logger.warning(f"创建文件副本失败: {copy_error}")
     
+    # 计算处理时间
+    end_time = datetime.now()
+    processing_time = (end_time - start_time).total_seconds()
+    
     # 统计信息
     total_programs = sum(len(progs) for progs in all_programmes.values())
-    logger.info(f"✅ 处理完成!")
-    logger.info(f"   频道数: {len(all_channels)}")
-    logger.info(f"   节目数: {total_programs}")
-    logger.info(f"   XML文件: {xml_filename}")
-    logger.info(f"   压缩文件: {gz_filename}")
-    logger.info(f"   最新文件链接: {latest_link}")
+    
+    # 计算文件大小
+    xml_size = os.path.getsize(xml_filename) / (1024 * 1024)
+    gz_size = os.path.getsize(gz_filename) / (1024 * 1024) if os.path.exists(gz_filename) else 0
+    
+    # 计算MD5（可选）
+    xml_md5 = get_file_md5(xml_filename)
+    
+    logger.info("=" * 60)
+    logger.info("✅ EPG合并处理完成!")
+    logger.info("-" * 60)
+    logger.info(f"📊 统计数据:")
+    logger.info(f"   ⏱️  处理时间: {processing_time:.1f}秒")
+    logger.info(f"   📡 数据源: {successful_sources}成功/{failed_sources}失败")
+    logger.info(f"   📺 频道数: {len(all_channels)}")
+    logger.info(f"   🎬 节目数: {total_programs}")
+    logger.info(f"   💾 文件大小: XML={xml_size:.1f}MB, GZ={gz_size:.1f}MB")
+    logger.info(f"   📁 原始文件: {xml_filename}")
+    logger.info(f"   📦 压缩文件: {gz_filename}")
+    logger.info(f"   🔗 最新链接: {latest_link}")
+    if xml_md5:
+        logger.info(f"   🔐 文件校验: {xml_md5}")
+    logger.info("=" * 60)
+    
+    # 清理旧文件（在结束后清理，保留最新的3个文件）
+    cleaned_count = cleanup_old_files(output_dir, keep_count=3)
+    if cleaned_count > 0:
+        logger.info(f"🗑️  清理完成: 删除了 {cleaned_count} 个旧文件")
+
+def check_environment():
+    """检查运行环境"""
+    logger.info("检查运行环境...")
+    
+    # 检查Python版本
+    import sys
+    logger.info(f"Python版本: {sys.version}")
+    
+    # 检查依赖模块
+    required_modules = [
+        'xml.etree.ElementTree',
+        'aiohttp',
+        'asyncio',
+        'tqdm',
+        'opencc',
+        'gzip',
+        'shutil'
+    ]
+    
+    for module in required_modules:
+        try:
+            __import__(module.split('.')[0])
+            logger.debug(f"✓ {module} 可用")
+        except ImportError as e:
+            logger.error(f"✗ {module} 不可用: {e}")
+    
+    # 检查输出目录权限
+    output_dir = 'output'
+    try:
+        os.makedirs(output_dir, exist_ok=True)
+        test_file = os.path.join(output_dir, 'test.tmp')
+        with open(test_file, 'w') as f:
+            f.write('test')
+        os.remove(test_file)
+        logger.debug("✓ 输出目录可写")
+    except Exception as e:
+        logger.error(f"✗ 输出目录不可写: {e}")
 
 if __name__ == '__main__':
     try:
+        # 检查环境
+        check_environment()
+        
+        # 运行主程序
         asyncio.run(main())
+        
     except KeyboardInterrupt:
-        logger.info("用户中断")
+        logger.info("👋 用户中断程序")
     except Exception as e:
-        logger.error(f"程序异常: {e}")
+        logger.error(f"❌ 程序异常: {e}")
+        logger.exception("详细异常信息:")
         raise
