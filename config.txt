@@ -2,3 +2,5 @@
 
 https://raw.githubusercontent.com/AqFad2811/epg/main/astro.xml
 https://raw.githubusercontent.com/AqFad2811/epg/main/unifitv.xml
+https://raw.githubusercontent.com/AqFad2811/epg/main/rtmklik.xml
+https://itv.shrimp.cloudns.biz/epg.xml
