@@ -9,220 +9,264 @@ import shutil
 import re
 from opencc import OpenCC
 import os
+from tqdm import tqdm
 import logging
+from typing import Dict, List, Tuple, Optional
 import hashlib
-from typing import Dict, List, Tuple, Optional, AsyncGenerator
+import sys
 
-# 配置日志 - 使用更清晰的格式
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s [%(levelname)s] %(message)s',
-    datefmt='%H:%M:%S'
-)
+# ================= 强制北京时间配置 =================
+BEIJING_TZ = timezone(timedelta(hours=8))
+
+def beijing_now():
+    """获取当前的北京时间"""
+    return datetime.now(BEIJING_TZ)
+
+# 强制日志使用北京时间
+class BeijingFormatter(logging.Formatter):
+    def converter(self, timestamp):
+        dt = datetime.fromtimestamp(timestamp, tz=BEIJING_TZ)
+        return dt.timetuple()
+    
+    def formatTime(self, record, datefmt=None):
+        dt = datetime.fromtimestamp(record.created, tz=BEIJING_TZ)
+        if datefmt:
+            return dt.strftime(datefmt)
+        return dt.strftime('%Y-%m-%d %H:%M:%S,%f')[:-3]
+
+# 配置日志
+handler = logging.StreamHandler(sys.stdout)
+formatter = BeijingFormatter('%(asctime)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+
 logger = logging.getLogger(__name__)
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
+logger.propagate = False # 防止重复打印
 
-# 全局转换器
+# 全局实例
 cc = OpenCC("t2s")
 
-def transform_to_hans(text: str) -> str:
-    """转换为简体中文，增加空值处理"""
-    return cc.convert(text) if text else ""
+def transform2_zh_hans(string: str) -> str:
+    return cc.convert(string) if string else ""
 
 def normalize_channel_id(channel_id: str) -> str:
-    """更高效的频道ID规范化"""
-    if not channel_id: return ""
-    # 仅保留中英文字符、数字、横杠和下划线
-    return re.sub(r'[^\w\u4e00-\u9fff\-]', '', channel_id).strip()
+    channel_id = re.sub(r'[^\w\u4e00-\u9fff\-]', '', channel_id)
+    return channel_id.strip()
 
-def parse_epg_datetime(dt_str: str) -> datetime:
-    """
-    解析 EPG 时间字符串。
-    支持格式: 20231024120000 +0800, 20231024120000 Z, 20231024120000
-    """
-    if not dt_str:
-        return datetime.now(timezone.utc)
-    
-    # 清理空白
-    dt_str = dt_str.strip()
+def normalize_datetime(dt_str: str) -> datetime:
+    """解析任意时区时间并统一转换为北京时间"""
+    dt_str = re.sub(r'\s+', '', dt_str)
     
     # 提取前14位数字
     clean_ts = dt_str[:14]
-    try:
-        dt = datetime.strptime(clean_ts, "%Y%m%d%H%M%S")
-    except ValueError:
-        return datetime.now(timezone.utc)
-
-    # 时区处理
-    if "+08" in dt_str:
-        tz = timezone(timedelta(hours=8))
-    elif "Z" in dt_str.upper():
-        tz = timezone.utc
+    dt = datetime.strptime(clean_ts, "%Y%m%d%H%M%S")
+    
+    # 判断原始时区
+    if 'Z' in dt_str.upper():
+        dt = dt.replace(tzinfo=timezone.utc)
+    elif '+08' in dt_str:
+        dt = dt.replace(tzinfo=BEIJING_TZ)
     else:
-        tz = timezone(timedelta(hours=8)) # 默认东八区
-        
-    return dt.replace(tzinfo=tz)
+        # 默认假设为北京时间，如果不是，请根据源调整
+        dt = dt.replace(tzinfo=BEIJING_TZ)
+    
+    # 统一转换为北京时间
+    return dt.astimezone(BEIJING_TZ)
 
-async def download_and_parse(url: str, session: aiohttp.ClientSession) -> Tuple[Dict, Dict]:
-    """下载并立即解析，减少内存占用"""
+async def fetch_epg(url: str, session: aiohttp.ClientSession) -> Optional[str]:
     try:
         async with session.get(url, timeout=60) as response:
-            response.raise_for_status()
-            # 针对大文件，可以在这里改用流式解析(iterparse)
-            content = await response.text(encoding='utf-8', errors='ignore')
-            return parse_epg_logic(content, url)
-    except Exception as e:
-        logger.error(f"源获取失败 {url}: {e}")
-        return {}, {}
+            if response.status == 200:
+                return await response.text(encoding='utf-8', errors='ignore')
+    except Exception:
+        pass
+    return None
 
-def parse_epg_logic(content: str, source_url: str) -> Tuple[Dict[str, str], Dict[str, List[ET.Element]]]:
-    """核心解析逻辑"""
+def parse_epg(epg_content: str) -> Tuple[Dict[str, str], Dict[str, List[ET.Element]]]:
     channels = {}
     programmes = defaultdict(list)
+    if not epg_content: return channels, programmes
     
     try:
-        root = ET.fromstring(content)
-    except Exception as e:
-        logger.error(f"XML 语法错误 {source_url}: {e}")
+        root = ET.fromstring(epg_content)
+    except Exception:
         return channels, programmes
-
-    # 1. 解析频道
-    for ch in root.findall('channel'):
-        raw_id = ch.get('id', '')
-        if not raw_id: continue
-        
-        norm_id = normalize_channel_id(transform_to_hans(raw_id))
-        disp_name = ch.findtext('display-name', default=raw_id)
-        channels[norm_id] = transform_to_hans(disp_name)
-
-    # 2. 解析节目
-    now = datetime.now(timezone.utc)
+    
+    # 解析频道
+    for channel in root.findall('channel'):
+        c_id = channel.get('id', '')
+        if not c_id: continue
+        norm_id = normalize_channel_id(transform2_zh_hans(c_id))
+        name_node = channel.find('display-name')
+        display_name = transform2_zh_hans(name_node.text) if name_node is not None else norm_id
+        channels[norm_id] = display_name
+    
+    # 解析节目
+    now = beijing_now()
     for prog in root.findall('programme'):
-        raw_ch_id = prog.get('channel', '')
-        if not raw_ch_id: continue
+        c_id = prog.get('channel', '')
+        if not c_id: continue
+        norm_id = normalize_channel_id(transform2_zh_hans(c_id))
         
-        norm_id = normalize_channel_id(transform_to_hans(raw_ch_id))
-        start_raw = prog.get('start')
-        stop_raw = prog.get('stop')
-        
-        if not start_raw or not stop_raw: continue
-        
-        start_dt = parse_epg_datetime(start_raw)
-        stop_dt = parse_epg_datetime(stop_raw)
-
-        # 过滤已过期节目 (留出1小时余量)
-        if stop_dt < now - timedelta(hours=1):
-            continue
-
-        # 构建新的节目元素
-        new_prog = ET.Element('programme', {
-            "channel": norm_id,
-            "start": start_dt.strftime("%Y%m%d%H%M%S %z"),
-            "stop": stop_dt.strftime("%Y%m%d%H%M%S %z")
-        })
-        
-        # 转换文本内容
-        for tag in ['title', 'desc', 'sub-title', 'category', 'episode-num']:
-            elem = prog.find(tag)
-            if elem is not None and elem.text:
-                ET.SubElement(new_prog, tag).text = transform_to_hans(elem.text)
-        
-        programmes[norm_id].append(new_prog)
-        
+        try:
+            start_dt = normalize_datetime(prog.get('start', ''))
+            stop_dt = normalize_datetime(prog.get('stop', ''))
+            if stop_dt < now: continue # 过滤过期
+            
+            new_p = ET.Element('programme', {
+                "channel": norm_id,
+                "start": start_dt.strftime("%Y%m%d%H%M%S +0800"),
+                "stop": stop_dt.strftime("%Y%m%d%H%M%S +0800")
+            })
+            for tag in ['title', 'desc', 'sub-title', 'category', 'episode-num']:
+                node = prog.find(tag)
+                if node is not None and node.text:
+                    ET.SubElement(new_p, tag).text = transform2_zh_hans(node.text)
+            programmes[norm_id].append(new_p)
+        except: continue
+            
     return channels, programmes
 
-def save_xml(channels: Dict, programmes: Dict, filename: str):
-    """保存并美化 XML"""
+def write_to_xml(channels: Dict[str, str], programmes: Dict[str, List[ET.Element]], filename: str):
     root = ET.Element('tv', {
-        'generator-info-name': 'EPG-Optimizer',
-        'date': datetime.now().strftime("%Y%m%d%H%M%S")
+        'generator-info-name': 'EPG-Merger-Optimized',
+        'date': beijing_now().strftime("%Y%m%d%H%M%S +0800")
     })
-
-    # 写入频道
-    for ch_id, name in sorted(channels.items()):
-        ch_node = ET.SubElement(root, 'channel', {"id": ch_id})
+    
+    logger.info(f"写入 {len(channels)} 个频道")
+    for c_id, name in sorted(channels.items()):
+        ch_node = ET.SubElement(root, 'channel', {"id": c_id})
         ET.SubElement(ch_node, 'display-name', {"lang": "zh"}).text = name
-
-    # 写入节目 (去重并排序)
-    total_count = 0
-    for ch_id in programmes:
-        # 使用 (开始时间, 标题) 作为唯一键去重
-        unique_progs = {}
-        for p in programmes[ch_id]:
+    
+    total_prog_count = 0
+    for c_id in programmes:
+        unique = {}
+        for p in programmes[c_id]:
             key = (p.get('start'), p.findtext('title'))
-            if key not in unique_progs:
-                unique_progs[key] = p
+            if key not in unique: unique[key] = p
         
-        # 按开始时间排序
-        sorted_list = sorted(unique_progs.values(), key=lambda x: x.get('start', ''))
-        for p in sorted_list:
+        sorted_progs = sorted(unique.values(), key=lambda x: x.get('start'))
+        for p in sorted_progs:
             root.append(p)
-            total_count += 1
-
-    # 美化 XML (Python 3.9+)
+            total_prog_count += 1
+            
     ET.indent(root, space="  ")
     tree = ET.ElementTree(root)
-    
-    os.makedirs(os.path.dirname(filename), exist_ok=True)
     tree.write(filename, encoding='utf-8', xml_declaration=True)
-    logger.info(f"文件保存成功: {filename} (节目总数: {total_count})")
+    return total_prog_count
+
+def cleanup_old_files(output_dir: str, keep_count: int = 3):
+    files = [f for f in os.listdir(output_dir) if f.startswith('epg_') and f.endswith('.xml')]
+    files.sort(key=lambda x: os.path.getmtime(os.path.join(output_dir, x)), reverse=True)
+    
+    removed = 0
+    for old_file in files[keep_count:]:
+        try:
+            os.remove(os.path.join(output_dir, old_file))
+            logger.info(f"清理旧文件: {old_file}")
+            removed += 1
+        except: pass
+    return removed
 
 async def main():
-    start_time = datetime.now()
+    start_time_all = beijing_now()
+    logger.info("检查运行环境...")
+    logger.info(f"Python版本: {sys.version}")
+    logger.info("=" * 60)
+    logger.info("开始EPG合并处理")
+    logger.info("=" * 60)
+    
+    urls = []
+    if os.path.exists('config.txt'):
+        with open('config.txt', 'r', encoding='utf-8') as f:
+            urls = [l.strip() for l in f if l.strip() and not l.startswith('#')]
+    logger.info(f"从配置读取 {len(urls)} 个EPG源")
+    
+    if not urls: return
+
     output_dir = 'output'
-    config_path = 'config.txt'
+    os.makedirs(output_dir, exist_ok=True)
+    logger.info(f"开始从 {len(urls)} 个源获取EPG数据...")
     
-    # 1. 读取 URL
-    if not os.path.exists(config_path):
-        logger.error("config.txt 不存在")
-        return
+    async with aiohttp.ClientSession() as session:
+        tasks = [fetch_epg(url, session) for url in urls]
+        contents = await tqdm_asyncio.gather(*tasks, desc="获取EPG", unit="源")
     
-    with open(config_path, 'r', encoding='utf-8') as f:
-        urls = [line.strip() for line in f if line.strip() and not line.startswith('#')]
-
-    if not urls:
-        logger.warning("没有可处理的 URL")
-        return
-
-    # 2. 异步下载与并行解析
+    success_count = sum(1 for c in contents if c)
+    logger.info(f"EPG获取完成: {success_count} 成功, {len(urls)-success_count} 失败")
+    
+    logger.info("开始解析EPG数据...")
     all_channels = {}
     all_programmes = defaultdict(list)
     
-    timeout = aiohttp.ClientTimeout(total=300)
-    async with aiohttp.ClientSession(timeout=timeout) as session:
-        tasks = [download_and_parse(url, session) for url in urls]
-        
-        # 使用 tqdm 监控进度
-        for result in await tqdm_asyncio.gather(*tasks, desc="处理中"):
-            ch_data, prog_data = result
-            # 合并频道信息
-            for cid, name in ch_data.items():
-                if cid not in all_channels or len(name) > len(all_channels[cid]):
-                    all_channels[cid] = name
-            # 合并节目信息
-            for cid, progs in prog_data.items():
-                all_programmes[cid].extend(progs)
+    with tqdm(total=len(contents), desc="解析EPG", unit="文件") as pbar:
+        for content in contents:
+            if content:
+                ch, prog = parse_epg(content)
+                for cid, name in ch.items():
+                    if cid not in all_channels or len(name) > len(all_channels[cid]):
+                        all_channels[cid] = name
+                for cid, plist in prog.items():
+                    all_programmes[cid].extend(plist)
+                
+                # 打印日志时也使用北京时间格式
+                tqdm.write(f"{beijing_now().strftime('%Y-%m-%d %H:%M:%S,%f')[:-3]} - INFO - 解析完成: {len(ch)} 频道, {sum(len(v) for v in prog.values())} 节目")
+            pbar.update(1)
 
-    if not all_channels:
-        logger.error("未能获取任何有效数据")
-        return
-
-    # 3. 写入文件
-    xml_name = os.path.join(output_dir, f"epg_{datetime.now().strftime('%m%d_%H%M')}.xml")
-    save_xml(all_channels, all_programmes, xml_name)
+    ts = beijing_now().strftime("%Y%m%d_%H%M%S")
+    xml_file = os.path.join(output_dir, f"epg_{ts}.xml")
+    gz_file = os.path.join(output_dir, "epg.xml.gz")
     
-    # 4. 压缩
-    gz_name = os.path.join(output_dir, "epg.xml.gz")
-    with open(xml_name, 'rb') as f_in, gzip.open(gz_name, 'wb') as f_out:
+    logger.info("写入XML文件...")
+    total_progs = write_to_xml(all_channels, all_programmes, xml_file)
+    logger.info(f"写入完成: {xml_file}, {total_progs} 个节目")
+    
+    logger.info("生成压缩文件...")
+    with open(xml_file, 'rb') as f_in, gzip.open(gz_file, 'wb') as f_out:
         shutil.copyfileobj(f_in, f_out)
     
-    # 5. 清理旧文件 (保留最近5个)
-    files = sorted([os.path.join(output_dir, f) for f in os.listdir(output_dir) if f.startswith('epg_')], 
-                   key=os.path.getmtime, reverse=True)
-    for old_file in files[5:]:
-        os.remove(old_file)
+    xml_size = os.path.getsize(xml_file)
+    gz_size = os.path.getsize(gz_file)
+    logger.info(f"压缩完成: {gz_file}")
+    logger.info(f"压缩率: {gz_size/xml_size:.1%}")
 
-    duration = (datetime.now() - start_time).total_seconds()
-    logger.info(f"任务完成! 总耗时: {duration:.1f}s")
+    latest_link = os.path.join(output_dir, 'epg_latest.xml')
+    if os.path.exists(latest_link):
+        os.remove(latest_link)
+        logger.info(f"已移除旧的软链接: {latest_link}")
+    
+    try:
+        os.symlink(os.path.basename(xml_file), latest_link)
+        logger.info(f"创建软链接: {os.path.basename(xml_file)} -> {latest_link}")
+    except:
+        shutil.copy2(xml_file, latest_link)
+        logger.info(f"创建文件副本: {os.path.basename(xml_file)} -> {latest_link}")
+
+    with open(xml_file, "rb") as f:
+        file_md5 = hashlib.md5(f.read()).hexdigest()
+
+    duration = (beijing_now() - start_time_all).total_seconds()
+    logger.info("=" * 60)
+    logger.info("✅ EPG合并处理完成!")
+    logger.info("-" * 60)
+    logger.info("📊 统计数据:")
+    logger.info(f"   ⏱️  处理时间: {duration:.1f}秒")
+    logger.info(f"   📡 数据源: {success_count}成功/{len(urls)-success_count}失败")
+    logger.info(f"   📺 频道数: {len(all_channels)}")
+    logger.info(f"   🎬 节目数: {total_progs}")
+    logger.info(f"   💾 文件大小: XML={xml_size/1024/1024:.1f}MB, GZ={gz_size/1024/1024:.1f}MB")
+    logger.info(f"   📁 原始文件: {xml_file}")
+    logger.info(f"   📦 压缩文件: {gz_file}")
+    logger.info(f"   🔗 最新链接: {latest_link}")
+    logger.info(f"   🔐 文件校验: {file_md5}")
+    logger.info("=" * 60)
+
+    removed_count = cleanup_old_files(output_dir, 3)
+    logger.info(f"🗑️  清理完成: 删除了 {removed_count} 个旧文件")
 
 if __name__ == '__main__':
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        logger.info("👋 用户中断程序")
