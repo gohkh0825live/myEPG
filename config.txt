@@ -1,7 +1,7 @@
 #epg链接，一行一个
 
 https://raw.githubusercontent.com/AqFad2811/epg/main/astro.xml
-https://raw.githubusercontent.com/AqFad2811/epg/main/unifitv.xml
-https://raw.githubusercontent.com/AqFad2811/epg/main/rtmklik.xml
 https://raw.githubusercontent.com/AqFad2811/epg/refs/heads/main/singapore.xml
-http://epg.51zmt.top:8000/e.xml
+http://epg.51zmt.top:8000/e.xml.gz
+https://raw.githubusercontent.com/AqFad2811/epg/main/rtmklik.xml
+https://raw.githubusercontent.com/AqFad2811/epg/main/unifitv.xml
