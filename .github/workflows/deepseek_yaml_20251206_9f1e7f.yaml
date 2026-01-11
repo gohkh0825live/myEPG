@@ -2,7 +2,7 @@ name: Update EPG
 
 on:
   schedule:
-    - cron: '0 4,16 * * *'  # 北京时间 12:00 和 00:00
+    - cron: '0 4,10,16,22 * * *'  # 北京时间 0点、6点、12点、18点
   workflow_dispatch:        # 允许手动触发
   push:
     branches:
