@@ -2,8 +2,7 @@
 
 https://raw.githubusercontent.com/AqFad2811/epg/main/astro.xml
 https://raw.githubusercontent.com/AqFad2811/epg/main/rtmklik.xml
-https://raw.githubusercontent.com/fanmingming/live/main/e.xml
 https://raw.githubusercontent.com/AqFad2811/epg/refs/heads/main/singapore.xml
+https://raw.githubusercontent.com/fanmingming/live/main/e.xml
 https://epg.27481716.xyz/epg.xml
 http://epg.51zmt.top:8000/e1.xml.gz
-https://raw.githubusercontent.com/AqFad2811/epg/main/unifitv.xml
