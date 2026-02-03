@@ -19,10 +19,10 @@ import sys
 CONFIG = {
     "SOURCE_FILE": "config.txt",
     "OUTPUT_DIR": "output",
-    "MAX_CONCURRENT_REQUESTS": 5,  # 限制并发数，防止被封
-    "REQUEST_TIMEOUT": 30,         # 请求超时秒数
-    "KEEP_OLD_FILES": 3,           # 保留旧文件数量
-    "RETENTION_HOURS": 1,          # 保留过去多少小时的节目
+    "MAX_CONCURRENT_REQUESTS": 5,   # 限制并发数，防止被封
+    "REQUEST_TIMEOUT": 30,          # 请求超时秒数
+    "KEEP_OLD_FILES": 3,            # 保留旧文件数量
+    "RETENTION_HOURS": 1,           # 保留过去多少小时的节目
     "USER_AGENT": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
 }
 
@@ -64,11 +64,14 @@ def transform2_zh_hans(string: Optional[str]) -> str:
     return cc.convert(string) if string else ""
 
 def normalize_channel_id(channel_id: str) -> str:
-    """标准化频道ID：仅保留中文、字母、数字、横线"""
+    """
+    【已修改】标准化频道ID
+    原逻辑：去除特殊字符并转简体
+    新逻辑：仅去除首尾空格，完全保留原始ID（确保与M3U的tvg-id匹配）
+    """
     if not channel_id:
         return "unknown"
-    # 预编译正则可略微提升性能，但此处调用频率不高，直接调用亦可
-    return re.sub(r'[^\w\u4e00-\u9fff\-]', '', channel_id).strip()
+    return channel_id.strip()
 
 def normalize_datetime(dt_str: str) -> datetime:
     """
@@ -167,11 +170,12 @@ def parse_epg_content(epg_content: str) -> Tuple[Dict[str, str], Dict[str, List[
         c_id = channel.get('id')
         if not c_id: continue
         
-        # 转换 ID 和 名称
-        norm_id = normalize_channel_id(transform2_zh_hans(c_id))
+        # 【修改点】 不再进行繁简转换，直接 normalize
+        norm_id = normalize_channel_id(c_id)
         
         display_name_node = channel.find('display-name')
         if display_name_node is not None and display_name_node.text:
+            # 频道名称（Display Name）依然建议做繁简转换，为了用户体验
             display_name = transform2_zh_hans(display_name_node.text)
         else:
             display_name = norm_id
@@ -185,7 +189,8 @@ def parse_epg_content(epg_content: str) -> Tuple[Dict[str, str], Dict[str, List[
         c_id = prog.get('channel')
         if not c_id: continue
         
-        norm_id = normalize_channel_id(transform2_zh_hans(c_id))
+        # 【修改点】 节目必须与频道ID保持一致，不做繁简转换
+        norm_id = normalize_channel_id(c_id)
         
         start_str = prog.get('start')
         stop_str = prog.get('stop')
@@ -305,13 +310,13 @@ async def main():
     start_time_all = beijing_now()
     
     print(r"""
-   ___  ___  ___   __  __                             
-  / _ \/ _ \/ _ \ /  \/  \ ___  _ _ __ _  ___  _ _    
- |  __/  __/ (_| | |\/| | / -_)| '_/ _` |/ -_)| '_|   
-  \___|_|   \__, |_|  |_| \___||_| \__, |\___||_|     
-            |___/                  |___/              
+    ___  ___  ___   __  __                       
+   / _ \/ _ \/ _ \ /  \/  \ ___  _ _ __ _  ___  _ _   
+  |  __/  __/ (_| | |\/| | / -_)| '_/ _` |/ -_)| '_|   
+   \___|_|   \__, |_|  |_| \___||_| \__, |\___||_|     
+            |___/                  |___/               
     """)
-    logger.info("启动 EPG 合并程序 (Optimized)")
+    logger.info("启动 EPG 合并程序 (保留原始ID版)")
     
     # 1. 读取配置
     urls = []
