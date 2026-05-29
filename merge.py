@@ -49,8 +49,7 @@ class EPGProcessor:
         self.channels_map = {} # display_name -> map_id
         self.channel_names = defaultdict(list)
         
-        # 【关键修改】: 使用 dict 替代 set()，利用 Python 3.7+ 字典保持插入顺序的特性
-        # 从而严格保证输出顺序与 config.txt 抓取顺序完全一致
+        # 使用 dict 替代 set()，利用字典保持插入顺序的特性，保证输出顺序与 config.txt 一致
         self.channel_ids = {} 
         self.programmes = defaultdict(list)
 
@@ -92,7 +91,6 @@ class EPGProcessor:
 
         local_channels = {}
         local_programmes = defaultdict(list)
-        # 此处也用 dict 维持单个源内部频道的先后顺序
         valid_local_channels = {} 
         channel_names_str = {}
 
@@ -110,8 +108,7 @@ class EPGProcessor:
                 names_data.append((t_name, lang))
                 raw_names.append(t_name)
                 
-            if not channel_id.isdigit() and not any(channel_id == n[0] for n in names_data):
-                names_data.append((channel_id, 'zh'))
+            # 【已移除】之前会把非数字ID强行当做名字的代码已删除，确保名字纯净
                 
             local_channels[channel_id] = names_data
             channel_names_str[raw_id] = ' '.join(raw_names) + ' ' + raw_id
@@ -174,7 +171,7 @@ class EPGProcessor:
             map_id = self.channels_map.get(map_id, channel_id)
 
             if not is_in_map:
-                # 【关键修改】第一次遇到该频道，按照当前顺序注册到有序字典中
+                # 第一次遇到该频道，按照当前顺序注册到有序字典中
                 self.channel_ids[map_id] = True 
                 self.channel_names[map_id] = display_names
                 self.programmes[map_id] = local_programmes[channel_id]
@@ -197,7 +194,7 @@ class EPGProcessor:
         current_time = datetime.now(TZ_UTC_PLUS_8).strftime("%Y%m%d%H%M%S %z")
         root = ET.Element('tv', attrib={'date': current_time})
 
-        # 【关键修改】标准 XMLTV 结构：先集中写入所有 <channel> 频道声明
+        # 标准 XMLTV 结构：先集中写入所有 <channel> 频道声明
         for map_id in self.channel_ids.keys():
             c_elem = ET.SubElement(root, 'channel', attrib={"id": map_id})
             for d_name, lang in self.channel_names[map_id]:
@@ -209,7 +206,7 @@ class EPGProcessor:
                 prog.set('channel', map_id)
                 root.append(prog)
 
-        # 内存极低的内置缩进 (避免 minidom 崩溃)
+        # 内存极低的内置缩进 
         if hasattr(ET, 'indent'): ET.indent(root, space="\t")
         
         tree = ET.ElementTree(root)
@@ -230,12 +227,10 @@ async def main():
     processor = EPGProcessor()
     
     print("📡 正在并发获取 EPG 数据...")
-    # asyncio.gather 能够保证返回的 results 顺序与 urls 的初始顺序完全对应
     tasks = [processor.fetch_epg(url) for url in urls]
     results = await tqdm_asyncio.gather(*tasks, desc="下载进度")
 
     print("\n⚙️ 正在解析与合并数据...")
-    # 严格按照 config.txt 中的 url 顺序依次处理
     for url, content in tqdm(results, desc="处理进度"):
         processor.parse_and_merge(url, content)
 
