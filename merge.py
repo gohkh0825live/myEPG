@@ -15,6 +15,16 @@ OUTPUT_DIR = 'output'
 CONFIG_FILE = 'config.txt'
 TZ_UTC_PLUS_8 = timezone(timedelta(hours=8))
 
+# ================= 自定义名称注入字典 =================
+# 键(Key)必须是你在 XML 源里抓取到的对应频道的真实 tvg-id (channel id)
+CUSTOM_NAME_INJECTIONS = {
+    # ⚠️ 请把下方的 "8tv_real_id" 替换成你的数据源里 8TV 真正的 id 字符串
+    "8tv_real_id": ["八度空间"], 
+    
+    # 示例：你可以继续添加其他需要补充中文名的频道
+    # "astro_aec_id": ["Astro AEC", "AEC 频道"],
+}
+
 # ================= 核心处理引擎 =================
 
 async def fetch_epg(url, session):
@@ -34,10 +44,9 @@ async def fetch_epg(url, session):
 def process_and_merge(results):
     """
     双重遍历解析器 (以 ID 为唯一标识的版本)
-    Pass 1: 以 Channel ID 为主键，收集去重所有的名称和图标
+    Pass 1: 以 Channel ID 为主键，收集去重所有的名称和图标，并注入自定义名称
     Pass 2: 精准提取与有效 ID 匹配的 Programme 节点
     """
-    # 字典的 Key 现在是 channel_id
     channel_groups = defaultdict(lambda: {
         "display_names": set(),
         "icons": set()
@@ -57,17 +66,14 @@ def process_and_merge(results):
             for event, elem in context:
                 if elem.tag == 'channel':
                     channel_id = elem.get('id')
-                    # 如果连 ID 都没有，直接丢弃
                     if not channel_id:
                         elem.clear()
                         continue
                     
-                    # 收集该 ID 下所有的 display-name
                     for dn in elem.findall('display-name'):
                         if dn.text:
                             channel_groups[channel_id]["display_names"].add(dn.text.strip())
                     
-                    # 收集台标
                     icon_node = elem.find('icon')
                     if icon_node is not None and icon_node.get('src'):
                         channel_groups[channel_id]["icons"].add(icon_node.get('src'))
@@ -76,26 +82,32 @@ def process_and_merge(results):
         except ET.ParseError as e:
             print(f"⚠️ XML解析跳过 ({url}): {e}")
 
+    # ================= 自动注入自定义名称 =================
+    for cid, custom_names in CUSTOM_NAME_INJECTIONS.items():
+        if cid in channel_groups: # 确保网络源里抓到了这个台
+            for name in custom_names:
+                # set 会自动处理去重，完美追加中文名
+                channel_groups[cid]["display_names"].add(name)
+    # ==========================================================
+
     unified_channels = []
-    # 提取所有有效的、被我们记录下来的 ID 集合，供第二阶段光速查询
     valid_ids = set(channel_groups.keys())
     
     for cid, data in channel_groups.items():
         c_elem = ET.Element("channel", id=cid)
         
         if not data["display_names"]:
-            # 极限容错：如果全网都没抓到这个频道的名字，用 ID 兜底
             disp_elem = ET.SubElement(c_elem, "display-name", lang="en")
             disp_elem.text = cid
         else:
-            # XMLTV 标准允许同一个 channel 有多个 display-name
-            # 这里我们将收集到的各种叫法全部写入，以防播放器匹配不上
             for name in data["display_names"]:
-                disp_elem = ET.SubElement(c_elem, "display-name", lang="en")
+                # 为了简化，这里统一种为 lang="en" 和 lang="zh" 也可以，
+                # 但直接写入多个 display-name 播放器都能识别。
+                lang_attr = "zh" if any('\u4e00' <= char <= '\u9fff' for char in name) else "en"
+                disp_elem = ET.SubElement(c_elem, "display-name", lang=lang_attr)
                 disp_elem.text = name
                 
         if data["icons"]:
-            # 图标随便取一个能用的即可
             ET.SubElement(c_elem, "icon", src=list(data["icons"])[0])
             
         unified_channels.append(c_elem)
@@ -115,11 +127,10 @@ def process_and_merge(results):
             for event, elem in context:
                 if elem.tag == 'programme':
                     prog_channel_id = elem.get('channel')
-                    # 因为 ID 是固定的，这里极其简单：只要这个节目单的 ID 存在于我们的频道列表里，就保留
                     if prog_channel_id in valid_ids:
                         unified_programmes.append(elem)
                     else:
-                        elem.clear() # 丢弃僵尸节目单，防内存泄漏
+                        elem.clear() 
         except ET.ParseError:
             pass
 
@@ -132,7 +143,7 @@ def export_results(channel_groups, channels, programmes):
     xml_file = os.path.join(OUTPUT_DIR, 'epg.xml')
     gz_file = os.path.join(OUTPUT_DIR, 'epg.xml.gz')
 
-    # 1. 导出 JSON 映射表 (这次以 Channel ID 为主键)
+    # 1. 导出 JSON 映射表
     json_export_data = {}
     for cid, data in channel_groups.items():
         json_export_data[cid] = {
@@ -192,7 +203,7 @@ async def main():
 
 if __name__ == '__main__':
     print("==================================================")
-    print("      EPG 聚合器 - 终极版 (基于固定的 ID 驱动)      ")
+    print("      EPG 聚合器 - 终极版 (固定 ID + 名称注入)      ")
     print("==================================================")
     if sys.platform == 'win32':
         asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
