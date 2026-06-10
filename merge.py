@@ -1,10 +1,13 @@
-import xml.etree.ElementTree as ET
-import aiohttp
-import asyncio
 import os
+import sys
 import gzip
 import shutil
-import sys
+import json
+import asyncio
+import aiohttp
+import xml.etree.ElementTree as ET
+import io
+from collections import defaultdict
 from datetime import datetime, timezone, timedelta
 
 # ================= 配置常量 =================
@@ -12,14 +15,15 @@ OUTPUT_DIR = 'output'
 CONFIG_FILE = 'config.txt'
 TZ_UTC_PLUS_8 = timezone(timedelta(hours=8))
 
+# ================= 核心处理引擎 =================
+
 async def fetch_epg(url, session):
-    """异步下载 EPG 文件，不做任何多余处理"""
+    """异步下载 EPG 文件，支持 GZIP 实时解压"""
     try:
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
         async with session.get(url, headers=headers, timeout=30) as response:
             if response.status == 200:
                 data = await response.read()
-                # 兼容 gzip 压缩的数据源
                 if url.endswith('.gz') or data.startswith(b'\x1f\x8b'):
                     return url, gzip.decompress(data).decode('utf-8', errors='ignore')
                 return url, data.decode('utf-8', errors='ignore')
@@ -27,64 +31,143 @@ async def fetch_epg(url, session):
         print(f"❌ 下载失败 {url}: {e}")
     return url, None
 
-def merge_xmls_raw(results):
+def process_and_merge(results):
     """
-    极简拼接模式：
-    不去重，不合并，不处理名字，纯粹的节点拼装。
+    双重遍历解析器 (以 ID 为唯一标识的版本)
+    Pass 1: 以 Channel ID 为主键，收集去重所有的名称和图标
+    Pass 2: 精准提取与有效 ID 匹配的 Programme 节点
     """
-    all_channels = []
-    all_programmes = []
-
-    # 按照 gather 收集回来的顺序依次处理（与 config 顺序一致）
+    # 字典的 Key 现在是 channel_id
+    channel_groups = defaultdict(lambda: {
+        "display_names": set(),
+        "icons": set()
+    })
+    
+    print("\n⚙️ [第一阶段] 正在以固定的 Channel ID 为基准聚合频道数据...")
+    
+    # --- Pass 1: 建立频道档案 ---
     for url, content in results:
         if not content: continue
         
+        content = content.replace(' xmlns="', ' dummy="')
+        stream = io.BytesIO(content.encode('utf-8'))
+        
         try:
-            # 暴力移除 xmlns 避免解析报错
-            content = content.replace(' xmlns="', ' dummy="')
-            root = ET.fromstring(content)
+            context = ET.iterparse(stream, events=("end",))
+            for event, elem in context:
+                if elem.tag == 'channel':
+                    channel_id = elem.get('id')
+                    # 如果连 ID 都没有，直接丢弃
+                    if not channel_id:
+                        elem.clear()
+                        continue
+                    
+                    # 收集该 ID 下所有的 display-name
+                    for dn in elem.findall('display-name'):
+                        if dn.text:
+                            channel_groups[channel_id]["display_names"].add(dn.text.strip())
+                    
+                    # 收集台标
+                    icon_node = elem.find('icon')
+                    if icon_node is not None and icon_node.get('src'):
+                        channel_groups[channel_id]["icons"].add(icon_node.get('src'))
+                        
+                    elem.clear()
         except ET.ParseError as e:
             print(f"⚠️ XML解析跳过 ({url}): {e}")
-            continue
 
-        # 简单地把每个源的节点搜集起来
-        for channel in root.findall('channel'):
-            all_channels.append(channel)
+    unified_channels = []
+    # 提取所有有效的、被我们记录下来的 ID 集合，供第二阶段光速查询
+    valid_ids = set(channel_groups.keys())
+    
+    for cid, data in channel_groups.items():
+        c_elem = ET.Element("channel", id=cid)
+        
+        if not data["display_names"]:
+            # 极限容错：如果全网都没抓到这个频道的名字，用 ID 兜底
+            disp_elem = ET.SubElement(c_elem, "display-name", lang="en")
+            disp_elem.text = cid
+        else:
+            # XMLTV 标准允许同一个 channel 有多个 display-name
+            # 这里我们将收集到的各种叫法全部写入，以防播放器匹配不上
+            for name in data["display_names"]:
+                disp_elem = ET.SubElement(c_elem, "display-name", lang="en")
+                disp_elem.text = name
+                
+        if data["icons"]:
+            # 图标随便取一个能用的即可
+            ET.SubElement(c_elem, "icon", src=list(data["icons"])[0])
             
-        for prog in root.findall('programme'):
-            all_programmes.append(prog)
+        unified_channels.append(c_elem)
 
-    return all_channels, all_programmes
+    print("\n⚙️ [第二阶段] 正在提取并过滤合法的节目单...")
+    
+    # --- Pass 2: 提取 Programme ---
+    unified_programmes = []
+    
+    for url, content in results:
+        if not content: continue
+        content = content.replace(' xmlns="', ' dummy="')
+        stream = io.BytesIO(content.encode('utf-8'))
+        
+        try:
+            context = ET.iterparse(stream, events=("end",))
+            for event, elem in context:
+                if elem.tag == 'programme':
+                    prog_channel_id = elem.get('channel')
+                    # 因为 ID 是固定的，这里极其简单：只要这个节目单的 ID 存在于我们的频道列表里，就保留
+                    if prog_channel_id in valid_ids:
+                        unified_programmes.append(elem)
+                    else:
+                        elem.clear() # 丢弃僵尸节目单，防内存泄漏
+        except ET.ParseError:
+            pass
 
-def save_xml_raw(channels, programmes):
-    """最基础的写入模式"""
+    return channel_groups, unified_channels, unified_programmes
+
+def export_results(channel_groups, channels, programmes):
+    """序列化导出引擎"""
     os.makedirs(OUTPUT_DIR, exist_ok=True)
+    json_file = os.path.join(OUTPUT_DIR, 'unified_channels.json')
     xml_file = os.path.join(OUTPUT_DIR, 'epg.xml')
     gz_file = os.path.join(OUTPUT_DIR, 'epg.xml.gz')
 
-    # 生成根节点
+    # 1. 导出 JSON 映射表 (这次以 Channel ID 为主键)
+    json_export_data = {}
+    for cid, data in channel_groups.items():
+        json_export_data[cid] = {
+            "display_names": list(data["display_names"]),
+            "icons": list(data["icons"])
+        }
+    with open(json_file, 'w', encoding='utf-8') as jf:
+        json.dump(json_export_data, jf, indent=4, ensure_ascii=False)
+    
+    # 2. 导出合并后的 XML
     current_time = datetime.now(TZ_UTC_PLUS_8).strftime("%Y%m%d%H%M%S %z")
-    root = ET.Element('tv', attrib={'date': current_time})
+    root = ET.Element('tv', attrib={
+        'date': current_time, 
+        'generator-info-name': "Python-ID-Driven-EPG-Aggregator"
+    })
     
-    # 按照先 channel，后 programme 的顺序插入，符合播放器标准
-    for c_node in channels:
-        root.append(c_node)
+    for c in channels:
+        root.append(c)
+    for p in programmes:
+        root.append(p)
         
-    for p_node in programmes:
-        root.append(p_node)
-
-    # 如果 Python 版本支持，进行一下基本缩进
-    if hasattr(ET, 'indent'): 
-        ET.indent(root, space="\t")
-    
     tree = ET.ElementTree(root)
+    if hasattr(ET, 'indent'):
+        ET.indent(tree, space="\t", level=0)
     tree.write(xml_file, encoding='utf-8', xml_declaration=True)
 
-    # 打包 gz
+    # 3. 生成 GZ 压缩包
     with open(xml_file, 'rb') as f_in, gzip.open(gz_file, 'wb') as f_out:
         shutil.copyfileobj(f_in, f_out)
-        
-    print(f"✅ 物理拼接完成! 频道数: {len(channels)}, 节目数: {len(programmes)}, XML大小: {os.path.getsize(xml_file)/1024/1024:.2f}MB")
+
+    print(f"\n✅ 处理完成!")
+    print(f"📊 唯一频道 ID 数: {len(channels)}")
+    print(f"🎬 合规节目单数: {len(programmes)}")
+    print(f"💾 XML 文件大小: {os.path.getsize(xml_file)/1024/1024:.2f} MB")
+    print(f"📂 输出目录: ./{OUTPUT_DIR}/")
 
 async def main():
     if not os.path.exists(CONFIG_FILE):
@@ -92,23 +175,25 @@ async def main():
         return
         
     with open(CONFIG_FILE, 'r', encoding='utf-8') as f:
-        # 读取非空且非注释的链接
         urls = [line.strip() for line in f if line.strip() and not line.startswith('#')]
 
     print("📡 正在并发获取 EPG 数据...")
     async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(ssl=False)) as session:
         tasks = [fetch_epg(url, session) for url in urls]
-        # gather 返回的列表顺序与 urls 严格一致
         results = await asyncio.gather(*tasks)
 
-    print("\n⚙️ 正在进行极简物理拼接...")
-    channels, programmes = merge_xmls_raw(results)
-
-    print("💾 正在输出文件...")
-    save_xml_raw(channels, programmes)
+    channel_groups, final_channels, final_programmes = process_and_merge(results)
+    
+    if final_channels:
+        print("\n💾 正在输出文件...")
+        export_results(channel_groups, final_channels, final_programmes)
+    else:
+        print("\n⚠️ 没有提取到任何有效频道，中止输出。")
 
 if __name__ == '__main__':
-    # 修复 Windows 下的 aiohttp 报错
+    print("==================================================")
+    print("      EPG 聚合器 - 终极版 (基于固定的 ID 驱动)      ")
+    print("==================================================")
     if sys.platform == 'win32':
         asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
     asyncio.run(main())
