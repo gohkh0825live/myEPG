@@ -20,12 +20,12 @@ jobs:
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5.4.0
         with:
           python-version: '3.13'
       
@@ -64,7 +64,7 @@ jobs:
       
       - name: Commit changes
         if: steps.check_output.outputs.has_output == 'true'
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v5.1.0
         with:
           # 使用上面步骤中生成的动态时间
           commit_message: "chore: 自动更新 EPG 数据 [${{ steps.check_output.outputs.now }}]"
