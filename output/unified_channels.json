@@ -1,4 +1,1536 @@
 {
+    "TV1": {
+        "display_names": [
+            "TV1"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/TV1.jpg",
+            "https://datastore.vr.ctrp.sooka.my/content/images/145554TV1_v1.png"
+        ]
+    },
+    "TV2": {
+        "display_names": [
+            "TV2"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/TV2.jpg",
+            "https://datastore.vr.ctrp.sooka.my/content/images/52157bTV2_v1.png"
+        ]
+    },
+    "Okey": {
+        "display_names": [
+            "Okey"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/Okey.jpg"
+        ]
+    },
+    "Sukan RTM": {
+        "display_names": [
+            "Sukan+"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/Sukan.jpg"
+        ]
+    },
+    "Berita RTM": {
+        "display_names": [
+            "Berita RTM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/berita_bckg.jpg"
+        ]
+    },
+    "Dewan Rakyat": {
+        "display_names": [
+            "Dewan Rakyat"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/7.png"
+        ]
+    },
+    "Dewan Negara": {
+        "display_names": [
+            "Dewan Negara"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/PDN_Trans.png"
+        ]
+    },
+    "Radio Klasik": {
+        "display_names": [
+            "Radio Klasik"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/thumbnail_Radio_1920x1080px_Radio_Klasik_FM.png"
+        ]
+    },
+    "Nasional FM": {
+        "display_names": [
+            "Nasional FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/thumbnail_Radio_1920x1080px_Nasional_FM.png"
+        ]
+    },
+    "Traxx FM": {
+        "display_names": [
+            "Traxx FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/thumbnail_Radio_1920x1080px_Traxx_FM.png"
+        ]
+    },
+    "AI FM": {
+        "display_names": [
+            "AI FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/thumbnail_Radio_1920x1080px_Ai_FM.png"
+        ]
+    },
+    "Minnal FM": {
+        "display_names": [
+            "Minnal FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/thumbnail_Radio_1920x1080px_Minnal_FM.png"
+        ]
+    },
+    "Asyik FM": {
+        "display_names": [
+            "Asyik FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/radio-asset/SALAM_FM_RTMKLIK_NEW.jpg"
+        ]
+    },
+    "Selangor FM": {
+        "display_names": [
+            "Selangor FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/SelangorFM.png"
+        ]
+    },
+    "Sabah VFM": {
+        "display_names": [
+            "Sabah VFM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/SabahVFM.png"
+        ]
+    },
+    "Sarawak FM": {
+        "display_names": [
+            "Sarawak FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/SarawakFM.png"
+        ]
+    },
+    "Labuan FM": {
+        "display_names": [
+            "Labuan FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/LABUANfm.png"
+        ]
+    },
+    "Kedah FM": {
+        "display_names": [
+            "Kedah FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/KedahFM.png"
+        ]
+    },
+    "KLFM": {
+        "display_names": [
+            "KLFM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/KLFM.png"
+        ]
+    },
+    "Kelantan FM": {
+        "display_names": [
+            "Kelantan FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/KELANTANfm.png"
+        ]
+    },
+    "Terengganu FM": {
+        "display_names": [
+            "Terengganu FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/TerengganuFM.png"
+        ]
+    },
+    "Pahang FM": {
+        "display_names": [
+            "Pahang FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/PahangFM.png"
+        ]
+    },
+    "Negeri Sembilan FM": {
+        "display_names": [
+            "Negeri Sembilan FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/NegeriSembilanFM.png"
+        ]
+    },
+    "Perak FM": {
+        "display_names": [
+            "Perak FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/PerakFM.png"
+        ]
+    },
+    "Mutiara FM": {
+        "display_names": [
+            "Mutiara FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/MUTIARAFM.png"
+        ]
+    },
+    "Perlis FM": {
+        "display_names": [
+            "Perlis FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/PerlisFM.png"
+        ]
+    },
+    "Melaka FM": {
+        "display_names": [
+            "Melaka FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/MELAKAfm.png"
+        ]
+    },
+    "Sabah FM": {
+        "display_names": [
+            "Sabah FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/SabahFM.png"
+        ]
+    },
+    "Wai FM": {
+        "display_names": [
+            "Wai FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/WaiFM.png"
+        ]
+    },
+    "Red FM": {
+        "display_names": [
+            "Red FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/724.gif"
+        ]
+    },
+    "Langkawi FM": {
+        "display_names": [
+            "Langkawi FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/LANGKAWIfm.png"
+        ]
+    },
+    "Limbang FM": {
+        "display_names": [
+            "Limbang FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/LIMBANGfm.png"
+        ]
+    },
+    "Miri FM": {
+        "display_names": [
+            "Miri FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/MIRIfm.png"
+        ]
+    },
+    "Sri Aman FM": {
+        "display_names": [
+            "Sri Aman FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/SriAmanFM.png"
+        ]
+    },
+    "Bintulu FM": {
+        "display_names": [
+            "Bintulu FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/BintuluFM.png"
+        ]
+    },
+    "Sibu FM": {
+        "display_names": [
+            "Sibu FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/SibuFM.png"
+        ]
+    },
+    "Sandakan FM": {
+        "display_names": [
+            "Sandakan FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/SandakanFM.png"
+        ]
+    },
+    "Tawau FM": {
+        "display_names": [
+            "Tawau FM"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/live_channel/TawauFM.png"
+        ]
+    },
+    "Roll": {
+        "display_names": [
+            "Roll"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/fast_channel/ROLL_CHANNEL.jpg"
+        ]
+    },
+    "Snap": {
+        "display_names": [
+            "Snap"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/fast_channel/SNAP_CHANNEL.jpg"
+        ]
+    },
+    "Apetito": {
+        "display_names": [
+            "Apetito"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/fast_channel/APETITO_CHANNEL.jpg"
+        ]
+    },
+    "Lead": {
+        "display_names": [
+            "Lead"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/fast_channel/LEAD_CHANNEL.jpg"
+        ]
+    },
+    "Aura": {
+        "display_names": [
+            "Aura"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/fast_channel/AURA_CHANNEL.jpg"
+        ]
+    },
+    "Fitrah": {
+        "display_names": [
+            "Fitrah"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/fast_channel/FITRAH_CHANNEL.jpg"
+        ]
+    },
+    "Jr": {
+        "display_names": [
+            "Jr"
+        ],
+        "icons": [
+            "https://rtm-images.glueapi.io/480x0/fast_channel/JR_CHANNEL.jpg"
+        ]
+    },
+    "AXN": {
+        "display_names": [
+            "AXN"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/ebd75bAXN_v1.png"
+        ]
+    },
+    "AlJazeeraEnglish": {
+        "display_names": [
+            "Al Jazeera English"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/062763AlJazeera_v1.png"
+        ]
+    },
+    "AstroAEC": {
+        "display_names": [
+            "Astro AEC"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/83cd32AstroAEC_2024.png"
+        ]
+    },
+    "AstroArena": {
+        "display_names": [
+            "Astro Arena"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/a553c6AstroArena_2024.png"
+        ]
+    },
+    "AstroArena2": {
+        "display_names": [
+            "Astro Arena 2"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/7e0e32AstroStadium.png"
+        ]
+    },
+    "AstroArenaBola": {
+        "display_names": [
+            "Astro Arena Bola"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/a6e1bbAstroArenaBola_2024.png"
+        ]
+    },
+    "AstroArenaBola2": {
+        "display_names": [
+            "Astro Arena Bola 2"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/bce72aAstroArenaBola2_2024.png"
+        ]
+    },
+    "AstroAura": {
+        "display_names": [
+            "Astro Aura"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/9b741bAstroAura_2024.png"
+        ]
+    },
+    "AstroAwani": {
+        "display_names": [
+            "Astro Awani"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/0b2085AstroAwani_2025.png"
+        ]
+    },
+    "AstroBadminton": {
+        "display_names": [
+            "Astro Badminton"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/d5f5f1AstroBadminton_2024.png"
+        ]
+    },
+    "AstroCeria": {
+        "display_names": [
+            "Astro Ceria"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/471f63AstroCeria_2024.png"
+        ]
+    },
+    "AstroDaebak": {
+        "display_names": [
+            "Astro Daebak"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/5d8b9dAstroDaebak.png"
+        ]
+    },
+    "AstroFootball": {
+        "display_names": [
+            "Astro Football"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/05b739AstroFootball_2024.png"
+        ]
+    },
+    "AstroGolf": {
+        "display_names": [
+            "Astro Golf"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/9c407aAstroGolf_2025.png"
+        ]
+    },
+    "AstroGrandstand": {
+        "display_names": [
+            "Astro Grandstand"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/1bb736AstroGrandstand_2024.png"
+        ]
+    },
+    "AstroHuaHeeDai": {
+        "display_names": [
+            "Astro Hua Hee Dai"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/c45b30AstroHuaHeeDai_2024.png"
+        ]
+    },
+    "AstroOasis": {
+        "display_names": [
+            "Astro Oasis"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/6f21ebAstroOasis_2024.png"
+        ]
+    },
+    "AstroPremierLeague": {
+        "display_names": [
+            "Astro Premier League"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/75e8a0AstroPremierLeague_2024.png"
+        ]
+    },
+    "AstroPremierLeague2": {
+        "display_names": [
+            "Astro Premier League 2"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/57e508AstroPremierLeague2_2024.png"
+        ]
+    },
+    "AstroQJ": {
+        "display_names": [
+            "Astro QJ"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/bd3108AstroQJ_2024.png"
+        ]
+    },
+    "AstroRania": {
+        "display_names": [
+            "Astro Rania"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/1ae508AstroRania_2024.png"
+        ]
+    },
+    "AstroSportsPlus": {
+        "display_names": [
+            "Astro Sports Plus"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/7cbafaAstroSportsPlus_2024.png"
+        ]
+    },
+    "AstroTennis": {
+        "display_names": [
+            "Astro Tennis"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/75b32cAstroTennis.png"
+        ]
+    },
+    "beINSports1": {
+        "display_names": [
+            "beIN SPORTS 1"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/a857f0beINSPORT1.png"
+        ]
+    },
+    "beINSports2": {
+        "display_names": [
+            "beIN SPORTS 2"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/a786c7beINSPORTS2.png"
+        ]
+    },
+    "beINSports3": {
+        "display_names": [
+            "beIN SPORTS 3"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/5d1d04beIN_SPORTS3_V2.png"
+        ]
+    },
+    "BeritaRTM": {
+        "display_names": [
+            "Berita RTM"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/b24df6Berita_RTM_TVGuide.png"
+        ]
+    },
+    "BernamaTV": {
+        "display_names": [
+            "Bernama TV"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/201f23BNC_v3.png"
+        ]
+    },
+    "BlippiandFriends": {
+        "display_names": [
+            "Blippi & Friends"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/1846c1Blippi&Friends.png"
+        ]
+    },
+    "CCTV4": {
+        "display_names": [
+            "CCTV4"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/6bfd29CCTV4_v1.png"
+        ]
+    },
+    "CGTNDocumentary": {
+        "display_names": [
+            "CGTN Documentary"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/98bef8CGTN_DOC.png"
+        ]
+    },
+    "CNA": {
+        "display_names": [
+            "CNA"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/1f7dc9Channel_News_Asia_v1.png"
+        ]
+    },
+    "CTIAsia": {
+        "display_names": [
+            "CTIAsia"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/09be81Cti_v1.png"
+        ]
+    },
+    "Cricbuzz": {
+        "display_names": [
+            "Cricbuzz"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/a8b76fCricbuzz.png"
+        ]
+    },
+    "DWEnglish": {
+        "display_names": [
+            "DW English"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/313ffeDW_v1.png"
+        ]
+    },
+    "DramaHebat": {
+        "display_names": [
+            "Drama Hebat"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/76ebdeDramaHebat_v1.png"
+        ]
+    },
+    "DramaHotpot": {
+        "display_names": [
+            "Drama Hotpot"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/dfae31DramaHotpot.png"
+        ]
+    },
+    "FashionTV": {
+        "display_names": [
+            "Fashion TV"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/159e64FTV.png"
+        ]
+    },
+    "FilemMantap": {
+        "display_names": [
+            "Filem Mantap"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/309d18FilemMantap.png"
+        ]
+    },
+    "France24": {
+        "display_names": [
+            "France24"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/22477aFrance24_v1.png"
+        ]
+    },
+    "FreeMovies": {
+        "display_names": [
+            "Free Movies"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/95d90eFree_Movies.png"
+        ]
+    },
+    "GustoTV": {
+        "display_names": [
+            "GustoTV"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/dbe142GustoTV.png"
+        ]
+    },
+    "HITS": {
+        "display_names": [
+            "HITS"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/a5ad56Hits_v1.png"
+        ]
+    },
+    "HITSMovies": {
+        "display_names": [
+            "HITS MOVIES"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/22c130Logo_10000499.png"
+        ]
+    },
+    "HITSNow": {
+        "display_names": [
+            "HITS NOW"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/74457cHITSNOW.png"
+        ]
+    },
+    "HorseandCountry": {
+        "display_names": [
+            "Horse & Country"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/894a2eHNC.png"
+        ]
+    },
+    "iQIYI": {
+        "display_names": [
+            "iQIYI"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/8f0841IQIYI_2022.png"
+        ]
+    },
+    "JomNgaji": {
+        "display_names": [
+            "Jom Ngaji"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/13b8daJomNgaji.png"
+        ]
+    },
+    "K-Plus": {
+        "display_names": [
+            "K-Plus"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/0876f2K-Plus_v1.png"
+        ]
+    },
+    "KBSWorld": {
+        "display_names": [
+            "KBS World"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/2ee8e4KBSW_v1.png"
+        ]
+    },
+    "KCM": {
+        "display_names": [
+            "KCM"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/22404dKCM.png"
+        ]
+    },
+    "LawakSentral": {
+        "display_names": [
+            "Lawak Sentral"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/a59b94LawakSentral.png"
+        ]
+    },
+    "LoveNature": {
+        "display_names": [
+            "Love Nature"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/793f06LoveNature_HD.png"
+        ]
+    },
+    "Moonbug": {
+        "display_names": [
+            "Moonbug"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/1b5a8aMoonbug_V1.png"
+        ]
+    },
+    "MyToonz": {
+        "display_names": [
+            "My Toonz"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/fe02b4mytoonz.png"
+        ]
+    },
+    "OhMyCeria": {
+        "display_names": [
+            "Oh My Ceria!"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/756588OhMyCeria.png"
+        ]
+    },
+    "PetClub": {
+        "display_names": [
+            "Pet Club"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/cb4befPetClubTV.png"
+        ]
+    },
+    "PhoenixChineseChannel": {
+        "display_names": [
+            "Phoenix Chinese Channel"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/e07278Phoenix_v1.png"
+        ]
+    },
+    "PhoenixInfoNews": {
+        "display_names": [
+            "Phoenix Info News"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/4fa4e8Phoenix_News_Info_v1.png"
+        ]
+    },
+    "ROCKAction": {
+        "display_names": [
+            "ROCK Action"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/fdb766RockAction.png"
+        ]
+    },
+    "ROCKXStream": {
+        "display_names": [
+            "ROCK X Stream"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/814458RockXStream.png"
+        ]
+    },
+    "Sukan+": {
+        "display_names": [
+            "Sukan+"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/f6206eSukan_RTM_TVGuide.png"
+        ]
+    },
+    "OKEY": {
+        "display_names": [
+            "TV Okey"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/243e33Okey_v1.png"
+        ]
+    },
+    "TravelandTaste": {
+        "display_names": [
+            "Travel & Taste"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/671371TravelTaste.png"
+        ]
+    },
+    "TVBClassic": {
+        "display_names": [
+            "TVB Classic"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/266a7cTVB_Classic_2022.png"
+        ]
+    },
+    "TVBEntertainmentNews": {
+        "display_names": [
+            "TVB Entertainment News"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/efc0a9TVBE_v1.png"
+        ]
+    },
+    "TVBJade": {
+        "display_names": [
+            "TVB Jade"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/638e69TVB_Jade_v3.png"
+        ]
+    },
+    "TVBXingHe": {
+        "display_names": [
+            "TVB Xing He"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/355eebTVB_XingHe_v1.png"
+        ]
+    },
+    "tvN": {
+        "display_names": [
+            "tvN"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/7c75c4tvN_2021.png"
+        ]
+    },
+    "tvNMovies": {
+        "display_names": [
+            "tvN Movies"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/76f021tvNMovies_2021.png"
+        ]
+    },
+    "TVS": {
+        "display_names": [
+            "TV Sarawak"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/934ccbTVS.png"
+        ]
+    },
+    "WeDoTVAmor": {
+        "display_names": [
+            "WeDoTV Amor"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/15dc35WD_Amor.png"
+        ]
+    },
+    "WeDoTVBigStories": {
+        "display_names": [
+            "WeDoTV Big Stories"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/5550b7WD_Big_Stories.png"
+        ]
+    },
+    "WeDoTMovies": {
+        "display_names": [
+            "WeDoTV Movies"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/c1ce3eWD_Movies.png"
+        ]
+    },
+    "WeDoTVSports": {
+        "display_names": [
+            "WeDoTV Sports"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/711411WD_Sports.png"
+        ]
+    },
+    "W-Sport": {
+        "display_names": [
+            "W-Sport"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/76ff7aW-Sport.png"
+        ]
+    },
+    "YRFMusic": {
+        "display_names": [
+            "YRF music"
+        ],
+        "icons": [
+            "https://datastore.vr.ctrp.sooka.my/content/images/23f4e7YRFMusic.png"
+        ]
+    },
+    "101": {
+        "display_names": [
+            "TV1"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/F01074B2-F6DD-441B-9477-1DF50C081978/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "102": {
+        "display_names": [
+            "TV2"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/907F5B90-0688-4EC2-ABEF-A69F7C842287/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "103": {
+        "display_names": [
+            "TV3"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/AED0C736-D2D2-4E97-B2F6-4FF4A0ACE765/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "107": {
+        "display_names": [
+            "Didik TV KPM"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/4504543C-34AB-456E-940F-72431972DC9C/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "108": {
+        "display_names": [
+            "8TV"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/9C66E114-6607-4EB2-9F11-DE0F25C161EE/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "109": {
+        "display_names": [
+            "TV9"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/01A5D01A-1DAE-4E0F-8003-0B570E9F474E/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "113": {
+        "display_names": [
+            "Salam HD"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/1CE8DFF2-DF3E-4EFD-8D01-3D261D0890DD/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "114": {
+        "display_names": [
+            "TV AlHijrah HD"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/F4935E21-02B4-4697-BEC4-671EB6034217/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "116": {
+        "display_names": [
+            "Sensasi"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/8F641B7A-CC55-497E-9C73-B1F10ADA7541/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "118": {
+        "display_names": [
+            "Inspirasi"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/571B75B0-7857-425F-BB88-9D8E12E7903B/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "120": {
+        "display_names": [
+            "DEGUP"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/07A79742-0FA2-4DD8-8F98-929157AE96DF/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "121": {
+        "display_names": [
+            "SIAR"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/F101B330-8D9C-4670-9DE3-2C53E8866EA0/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "122": {
+        "display_names": [
+            "TV Sarawak"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/2BE028DB-08C8-437F-BB78-93DEC3F03786/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "128": {
+        "display_names": [
+            "Dunia Sinema HD"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/66BD76C5-BEFD-476A-9688-87AFCE8E8526/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "141": {
+        "display_names": [
+            "PESONA",
+            "凤凰中文"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/4BDA018A-6442-4561-85D4-CD8333CA2560/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "201": {
+        "display_names": [
+            "tvN Movies HD"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/8D56EE30-95BC-4047-B13F-CF2E5C5F84F8/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "211": {
+        "display_names": [
+            "tvN HD"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/E81EA250-61A3-4778-9E6D-4648A2E391A1/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "231": {
+        "display_names": [
+            "TVB Jade"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/EA67DBDB-6A52-4D0C-A0ED-F390183F0E70/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "232": {
+        "display_names": [
+            "TVB Xing He"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/B7509514-749E-4782-9521-8A07E81A07B2/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "235": {
+        "display_names": [
+            "CCTV-4"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/E5BD5F84-8278-4B7C-95EA-E7057B0B3233/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "236": {
+        "display_names": [
+            "Phoenix Hong Kong Channel"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/8042936E-2929-40C1-8486-463C6FA3DD5F/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "239": {
+        "display_names": [
+            "SETI"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/D9A91961-CCD2-48BA-A4FD-6EC1ECAF0AFC/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "288": {
+        "display_names": [
+            "Celestial Movies"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/6C8CF795-8ABE-40AF-A6D5-C0CE552D2C39/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "289": {
+        "display_names": [
+            "Celestial Classic Movies"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/E4D467A1-81DD-4D5C-9AE8-43C7908B80E9/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "302": {
+        "display_names": [
+            "Zee Thirai"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/DD728749-B762-4F91-81F8-EA1016F97EF3/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "303": {
+        "display_names": [
+            "Sony YAY!"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/BD814A07-3CF5-4686-B552-31FF782BB8F7/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "311": {
+        "display_names": [
+            "Zee Tamil HD"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/0331DB51-F701-463B-8C3D-67595A11BA8E/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "333": {
+        "display_names": [
+            "Zee Cinema HD"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/80C77245-57B4-4DA8-8C30-4A0A2DB30D1B/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "401": {
+        "display_names": [
+            "HBO"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/9A5A508C-BB3A-4139-8C2F-8B092336F192/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "402": {
+        "display_names": [
+            "HBO Hits"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/054D31F0-3639-4ADB-AB0D-9B8621E0190D/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "403": {
+        "display_names": [
+            "HBO Family"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/31780236-3056-4866-AE99-B3C33D65B073/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "405": {
+        "display_names": [
+            "Cinemax"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/479F46FE-15C6-498A-92C1-8E583B79E487/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "407": {
+        "display_names": [
+            "HITS Movies"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/3C8B5AB5-8F5E-41A6-9AD2-ED9E22B460E9/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "451": {
+        "display_names": [
+            "Warner TV HD"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/7C14DEDF-68C8-447B-B1D7-5CB170AF3CF3/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "452": {
+        "display_names": [
+            "HITS NOW"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/AB981083-F9B7-45F0-A28E-F6DCC3DAF10A/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "453": {
+        "display_names": [
+            "AXN"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/568841DF-E3B3-454A-9521-11813C6C0954/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "454": {
+        "display_names": [
+            "HITS"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/E55E65A4-6CCD-4A8B-8132-1727470820F4/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "462": {
+        "display_names": [
+            "K Plus"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/B8D0D9CC-B198-469A-9AAE-87DAE8A4DDB4/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "472": {
+        "display_names": [
+            "Animax"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/D40AFC4A-BD3D-46B2-B1F4-78B483796A2A/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "473": {
+        "display_names": [
+            "ROCK Entertainment HD"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/3A21C3E7-8514-4978-BEAA-6EE4DAB2C5B8/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "474": {
+        "display_names": [
+            "Rock Action HD"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/1EEE031E-E97D-468E-A503-ECE1F41E3AC0/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "501": {
+        "display_names": [
+            "BBC Earth HD"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/06456101-BAA6-40B9-AA17-81B113B0E289/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "502": {
+        "display_names": [
+            "Love Nature HD"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/9B3871C9-6B6A-4B72-A180-D2F3C0717159/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "511": {
+        "display_names": [
+            "HGTV"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/B7EBC0E2-E56A-431D-B9CF-D1105908CAD3/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "512": {
+        "display_names": [
+            "BBC Lifestyle HD"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/7449833A-0595-4CB6-A762-FA16B2C6604C/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "521": {
+        "display_names": [
+            "Asian Food Network"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/85AFA58C-C399-4D78-87BF-FEB53DA2F4CD/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "550": {
+        "display_names": [
+            "DreamWorks HD"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/C80E3DCC-64D5-4447-991B-E2E2998E6DEF/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "551": {
+        "display_names": [
+            "Moonbug"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/8E7404EF-65F4-491A-8498-7BA94D15D28A/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "552": {
+        "display_names": [
+            "Nick Jr."
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/27A246D6-BEAD-43F8-89AE-12FB781954FD/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "553": {
+        "display_names": [
+            "Cbeebies HD"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/9784F0AC-A9BC-4C93-8D22-023403A38B7B/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "554": {
+        "display_names": [
+            "Nickelodeon"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/B0F89221-2AF9-493C-B1FD-3169136100C2/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "556": {
+        "display_names": [
+            "宁夏公共",
+            "Cartoon Network"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/19A98713-0CA9-4509-BDA3-AA652B2329A3/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "601": {
+        "display_names": [
+            "BBC News"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/27953737-1BD2-45A3-9187-D055D4550D6D/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "602": {
+        "display_names": [
+            "Al Jazeera"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/5410FF16-4BD0-47F5-91B9-DAC673523D53/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "610": {
+        "display_names": [
+            "CGTN"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/8545CF4C-4493-4134-B706-13547D9B4B36/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "611": {
+        "display_names": [
+            "CNA"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/D13F284A-4009-4A1D-964C-CCD4F25A4579/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "612": {
+        "display_names": [
+            "Euronews"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/98415BAC-8D06-4614-8459-7C0E306DA785/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "631": {
+        "display_names": [
+            "Bernama TV"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/F3362D9E-20F0-483D-BA25-B3305233657A/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "633": {
+        "display_names": [
+            "Parlimen Malaysia"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/85286732-64A6-4885-B02A-ED0383F4319D/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "641": {
+        "display_names": [
+            "ABC Australia"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/F16A709A-F106-4164-8E34-DFD79461B61A/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "642": {
+        "display_names": [
+            "DW"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/6A3F3B67-97AB-469D-B2D8-00B6A1C5A2DD/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "643": {
+        "display_names": [
+            "NHK WORLD-JAPAN"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/83E223EF-AE4A-4E3F-A7D9-07A33B4C3A20/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "701": {
+        "display_names": [
+            "Unifi Sports 1"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/28EEC6E6-98AD-44E7-8CF3-101111099742/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "706": {
+        "display_names": [
+            "SPOTV"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/75E45C13-621B-44EB-86F1-35C8C3DCB7E1/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "707": {
+        "display_names": [
+            "SPOTV2"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/6E16A3C6-3131-4199-B8F2-467F023E14BE/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "708": {
+        "display_names": [
+            "beIN SPORTS 1"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/A0C43E09-6105-4CD5-9F44-390B57BCA1A5/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "709": {
+        "display_names": [
+            "beIN SPORTS 2"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/B6AE264E-3B1A-4E37-B9A2-43D912FC89D7/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "710": {
+        "display_names": [
+            "beIN SPORTS 3"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/03E8ED19-B3A5-44F1-9176-4EC1FD68B0A1/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
+    "711": {
+        "display_names": [
+            "beIN SPORTS 4"
+        ],
+        "icons": [
+            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/C0FFC072-D51A-4676-B232-F1C06BFA87D1/0-16x9.png?width=160&updatedTime=0&dt=Web"
+        ]
+    },
     "astro622": {
         "display_names": [
             "Astro30"
@@ -1303,560 +2835,6 @@
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/240_144.png"
         ]
     },
-    "101": {
-        "display_names": [
-            "TV1"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/F01074B2-F6DD-441B-9477-1DF50C081978/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "102": {
-        "display_names": [
-            "TV2"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/907F5B90-0688-4EC2-ABEF-A69F7C842287/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "103": {
-        "display_names": [
-            "TV3"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/AED0C736-D2D2-4E97-B2F6-4FF4A0ACE765/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "107": {
-        "display_names": [
-            "Didik TV KPM"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/4504543C-34AB-456E-940F-72431972DC9C/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "108": {
-        "display_names": [
-            "8TV"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/9C66E114-6607-4EB2-9F11-DE0F25C161EE/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "109": {
-        "display_names": [
-            "TV9"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/01A5D01A-1DAE-4E0F-8003-0B570E9F474E/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "113": {
-        "display_names": [
-            "Salam HD"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/1CE8DFF2-DF3E-4EFD-8D01-3D261D0890DD/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "114": {
-        "display_names": [
-            "TV AlHijrah HD"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/F4935E21-02B4-4697-BEC4-671EB6034217/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "116": {
-        "display_names": [
-            "Sensasi"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/8F641B7A-CC55-497E-9C73-B1F10ADA7541/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "118": {
-        "display_names": [
-            "Inspirasi"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/571B75B0-7857-425F-BB88-9D8E12E7903B/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "120": {
-        "display_names": [
-            "DEGUP"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/07A79742-0FA2-4DD8-8F98-929157AE96DF/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "121": {
-        "display_names": [
-            "SIAR"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/F101B330-8D9C-4670-9DE3-2C53E8866EA0/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "122": {
-        "display_names": [
-            "TV Sarawak"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/2BE028DB-08C8-437F-BB78-93DEC3F03786/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "128": {
-        "display_names": [
-            "Dunia Sinema HD"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/66BD76C5-BEFD-476A-9688-87AFCE8E8526/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "141": {
-        "display_names": [
-            "PESONA",
-            "凤凰中文"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/4BDA018A-6442-4561-85D4-CD8333CA2560/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "201": {
-        "display_names": [
-            "tvN Movies HD"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/8D56EE30-95BC-4047-B13F-CF2E5C5F84F8/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "211": {
-        "display_names": [
-            "tvN HD"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/E81EA250-61A3-4778-9E6D-4648A2E391A1/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "231": {
-        "display_names": [
-            "TVB Jade"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/EA67DBDB-6A52-4D0C-A0ED-F390183F0E70/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "232": {
-        "display_names": [
-            "TVB Xing He"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/B7509514-749E-4782-9521-8A07E81A07B2/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "235": {
-        "display_names": [
-            "CCTV-4"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/E5BD5F84-8278-4B7C-95EA-E7057B0B3233/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "236": {
-        "display_names": [
-            "Phoenix Hong Kong Channel"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/8042936E-2929-40C1-8486-463C6FA3DD5F/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "239": {
-        "display_names": [
-            "SETI"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/D9A91961-CCD2-48BA-A4FD-6EC1ECAF0AFC/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "288": {
-        "display_names": [
-            "Celestial Movies"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/6C8CF795-8ABE-40AF-A6D5-C0CE552D2C39/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "289": {
-        "display_names": [
-            "Celestial Classic Movies"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/E4D467A1-81DD-4D5C-9AE8-43C7908B80E9/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "302": {
-        "display_names": [
-            "Zee Thirai"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/DD728749-B762-4F91-81F8-EA1016F97EF3/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "303": {
-        "display_names": [
-            "Sony YAY!"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/BD814A07-3CF5-4686-B552-31FF782BB8F7/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "311": {
-        "display_names": [
-            "Zee Tamil HD"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/0331DB51-F701-463B-8C3D-67595A11BA8E/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "333": {
-        "display_names": [
-            "Zee Cinema HD"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/80C77245-57B4-4DA8-8C30-4A0A2DB30D1B/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "401": {
-        "display_names": [
-            "HBO"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/9A5A508C-BB3A-4139-8C2F-8B092336F192/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "402": {
-        "display_names": [
-            "HBO Hits"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/054D31F0-3639-4ADB-AB0D-9B8621E0190D/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "403": {
-        "display_names": [
-            "HBO Family"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/31780236-3056-4866-AE99-B3C33D65B073/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "405": {
-        "display_names": [
-            "Cinemax"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/479F46FE-15C6-498A-92C1-8E583B79E487/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "407": {
-        "display_names": [
-            "HITS Movies"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/3C8B5AB5-8F5E-41A6-9AD2-ED9E22B460E9/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "451": {
-        "display_names": [
-            "Warner TV HD"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/7C14DEDF-68C8-447B-B1D7-5CB170AF3CF3/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "452": {
-        "display_names": [
-            "HITS NOW"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/AB981083-F9B7-45F0-A28E-F6DCC3DAF10A/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "453": {
-        "display_names": [
-            "AXN"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/568841DF-E3B3-454A-9521-11813C6C0954/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "454": {
-        "display_names": [
-            "HITS"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/E55E65A4-6CCD-4A8B-8132-1727470820F4/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "462": {
-        "display_names": [
-            "K Plus"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/B8D0D9CC-B198-469A-9AAE-87DAE8A4DDB4/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "472": {
-        "display_names": [
-            "Animax"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/D40AFC4A-BD3D-46B2-B1F4-78B483796A2A/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "473": {
-        "display_names": [
-            "ROCK Entertainment HD"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/3A21C3E7-8514-4978-BEAA-6EE4DAB2C5B8/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "474": {
-        "display_names": [
-            "Rock Action HD"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/1EEE031E-E97D-468E-A503-ECE1F41E3AC0/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "501": {
-        "display_names": [
-            "BBC Earth HD"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/06456101-BAA6-40B9-AA17-81B113B0E289/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "502": {
-        "display_names": [
-            "Love Nature HD"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/9B3871C9-6B6A-4B72-A180-D2F3C0717159/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "511": {
-        "display_names": [
-            "HGTV"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/B7EBC0E2-E56A-431D-B9CF-D1105908CAD3/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "512": {
-        "display_names": [
-            "BBC Lifestyle HD"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/7449833A-0595-4CB6-A762-FA16B2C6604C/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "521": {
-        "display_names": [
-            "Asian Food Network"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/85AFA58C-C399-4D78-87BF-FEB53DA2F4CD/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "550": {
-        "display_names": [
-            "DreamWorks HD"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/C80E3DCC-64D5-4447-991B-E2E2998E6DEF/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "551": {
-        "display_names": [
-            "Moonbug"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/8E7404EF-65F4-491A-8498-7BA94D15D28A/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "552": {
-        "display_names": [
-            "Nick Jr."
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/27A246D6-BEAD-43F8-89AE-12FB781954FD/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "553": {
-        "display_names": [
-            "Cbeebies HD"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/9784F0AC-A9BC-4C93-8D22-023403A38B7B/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "554": {
-        "display_names": [
-            "Nickelodeon"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/B0F89221-2AF9-493C-B1FD-3169136100C2/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "556": {
-        "display_names": [
-            "Cartoon Network",
-            "宁夏公共"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/19A98713-0CA9-4509-BDA3-AA652B2329A3/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "601": {
-        "display_names": [
-            "BBC News"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/27953737-1BD2-45A3-9187-D055D4550D6D/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "602": {
-        "display_names": [
-            "Al Jazeera"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/5410FF16-4BD0-47F5-91B9-DAC673523D53/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "610": {
-        "display_names": [
-            "CGTN"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/8545CF4C-4493-4134-B706-13547D9B4B36/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "611": {
-        "display_names": [
-            "CNA"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/D13F284A-4009-4A1D-964C-CCD4F25A4579/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "612": {
-        "display_names": [
-            "Euronews"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/98415BAC-8D06-4614-8459-7C0E306DA785/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "631": {
-        "display_names": [
-            "Bernama TV"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/F3362D9E-20F0-483D-BA25-B3305233657A/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "633": {
-        "display_names": [
-            "Parlimen Malaysia"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/85286732-64A6-4885-B02A-ED0383F4319D/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "641": {
-        "display_names": [
-            "ABC Australia"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/F16A709A-F106-4164-8E34-DFD79461B61A/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "642": {
-        "display_names": [
-            "DW"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/6A3F3B67-97AB-469D-B2D8-00B6A1C5A2DD/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "643": {
-        "display_names": [
-            "NHK WORLD-JAPAN"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/83E223EF-AE4A-4E3F-A7D9-07A33B4C3A20/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "701": {
-        "display_names": [
-            "Unifi Sports 1"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/28EEC6E6-98AD-44E7-8CF3-101111099742/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "706": {
-        "display_names": [
-            "SPOTV"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/75E45C13-621B-44EB-86F1-35C8C3DCB7E1/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "707": {
-        "display_names": [
-            "SPOTV2"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/6E16A3C6-3131-4199-B8F2-467F023E14BE/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "708": {
-        "display_names": [
-            "beIN SPORTS 1"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/A0C43E09-6105-4CD5-9F44-390B57BCA1A5/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "709": {
-        "display_names": [
-            "beIN SPORTS 2"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/B6AE264E-3B1A-4E37-B9A2-43D912FC89D7/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "710": {
-        "display_names": [
-            "beIN SPORTS 3"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/03E8ED19-B3A5-44F1-9176-4EC1FD68B0A1/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
-    "711": {
-        "display_names": [
-            "beIN SPORTS 4"
-        ],
-        "icons": [
-            "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/C0FFC072-D51A-4676-B232-F1C06BFA87D1/0-16x9.png?width=160&updatedTime=0&dt=Web"
-        ]
-    },
     "100.astro": {
         "display_names": [
             "Astro30",
@@ -1877,8 +2855,8 @@
     },
     "102.astro": {
         "display_names": [
-            "TV2 HD",
-            "102"
+            "102",
+            "TV2 HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/396_144.png"
@@ -1886,8 +2864,8 @@
     },
     "103.astro": {
         "display_names": [
-            "103",
-            "TV3"
+            "TV3",
+            "103"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/106_144.png"
@@ -1904,8 +2882,8 @@
     },
     "105.astro": {
         "display_names": [
-            "Astro Prima",
-            "105"
+            "105",
+            "Astro Prima"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/316_144.png"
@@ -1913,8 +2891,8 @@
     },
     "106.astro": {
         "display_names": [
-            "Astro Oasis",
-            "106"
+            "106",
+            "Astro Oasis"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/315_144.png"
@@ -1922,8 +2900,8 @@
     },
     "108.astro": {
         "display_names": [
-            "Astro Citra",
-            "108"
+            "108",
+            "Astro Citra"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/301_144.png"
@@ -1931,8 +2909,8 @@
     },
     "112.astro": {
         "display_names": [
-            "Astro Rania",
-            "112"
+            "112",
+            "Astro Rania"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/401_144.png"
@@ -1958,8 +2936,8 @@
     },
     "116.astro": {
         "display_names": [
-            "116",
-            "Colors Hindi HD"
+            "Colors Hindi HD",
+            "116"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/365_144.png"
@@ -1967,8 +2945,8 @@
     },
     "117.astro": {
         "display_names": [
-            "117",
-            "Z Cinema HD"
+            "Z Cinema HD",
+            "117"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/490_144.png"
@@ -1976,8 +2954,8 @@
     },
     "120.astro": {
         "display_names": [
-            "120",
-            "Aniplus"
+            "Aniplus",
+            "120"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/267_144.png"
@@ -1985,8 +2963,8 @@
     },
     "122.astro": {
         "display_names": [
-            "122",
-            "TV Sarawak"
+            "TV Sarawak",
+            "122"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/429_144.png"
@@ -1994,8 +2972,8 @@
     },
     "146.astro": {
         "display_names": [
-            "TV Okey HD",
-            "146"
+            "146",
+            "TV Okey HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/467_144.png"
@@ -2048,8 +3026,8 @@
     },
     "203.astro": {
         "display_names": [
-            "Astro Vellithirai HD",
-            "203"
+            "203",
+            "Astro Vellithirai HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/399_144.png"
@@ -2057,8 +3035,8 @@
     },
     "211.astro": {
         "display_names": [
-            "SUN TV HD",
-            "211"
+            "211",
+            "SUN TV HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/358_144.png"
@@ -2084,8 +3062,8 @@
     },
     "215.astro": {
         "display_names": [
-            "Sun News",
-            "215"
+            "215",
+            "Sun News"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/478_144.png"
@@ -2093,8 +3071,8 @@
     },
     "216.astro": {
         "display_names": [
-            "216",
-            "KTV"
+            "KTV",
+            "216"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/477_144.png"
@@ -2111,8 +3089,8 @@
     },
     "221.astro": {
         "display_names": [
-            "221",
-            "Star Vijay HD"
+            "Star Vijay HD",
+            "221"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/357_144.png"
@@ -2120,8 +3098,8 @@
     },
     "222.astro": {
         "display_names": [
-            "222",
-            "Colors Tamil HD"
+            "Colors Tamil HD",
+            "222"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/298_144.png"
@@ -2129,8 +3107,8 @@
     },
     "223.astro": {
         "display_names": [
-            "Z Tamil HD",
-            "223"
+            "223",
+            "Z Tamil HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/297_144.png"
@@ -2138,8 +3116,8 @@
     },
     "241.astro": {
         "display_names": [
-            "Astro Thangathirai",
-            "241"
+            "241",
+            "Astro Thangathirai"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/177_144.png"
@@ -2156,8 +3134,8 @@
     },
     "305.astro": {
         "display_names": [
-            "TVB Classic HD",
-            "305"
+            "305",
+            "TVB Classic HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/425_144.png"
@@ -2174,8 +3152,8 @@
     },
     "308.astro": {
         "display_names": [
-            "Astro QJ",
-            "308"
+            "308",
+            "Astro QJ"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/158_144.png"
@@ -2183,8 +3161,8 @@
     },
     "309.astro": {
         "display_names": [
-            "Celestial Movies HD",
-            "309"
+            "309",
+            "Celestial Movies HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/134_144.png"
@@ -2192,8 +3170,8 @@
     },
     "310.astro": {
         "display_names": [
-            "TVB Jade",
-            "310"
+            "310",
+            "TVB Jade"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/203_144.png"
@@ -2201,8 +3179,8 @@
     },
     "311.astro": {
         "display_names": [
-            "Astro AOD",
-            "311"
+            "311",
+            "Astro AOD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/172_144.png"
@@ -2210,8 +3188,8 @@
     },
     "316.astro": {
         "display_names": [
-            "CTI Asia HD",
-            "316"
+            "316",
+            "CTI Asia HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/424_144.png"
@@ -2237,8 +3215,8 @@
     },
     "320.astro": {
         "display_names": [
-            "TVBS Asia HD",
-            "320"
+            "320",
+            "TVBS Asia HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/384_144.png"
@@ -2264,8 +3242,8 @@
     },
     "326.astro": {
         "display_names": [
-            "Phoenix Info News HD",
-            "326"
+            "326",
+            "Phoenix Info News HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/43_144.png"
@@ -2273,8 +3251,8 @@
     },
     "333.astro": {
         "display_names": [
-            "Astro Hua Hee Dai",
-            "333"
+            "333",
+            "Astro Hua Hee Dai"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/162_144.png"
@@ -2291,8 +3269,8 @@
     },
     "392.astro": {
         "display_names": [
-            "392",
-            "KBS World HD"
+            "KBS World HD",
+            "392"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/161_144.png"
@@ -2327,8 +3305,8 @@
     },
     "398.astro": {
         "display_names": [
-            "NHK World Premium",
-            "398"
+            "398",
+            "NHK World Premium"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/428_144.png"
@@ -2363,8 +3341,8 @@
     },
     "412.astro": {
         "display_names": [
-            "412",
-            "Astro FAM Time"
+            "Astro FAM Time",
+            "412"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/603_144.png"
@@ -2372,8 +3350,8 @@
     },
     "413.astro": {
         "display_names": [
-            "Astro Showcase",
-            "413"
+            "413",
+            "Astro Showcase"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/454_144.png"
@@ -2453,8 +3431,8 @@
     },
     "512.astro": {
         "display_names": [
-            "512",
-            "BBC News HD"
+            "BBC News HD",
+            "512"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/366_144.png"
@@ -2480,8 +3458,8 @@
     },
     "516.astro": {
         "display_names": [
-            "CNBC Asia HD",
-            "516"
+            "516",
+            "CNBC Asia HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/423_144.png"
@@ -2489,8 +3467,8 @@
     },
     "517.astro": {
         "display_names": [
-            "Bloomberg TV HD",
-            "517"
+            "517",
+            "Bloomberg TV HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/422_144.png"
@@ -2498,8 +3476,8 @@
     },
     "518.astro": {
         "display_names": [
-            "518",
-            "ABC Australia HD"
+            "ABC Australia HD",
+            "518"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/461_144.png"
@@ -2507,8 +3485,8 @@
     },
     "549.astro": {
         "display_names": [
-            "549",
-            "Love Nature 4K"
+            "Love Nature 4K",
+            "549"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/472_144.png"
@@ -2516,8 +3494,8 @@
     },
     "550.astro": {
         "display_names": [
-            "550",
-            "Love Nature"
+            "Love Nature",
+            "550"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/483_144.png"
@@ -2534,8 +3512,8 @@
     },
     "553.astro": {
         "display_names": [
-            "Discovery Asia HD",
-            "553"
+            "553",
+            "Discovery Asia HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/136_144.png"
@@ -2543,8 +3521,8 @@
     },
     "554.astro": {
         "display_names": [
-            "554",
-            "BBC Earth"
+            "BBC Earth",
+            "554"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/452_144.png"
@@ -2552,8 +3530,8 @@
     },
     "555.astro": {
         "display_names": [
-            "History HD",
-            "555"
+            "555",
+            "History HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/144_144.png"
@@ -2588,8 +3566,8 @@
     },
     "615.astro": {
         "display_names": [
-            "Cartoon Network HD",
-            "615"
+            "615",
+            "Cartoon Network HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/371_144.png"
@@ -2606,8 +3584,8 @@
     },
     "617.astro": {
         "display_names": [
-            "617",
-            "Nick Jr."
+            "Nick Jr.",
+            "617"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/392_144.png"
@@ -2615,8 +3593,8 @@
     },
     "618.astro": {
         "display_names": [
-            "618",
-            "Moonbug"
+            "Moonbug",
+            "618"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/465_144.png"
@@ -2624,8 +3602,8 @@
     },
     "619.astro": {
         "display_names": [
-            "619",
-            "Blippi & Friends"
+            "Blippi & Friends",
+            "619"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/566_144.png"
@@ -2642,8 +3620,8 @@
     },
     "702.astro": {
         "display_names": [
-            "HITS NOW",
-            "702"
+            "702",
+            "HITS NOW"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/524_144.png"
@@ -2651,8 +3629,8 @@
     },
     "703.astro": {
         "display_names": [
-            "Lifetime HD",
-            "703"
+            "703",
+            "Lifetime HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/447_144.png"
@@ -2660,8 +3638,8 @@
     },
     "706.astro": {
         "display_names": [
-            "706",
-            "HITS HD"
+            "HITS HD",
+            "706"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/179_144.png"
@@ -2714,8 +3692,8 @@
     },
     "802.astro": {
         "display_names": [
-            "Stadium Astro",
-            "802"
+            "802",
+            "Stadium Astro"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/457_144.png"
@@ -2723,8 +3701,8 @@
     },
     "803.astro": {
         "display_names": [
-            "Arena Bola",
-            "803"
+            "803",
+            "Arena Bola"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/486_144.png"
@@ -2732,8 +3710,8 @@
     },
     "804.astro": {
         "display_names": [
-            "804",
-            "Arena Bola 2"
+            "Arena Bola 2",
+            "804"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/487_144.png"
@@ -2759,8 +3737,8 @@
     },
     "808.astro": {
         "display_names": [
-            "Astro Premier League 4",
-            "808"
+            "808",
+            "Astro Premier League 4"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/568_144.png"
@@ -2777,8 +3755,8 @@
     },
     "810.astro": {
         "display_names": [
-            "810",
-            "Astro Grandstand"
+            "Astro Grandstand",
+            "810"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/543_144.png"
@@ -2786,8 +3764,8 @@
     },
     "811.astro": {
         "display_names": [
-            "Astro Premier League",
-            "811"
+            "811",
+            "Astro Premier League"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/536_144.png"
@@ -2795,8 +3773,8 @@
     },
     "812.astro": {
         "display_names": [
-            "Astro Premier League 2",
-            "812"
+            "812",
+            "Astro Premier League 2"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/537_144.png"
@@ -2804,8 +3782,8 @@
     },
     "813.astro": {
         "display_names": [
-            "Astro Premier League 3",
-            "813"
+            "813",
+            "Astro Premier League 3"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/538_144.png"
@@ -2813,8 +3791,8 @@
     },
     "814.astro": {
         "display_names": [
-            "814",
-            "Astro Football"
+            "Astro Football",
+            "814"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/539_144.png"
@@ -2831,8 +3809,8 @@
     },
     "816.astro": {
         "display_names": [
-            "Astro Badminton 2",
-            "816"
+            "816",
+            "Astro Badminton 2"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/541_144.png"
@@ -2840,8 +3818,8 @@
     },
     "817.astro": {
         "display_names": [
-            "Astro Sports Plus",
-            "817"
+            "817",
+            "Astro Sports Plus"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/542_144.png"
@@ -2867,8 +3845,8 @@
     },
     "820.astro": {
         "display_names": [
-            "820",
-            "beIN SPORTS 1"
+            "beIN SPORTS 1",
+            "820"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/236_144.png"
@@ -2876,8 +3854,8 @@
     },
     "821.astro": {
         "display_names": [
-            "beIN SPORTS 2",
-            "821"
+            "821",
+            "beIN SPORTS 2"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/466_144.png"
@@ -2894,8 +3872,8 @@
     },
     "826.astro": {
         "display_names": [
-            "W-Sport",
-            "826"
+            "826",
+            "W-Sport"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/503_144.png"
@@ -2930,8 +3908,8 @@
     },
     "852.astro": {
         "display_names": [
-            "HITZ FM",
-            "852"
+            "852",
+            "HITZ FM"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/17_144.png"
@@ -2939,8 +3917,8 @@
     },
     "853.astro": {
         "display_names": [
-            "MY FM",
-            "853"
+            "853",
+            "MY FM"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/15_144.png"
@@ -2957,8 +3935,8 @@
     },
     "855.astro": {
         "display_names": [
-            "855",
-            "MIX FM"
+            "MIX FM",
+            "855"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/18_144.png"
@@ -2966,8 +3944,8 @@
     },
     "856.astro": {
         "display_names": [
-            "856",
-            "ERA FM"
+            "ERA FM",
+            "856"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/14_144.png"
@@ -3011,8 +3989,8 @@
     },
     "861.astro": {
         "display_names": [
-            "861",
-            "GOLD"
+            "GOLD",
+            "861"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/21_144.png"
@@ -3047,8 +4025,8 @@
     },
     "865.astro": {
         "display_names": [
-            "865",
-            "JAZZ"
+            "JAZZ",
+            "865"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/24_144.png"
@@ -3065,8 +4043,8 @@
     },
     "867.astro": {
         "display_names": [
-            "867",
-            "BAYU"
+            "BAYU",
+            "867"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/31_144.png"
@@ -3083,8 +4061,8 @@
     },
     "869.astro": {
         "display_names": [
-            "NAS FM",
-            "869"
+            "869",
+            "NAS FM"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/25_144.png"
@@ -3128,8 +4106,8 @@
     },
     "874.astro": {
         "display_names": [
-            "874",
-            "AI FM"
+            "AI FM",
+            "874"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/303_144.png"
@@ -3281,8 +4259,8 @@
     },
     "485.astro": {
         "display_names": [
-            "485",
-            "Astro First HD"
+            "Astro First HD",
+            "485"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/404_144.png"
@@ -3290,8 +4268,8 @@
     },
     "486.astro": {
         "display_names": [
-            "486",
-            "Astro First HD"
+            "Astro First HD",
+            "486"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/413_144.png"
@@ -3308,8 +4286,8 @@
     },
     "488.astro": {
         "display_names": [
-            "488",
-            "Astro First HD"
+            "Astro First HD",
+            "488"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/416_144.png"
@@ -3322,984 +4300,6 @@
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/240_144.png"
-        ]
-    },
-    "AXN": {
-        "display_names": [
-            "AXN"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/ebd75bAXN_v1.png"
-        ]
-    },
-    "AlJazeeraEnglish": {
-        "display_names": [
-            "Al Jazeera English"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/062763AlJazeera_v1.png"
-        ]
-    },
-    "AstroAEC": {
-        "display_names": [
-            "Astro AEC"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/83cd32AstroAEC_2024.png"
-        ]
-    },
-    "AstroArena": {
-        "display_names": [
-            "Astro Arena"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/a553c6AstroArena_2024.png"
-        ]
-    },
-    "AstroArena2": {
-        "display_names": [
-            "Astro Arena 2"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/7e0e32AstroStadium.png"
-        ]
-    },
-    "AstroArenaBola": {
-        "display_names": [
-            "Astro Arena Bola"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/a6e1bbAstroArenaBola_2024.png"
-        ]
-    },
-    "AstroArenaBola2": {
-        "display_names": [
-            "Astro Arena Bola 2"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/bce72aAstroArenaBola2_2024.png"
-        ]
-    },
-    "AstroAura": {
-        "display_names": [
-            "Astro Aura"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/9b741bAstroAura_2024.png"
-        ]
-    },
-    "AstroAwani": {
-        "display_names": [
-            "Astro Awani"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/0b2085AstroAwani_2025.png"
-        ]
-    },
-    "AstroBadminton": {
-        "display_names": [
-            "Astro Badminton"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/d5f5f1AstroBadminton_2024.png"
-        ]
-    },
-    "AstroCeria": {
-        "display_names": [
-            "Astro Ceria"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/471f63AstroCeria_2024.png"
-        ]
-    },
-    "AstroDaebak": {
-        "display_names": [
-            "Astro Daebak"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/5d8b9dAstroDaebak.png"
-        ]
-    },
-    "AstroFootball": {
-        "display_names": [
-            "Astro Football"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/05b739AstroFootball_2024.png"
-        ]
-    },
-    "AstroGolf": {
-        "display_names": [
-            "Astro Golf"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/9c407aAstroGolf_2025.png"
-        ]
-    },
-    "AstroGrandstand": {
-        "display_names": [
-            "Astro Grandstand"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/1bb736AstroGrandstand_2024.png"
-        ]
-    },
-    "AstroHuaHeeDai": {
-        "display_names": [
-            "Astro Hua Hee Dai"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/c45b30AstroHuaHeeDai_2024.png"
-        ]
-    },
-    "AstroOasis": {
-        "display_names": [
-            "Astro Oasis"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/6f21ebAstroOasis_2024.png"
-        ]
-    },
-    "AstroPremierLeague": {
-        "display_names": [
-            "Astro Premier League"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/75e8a0AstroPremierLeague_2024.png"
-        ]
-    },
-    "AstroPremierLeague2": {
-        "display_names": [
-            "Astro Premier League 2"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/57e508AstroPremierLeague2_2024.png"
-        ]
-    },
-    "AstroQJ": {
-        "display_names": [
-            "Astro QJ"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/bd3108AstroQJ_2024.png"
-        ]
-    },
-    "AstroRania": {
-        "display_names": [
-            "Astro Rania"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/1ae508AstroRania_2024.png"
-        ]
-    },
-    "AstroSportsPlus": {
-        "display_names": [
-            "Astro Sports Plus"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/7cbafaAstroSportsPlus_2024.png"
-        ]
-    },
-    "AstroTennis": {
-        "display_names": [
-            "Astro Tennis"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/75b32cAstroTennis.png"
-        ]
-    },
-    "beINSports1": {
-        "display_names": [
-            "beIN SPORTS 1"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/a857f0beINSPORT1.png"
-        ]
-    },
-    "beINSports2": {
-        "display_names": [
-            "beIN SPORTS 2"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/a786c7beINSPORTS2.png"
-        ]
-    },
-    "beINSports3": {
-        "display_names": [
-            "beIN SPORTS 3"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/5d1d04beIN_SPORTS3_V2.png"
-        ]
-    },
-    "BeritaRTM": {
-        "display_names": [
-            "Berita RTM"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/b24df6Berita_RTM_TVGuide.png"
-        ]
-    },
-    "BernamaTV": {
-        "display_names": [
-            "Bernama TV"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/201f23BNC_v3.png"
-        ]
-    },
-    "BlippiandFriends": {
-        "display_names": [
-            "Blippi & Friends"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/1846c1Blippi&Friends.png"
-        ]
-    },
-    "CCTV4": {
-        "display_names": [
-            "CCTV4"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/6bfd29CCTV4_v1.png"
-        ]
-    },
-    "CGTNDocumentary": {
-        "display_names": [
-            "CGTN Documentary"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/98bef8CGTN_DOC.png"
-        ]
-    },
-    "CNA": {
-        "display_names": [
-            "CNA"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/1f7dc9Channel_News_Asia_v1.png"
-        ]
-    },
-    "CTIAsia": {
-        "display_names": [
-            "CTIAsia"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/09be81Cti_v1.png"
-        ]
-    },
-    "Cricbuzz": {
-        "display_names": [
-            "Cricbuzz"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/a8b76fCricbuzz.png"
-        ]
-    },
-    "DWEnglish": {
-        "display_names": [
-            "DW English"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/313ffeDW_v1.png"
-        ]
-    },
-    "DramaHebat": {
-        "display_names": [
-            "Drama Hebat"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/76ebdeDramaHebat_v1.png"
-        ]
-    },
-    "DramaHotpot": {
-        "display_names": [
-            "Drama Hotpot"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/dfae31DramaHotpot.png"
-        ]
-    },
-    "FashionTV": {
-        "display_names": [
-            "Fashion TV"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/159e64FTV.png"
-        ]
-    },
-    "FilemMantap": {
-        "display_names": [
-            "Filem Mantap"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/309d18FilemMantap.png"
-        ]
-    },
-    "France24": {
-        "display_names": [
-            "France24"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/22477aFrance24_v1.png"
-        ]
-    },
-    "FreeMovies": {
-        "display_names": [
-            "Free Movies"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/95d90eFree_Movies.png"
-        ]
-    },
-    "GustoTV": {
-        "display_names": [
-            "GustoTV"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/dbe142GustoTV.png"
-        ]
-    },
-    "HITS": {
-        "display_names": [
-            "HITS"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/a5ad56Hits_v1.png"
-        ]
-    },
-    "HITSMovies": {
-        "display_names": [
-            "HITS MOVIES"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/22c130Logo_10000499.png"
-        ]
-    },
-    "HITSNow": {
-        "display_names": [
-            "HITS NOW"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/74457cHITSNOW.png"
-        ]
-    },
-    "HorseandCountry": {
-        "display_names": [
-            "Horse & Country"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/894a2eHNC.png"
-        ]
-    },
-    "iQIYI": {
-        "display_names": [
-            "iQIYI"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/8f0841IQIYI_2022.png"
-        ]
-    },
-    "JomNgaji": {
-        "display_names": [
-            "Jom Ngaji"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/13b8daJomNgaji.png"
-        ]
-    },
-    "K-Plus": {
-        "display_names": [
-            "K-Plus"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/0876f2K-Plus_v1.png"
-        ]
-    },
-    "KBSWorld": {
-        "display_names": [
-            "KBS World"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/2ee8e4KBSW_v1.png"
-        ]
-    },
-    "KCM": {
-        "display_names": [
-            "KCM"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/22404dKCM.png"
-        ]
-    },
-    "LawakSentral": {
-        "display_names": [
-            "Lawak Sentral"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/a59b94LawakSentral.png"
-        ]
-    },
-    "LoveNature": {
-        "display_names": [
-            "Love Nature"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/793f06LoveNature_HD.png"
-        ]
-    },
-    "Moonbug": {
-        "display_names": [
-            "Moonbug"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/1b5a8aMoonbug_V1.png"
-        ]
-    },
-    "MyToonz": {
-        "display_names": [
-            "My Toonz"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/fe02b4mytoonz.png"
-        ]
-    },
-    "OhMyCeria": {
-        "display_names": [
-            "Oh My Ceria!"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/756588OhMyCeria.png"
-        ]
-    },
-    "PetClub": {
-        "display_names": [
-            "Pet Club"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/cb4befPetClubTV.png"
-        ]
-    },
-    "PhoenixChineseChannel": {
-        "display_names": [
-            "Phoenix Chinese Channel"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/e07278Phoenix_v1.png"
-        ]
-    },
-    "PhoenixInfoNews": {
-        "display_names": [
-            "Phoenix Info News"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/4fa4e8Phoenix_News_Info_v1.png"
-        ]
-    },
-    "ROCKAction": {
-        "display_names": [
-            "ROCK Action"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/fdb766RockAction.png"
-        ]
-    },
-    "ROCKXStream": {
-        "display_names": [
-            "ROCK X Stream"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/814458RockXStream.png"
-        ]
-    },
-    "Sukan+": {
-        "display_names": [
-            "Sukan+"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/f6206eSukan_RTM_TVGuide.png"
-        ]
-    },
-    "OKEY": {
-        "display_names": [
-            "TV Okey"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/243e33Okey_v1.png"
-        ]
-    },
-    "TravelandTaste": {
-        "display_names": [
-            "Travel & Taste"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/671371TravelTaste.png"
-        ]
-    },
-    "TV1": {
-        "display_names": [
-            "TV1"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/TV1.jpg",
-            "https://datastore.vr.ctrp.sooka.my/content/images/145554TV1_v1.png"
-        ]
-    },
-    "TV2": {
-        "display_names": [
-            "TV2"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/52157bTV2_v1.png",
-            "https://rtm-images.glueapi.io/480x0/live_channel/TV2.jpg"
-        ]
-    },
-    "TVBClassic": {
-        "display_names": [
-            "TVB Classic"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/266a7cTVB_Classic_2022.png"
-        ]
-    },
-    "TVBEntertainmentNews": {
-        "display_names": [
-            "TVB Entertainment News"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/efc0a9TVBE_v1.png"
-        ]
-    },
-    "TVBJade": {
-        "display_names": [
-            "TVB Jade"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/638e69TVB_Jade_v3.png"
-        ]
-    },
-    "TVBXingHe": {
-        "display_names": [
-            "TVB Xing He"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/355eebTVB_XingHe_v1.png"
-        ]
-    },
-    "tvN": {
-        "display_names": [
-            "tvN"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/7c75c4tvN_2021.png"
-        ]
-    },
-    "tvNMovies": {
-        "display_names": [
-            "tvN Movies"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/76f021tvNMovies_2021.png"
-        ]
-    },
-    "TVS": {
-        "display_names": [
-            "TV Sarawak"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/934ccbTVS.png"
-        ]
-    },
-    "WeDoTVAmor": {
-        "display_names": [
-            "WeDoTV Amor"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/15dc35WD_Amor.png"
-        ]
-    },
-    "WeDoTVBigStories": {
-        "display_names": [
-            "WeDoTV Big Stories"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/5550b7WD_Big_Stories.png"
-        ]
-    },
-    "WeDoTMovies": {
-        "display_names": [
-            "WeDoTV Movies"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/c1ce3eWD_Movies.png"
-        ]
-    },
-    "WeDoTVSports": {
-        "display_names": [
-            "WeDoTV Sports"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/711411WD_Sports.png"
-        ]
-    },
-    "W-Sport": {
-        "display_names": [
-            "W-Sport"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/76ff7aW-Sport.png"
-        ]
-    },
-    "YRFMusic": {
-        "display_names": [
-            "YRF music"
-        ],
-        "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/23f4e7YRFMusic.png"
-        ]
-    },
-    "Okey": {
-        "display_names": [
-            "Okey"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/Okey.jpg"
-        ]
-    },
-    "Sukan RTM": {
-        "display_names": [
-            "Sukan+"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/Sukan.jpg"
-        ]
-    },
-    "Berita RTM": {
-        "display_names": [
-            "Berita RTM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/berita_bckg.jpg"
-        ]
-    },
-    "Dewan Rakyat": {
-        "display_names": [
-            "Dewan Rakyat"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/7.png"
-        ]
-    },
-    "Dewan Negara": {
-        "display_names": [
-            "Dewan Negara"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/PDN_Trans.png"
-        ]
-    },
-    "Radio Klasik": {
-        "display_names": [
-            "Radio Klasik"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/thumbnail_Radio_1920x1080px_Radio_Klasik_FM.png"
-        ]
-    },
-    "Nasional FM": {
-        "display_names": [
-            "Nasional FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/thumbnail_Radio_1920x1080px_Nasional_FM.png"
-        ]
-    },
-    "Traxx FM": {
-        "display_names": [
-            "Traxx FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/thumbnail_Radio_1920x1080px_Traxx_FM.png"
-        ]
-    },
-    "AI FM": {
-        "display_names": [
-            "AI FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/thumbnail_Radio_1920x1080px_Ai_FM.png"
-        ]
-    },
-    "Minnal FM": {
-        "display_names": [
-            "Minnal FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/thumbnail_Radio_1920x1080px_Minnal_FM.png"
-        ]
-    },
-    "Asyik FM": {
-        "display_names": [
-            "Asyik FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/radio-asset/SALAM_FM_RTMKLIK_NEW.jpg"
-        ]
-    },
-    "Selangor FM": {
-        "display_names": [
-            "Selangor FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/SelangorFM.png"
-        ]
-    },
-    "Sabah VFM": {
-        "display_names": [
-            "Sabah VFM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/SabahVFM.png"
-        ]
-    },
-    "Sarawak FM": {
-        "display_names": [
-            "Sarawak FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/SarawakFM.png"
-        ]
-    },
-    "Labuan FM": {
-        "display_names": [
-            "Labuan FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/LABUANfm.png"
-        ]
-    },
-    "Kedah FM": {
-        "display_names": [
-            "Kedah FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/KedahFM.png"
-        ]
-    },
-    "KLFM": {
-        "display_names": [
-            "KLFM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/KLFM.png"
-        ]
-    },
-    "Kelantan FM": {
-        "display_names": [
-            "Kelantan FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/KELANTANfm.png"
-        ]
-    },
-    "Terengganu FM": {
-        "display_names": [
-            "Terengganu FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/TerengganuFM.png"
-        ]
-    },
-    "Pahang FM": {
-        "display_names": [
-            "Pahang FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/PahangFM.png"
-        ]
-    },
-    "Negeri Sembilan FM": {
-        "display_names": [
-            "Negeri Sembilan FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/NegeriSembilanFM.png"
-        ]
-    },
-    "Perak FM": {
-        "display_names": [
-            "Perak FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/PerakFM.png"
-        ]
-    },
-    "Mutiara FM": {
-        "display_names": [
-            "Mutiara FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/MUTIARAFM.png"
-        ]
-    },
-    "Perlis FM": {
-        "display_names": [
-            "Perlis FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/PerlisFM.png"
-        ]
-    },
-    "Melaka FM": {
-        "display_names": [
-            "Melaka FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/MELAKAfm.png"
-        ]
-    },
-    "Sabah FM": {
-        "display_names": [
-            "Sabah FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/SabahFM.png"
-        ]
-    },
-    "Wai FM": {
-        "display_names": [
-            "Wai FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/WaiFM.png"
-        ]
-    },
-    "Red FM": {
-        "display_names": [
-            "Red FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/724.gif"
-        ]
-    },
-    "Langkawi FM": {
-        "display_names": [
-            "Langkawi FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/LANGKAWIfm.png"
-        ]
-    },
-    "Limbang FM": {
-        "display_names": [
-            "Limbang FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/LIMBANGfm.png"
-        ]
-    },
-    "Miri FM": {
-        "display_names": [
-            "Miri FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/MIRIfm.png"
-        ]
-    },
-    "Sri Aman FM": {
-        "display_names": [
-            "Sri Aman FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/SriAmanFM.png"
-        ]
-    },
-    "Bintulu FM": {
-        "display_names": [
-            "Bintulu FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/BintuluFM.png"
-        ]
-    },
-    "Sibu FM": {
-        "display_names": [
-            "Sibu FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/SibuFM.png"
-        ]
-    },
-    "Sandakan FM": {
-        "display_names": [
-            "Sandakan FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/SandakanFM.png"
-        ]
-    },
-    "Tawau FM": {
-        "display_names": [
-            "Tawau FM"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/TawauFM.png"
-        ]
-    },
-    "Roll": {
-        "display_names": [
-            "Roll"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/fast_channel/ROLL_CHANNEL.jpg"
-        ]
-    },
-    "Snap": {
-        "display_names": [
-            "Snap"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/fast_channel/SNAP_CHANNEL.jpg"
-        ]
-    },
-    "Apetito": {
-        "display_names": [
-            "Apetito"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/fast_channel/APETITO_CHANNEL.jpg"
-        ]
-    },
-    "Lead": {
-        "display_names": [
-            "Lead"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/fast_channel/LEAD_CHANNEL.jpg"
-        ]
-    },
-    "Aura": {
-        "display_names": [
-            "Aura"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/fast_channel/AURA_CHANNEL.jpg"
-        ]
-    },
-    "Fitrah": {
-        "display_names": [
-            "Fitrah"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/fast_channel/FITRAH_CHANNEL.jpg"
-        ]
-    },
-    "Jr": {
-        "display_names": [
-            "Jr"
-        ],
-        "icons": [
-            "https://rtm-images.glueapi.io/480x0/fast_channel/JR_CHANNEL.jpg"
         ]
     },
     "CCTV4.sg": {
@@ -6259,8 +6259,8 @@
     },
     "C": {
         "display_names": [
-            "C",
-            "Channel[V]"
+            "Channel[V]",
+            "C"
         ],
         "icons": []
     },
@@ -6460,8 +6460,8 @@
     },
     "DTV": {
         "display_names": [
-            "CDTV8",
-            "DTV"
+            "DTV",
+            "CDTV8"
         ],
         "icons": []
     },
@@ -6773,8 +6773,8 @@
     },
     "欢笑剧场": {
         "display_names": [
-            "欢笑剧场",
-            "欢笑剧场4K"
+            "欢笑剧场4K",
+            "欢笑剧场"
         ],
         "icons": []
     },
@@ -6852,8 +6852,8 @@
     },
     "热播剧场": {
         "display_names": [
-            "热播剧场专区",
-            "热播剧场"
+            "热播剧场",
+            "热播剧场专区"
         ],
         "icons": []
     },
