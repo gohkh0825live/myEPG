@@ -5,7 +5,7 @@
 #https://raw.githubusercontent.com/AqFad2811/epg/refs/heads/main/singapore.xml
 
 https://raw.githubusercontent.com/AqFad2811/epg/main/rtmklik.xml
-https://walpak1.github.io/epg/mana2.xml
+https://github.com/gohkh0825live/epg/raw/refs/heads/main/mana2.xml
 https://github.com/AqFad2811/epg/raw/main/sooka.xml
 https://github.com/AqFad2811/epg/raw/main/unifitv.xml
 https://github.com/v-epg/as-epg/raw/main/astro_epg.xml
