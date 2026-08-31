@@ -4,7 +4,7 @@
 #https://raw.githubusercontent.com/AqFad2811/epg/main/rtmklik.xml
 #https://raw.githubusercontent.com/AqFad2811/epg/refs/heads/main/singapore.xml
 
-
+https://github.com/v-epg/as-epg/raw/main/astro_epg.xml
 https://github.com/AqFad2811/epg/raw/main/unifitv.xml
 https://github.com/zultan-m/astro-epg/raw/main/astro.xml
 https://github.com/AqFad2811/epg/raw/main/sooka.xml
