@@ -15,15 +15,28 @@ OUTPUT_DIR = 'output'
 CONFIG_FILE = 'config.txt'
 TZ_UTC_PLUS_8 = timezone(timedelta(hours=8))
 
+# 建议保留的天数：保留今天（当天）及未来 2 天的节目单，过滤掉过期的历史节目
+KEEP_DAYS_PAST = 0    # 0 表示不过滤过去的节目，如果设为 0 但结合 KEEP_DAYS_FUTURE 可以大幅缩减体积；建议只抓今天起的节目
+KEEP_DAYS_FUTURE = 2  # 保留未来多少天的节目单 (今天 + 未来2天 = 3天)
+
 # ================= 自定义名称注入字典 =================
-# 键(Key)必须是你在 XML 源里抓取到的对应频道的真实 tvg-id (channel id)
 CUSTOM_NAME_INJECTIONS = {
     # ⚠️ 请把下方的 "8tv_real_id" 替换成你的数据源里 8TV 真正的 id 字符串
     "8tv_real_id": ["八度空间"], 
-    
-    # 示例：你可以继续添加其他需要补充中文名的频道
-    # "astro_aec_id": ["Astro AEC", "AEC 频道"],
 }
+
+# ================= 辅助函数 =================
+
+def parse_xmltv_date(date_str):
+    """解析 XMLTV 格式的时间字符串 (例如 20260901023000 +0800)"""
+    if not date_str or len(date_str) < 8:
+        return None
+    try:
+        # 取前 8 位年月日 YYYYMMDD
+        clean_date = date_str.split()[0][:8]
+        return datetime.strptime(clean_date, "%Y%m%d").date()
+    except Exception:
+        return None
 
 # ================= 核心处理引擎 =================
 
@@ -45,7 +58,7 @@ def process_and_merge(results):
     """
     双重遍历解析器 (以 ID 为唯一标识的版本)
     Pass 1: 以 Channel ID 为主键，收集去重所有的名称和图标，并注入自定义名称
-    Pass 2: 精准提取与有效 ID 匹配的 Programme 节点
+    Pass 2: 精准提取与有效 ID 匹配且在有效时间段内的 Programme 节点
     """
     channel_groups = defaultdict(lambda: {
         "display_names": set(),
@@ -86,7 +99,6 @@ def process_and_merge(results):
     for cid, custom_names in CUSTOM_NAME_INJECTIONS.items():
         if cid in channel_groups: # 确保网络源里抓到了这个台
             for name in custom_names:
-                # set 会自动处理去重，完美追加中文名
                 channel_groups[cid]["display_names"].add(name)
     # ==========================================================
 
@@ -101,8 +113,6 @@ def process_and_merge(results):
             disp_elem.text = cid
         else:
             for name in data["display_names"]:
-                # 为了简化，这里统一种为 lang="en" 和 lang="zh" 也可以，
-                # 但直接写入多个 display-name 播放器都能识别。
                 lang_attr = "zh" if any('\u4e00' <= char <= '\u9fff' for char in name) else "en"
                 disp_elem = ET.SubElement(c_elem, "display-name", lang=lang_attr)
                 disp_elem.text = name
@@ -112,9 +122,14 @@ def process_and_merge(results):
             
         unified_channels.append(c_elem)
 
-    print("\n⚙️ [第二阶段] 正在提取并过滤合法的节目单...")
+    print("\n⚙️ [第二阶段] 正在提取并过滤合法的节目单 (含过期节目清理)...")
     
-    # --- Pass 2: 提取 Programme ---
+    # 计算有效节目单的时间区间
+    today = datetime.now(TZ_UTC_PLUS_8).date()
+    min_date = today - timedelta(days=KEEP_DAYS_PAST)
+    max_date = today + timedelta(days=KEEP_DAYS_FUTURE)
+    
+    # --- Pass 2: 提取 Programme 并过滤时间 ---
     unified_programmes = []
     
     for url, content in results:
@@ -127,8 +142,16 @@ def process_and_merge(results):
             for event, elem in context:
                 if elem.tag == 'programme':
                     prog_channel_id = elem.get('channel')
+                    start_str = elem.get('start')
+                    
+                    # 校验 1: 必须是有效频道 ID
                     if prog_channel_id in valid_ids:
-                        unified_programmes.append(elem)
+                        # 校验 2: 过滤过期或过远的节目单
+                        prog_date = parse_xmltv_date(start_str)
+                        if prog_date and (min_date <= prog_date <= max_date):
+                            unified_programmes.append(elem)
+                        else:
+                            elem.clear()
                     else:
                         elem.clear() 
         except ET.ParseError:
@@ -153,7 +176,7 @@ def export_results(channel_groups, channels, programmes):
     with open(json_file, 'w', encoding='utf-8') as jf:
         json.dump(json_export_data, jf, indent=4, ensure_ascii=False)
     
-    # 2. 导出合并后的 XML
+    # 2. 导出合并后的 XML（移除 ET.indent 以极大减小 XML 体积）
     current_time = datetime.now(TZ_UTC_PLUS_8).strftime("%Y%m%d%H%M%S %z")
     root = ET.Element('tv', attrib={
         'date': current_time, 
@@ -166,8 +189,7 @@ def export_results(channel_groups, channels, programmes):
         root.append(p)
         
     tree = ET.ElementTree(root)
-    if hasattr(ET, 'indent'):
-        ET.indent(tree, space="\t", level=0)
+    # 取消 ET.indent(tree, space="\t", level=0)，避免写入数百万个缩进换行符
     tree.write(xml_file, encoding='utf-8', xml_declaration=True)
 
     # 3. 生成 GZ 压缩包
