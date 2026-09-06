@@ -4,8 +4,8 @@
             "TV1"
         ],
         "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/TV1.jpg",
-            "https://datastore.vr.ctrp.sooka.my/content/images/145554TV1_v1.png"
+            "https://datastore.vr.ctrp.sooka.my/content/images/145554TV1_v1.png",
+            "https://rtm-images.glueapi.io/480x0/live_channel/TV1.jpg"
         ]
     },
     "TV2": {
@@ -13,8 +13,8 @@
             "TV2"
         ],
         "icons": [
-            "https://datastore.vr.ctrp.sooka.my/content/images/52157bTV2_v1.png",
-            "https://rtm-images.glueapi.io/480x0/live_channel/TV2.jpg"
+            "https://rtm-images.glueapi.io/480x0/live_channel/TV2.jpg",
+            "https://datastore.vr.ctrp.sooka.my/content/images/52157bTV2_v1.png"
         ]
     },
     "Okey": {
@@ -1291,8 +1291,8 @@
     },
     "141": {
         "display_names": [
-            "PESONA",
-            "凤凰中文"
+            "凤凰中文",
+            "PESONA"
         ],
         "icons": [
             "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/4BDA018A-6442-4561-85D4-CD8333CA2560/0-16x9.png?width=160&updatedTime=0&dt=Web"
@@ -1588,8 +1588,8 @@
     },
     "556": {
         "display_names": [
-            "Cartoon Network",
-            "宁夏公共"
+            "宁夏公共",
+            "Cartoon Network"
         ],
         "icons": [
             "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/19A98713-0CA9-4509-BDA3-AA652B2329A3/0-16x9.png?width=160&updatedTime=0&dt=Web"
@@ -3029,8 +3029,8 @@
     },
     "100.astro": {
         "display_names": [
-            "100",
-            "Astro30"
+            "Astro30",
+            "100"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/622_144.png"
@@ -3038,8 +3038,8 @@
     },
     "101.astro": {
         "display_names": [
-            "TV1 HD",
-            "101"
+            "101",
+            "TV1 HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/395_144.png"
@@ -3047,8 +3047,8 @@
     },
     "102.astro": {
         "display_names": [
-            "102",
-            "TV2 HD"
+            "TV2 HD",
+            "102"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/396_144.png"
@@ -3065,8 +3065,8 @@
     },
     "104.astro": {
         "display_names": [
-            "Astro Ria",
-            "104"
+            "104",
+            "Astro Ria"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/193_144.png"
@@ -3074,8 +3074,8 @@
     },
     "105.astro": {
         "display_names": [
-            "Astro Prima",
-            "105"
+            "105",
+            "Astro Prima"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/316_144.png"
@@ -3101,8 +3101,8 @@
     },
     "112.astro": {
         "display_names": [
-            "112",
-            "Astro Rania"
+            "Astro Rania",
+            "112"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/401_144.png"
@@ -3110,8 +3110,8 @@
     },
     "113.astro": {
         "display_names": [
-            "Astro Aura",
-            "113"
+            "113",
+            "Astro Aura"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/400_144.png"
@@ -3119,8 +3119,8 @@
     },
     "114.astro": {
         "display_names": [
-            "Al-Hijrah",
-            "114"
+            "114",
+            "Al-Hijrah"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/149_144.png"
@@ -3128,8 +3128,8 @@
     },
     "116.astro": {
         "display_names": [
-            "116",
-            "Colors Hindi HD"
+            "Colors Hindi HD",
+            "116"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/365_144.png"
@@ -3137,8 +3137,8 @@
     },
     "117.astro": {
         "display_names": [
-            "117",
-            "Z Cinema HD"
+            "Z Cinema HD",
+            "117"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/490_144.png"
@@ -3155,8 +3155,8 @@
     },
     "122.astro": {
         "display_names": [
-            "TV Sarawak",
-            "122"
+            "122",
+            "TV Sarawak"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/429_144.png"
@@ -3164,8 +3164,8 @@
     },
     "146.astro": {
         "display_names": [
-            "146",
-            "Okey"
+            "Okey",
+            "146"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/467_144.png"
@@ -3173,8 +3173,8 @@
     },
     "147.astro": {
         "display_names": [
-            "147",
-            "NTV7"
+            "NTV7",
+            "147"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/93_144.png"
@@ -3209,8 +3209,8 @@
     },
     "202.astro": {
         "display_names": [
-            "Astro Vinmeen",
-            "202"
+            "202",
+            "Astro Vinmeen"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/167_144.png"
@@ -3218,8 +3218,8 @@
     },
     "203.astro": {
         "display_names": [
-            "Astro Vellithirai HD",
-            "203"
+            "203",
+            "Astro Vellithirai HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/399_144.png"
@@ -3236,8 +3236,8 @@
     },
     "212.astro": {
         "display_names": [
-            "212",
-            "Sun Music HD"
+            "Sun Music HD",
+            "212"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/417_144.png"
@@ -3245,8 +3245,8 @@
     },
     "214.astro": {
         "display_names": [
-            "Adithya",
-            "214"
+            "214",
+            "Adithya"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/67_144.png"
@@ -3254,8 +3254,8 @@
     },
     "215.astro": {
         "display_names": [
-            "Sun News",
-            "215"
+            "215",
+            "Sun News"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/478_144.png"
@@ -3272,8 +3272,8 @@
     },
     "217.astro": {
         "display_names": [
-            "217",
-            "Sun Life"
+            "Sun Life",
+            "217"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/476_144.png"
@@ -3299,8 +3299,8 @@
     },
     "223.astro": {
         "display_names": [
-            "Z Tamil HD",
-            "223"
+            "223",
+            "Z Tamil HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/297_144.png"
@@ -3308,8 +3308,8 @@
     },
     "241.astro": {
         "display_names": [
-            "Astro Thangathirai",
-            "241"
+            "241",
+            "Astro Thangathirai"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/177_144.png"
@@ -3317,8 +3317,8 @@
     },
     "300.astro": {
         "display_names": [
-            "300",
-            "iQIYI HD"
+            "iQIYI HD",
+            "300"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/355_144.png"
@@ -3326,8 +3326,8 @@
     },
     "305.astro": {
         "display_names": [
-            "TVB Classic HD",
-            "305"
+            "305",
+            "TVB Classic HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/425_144.png"
@@ -3335,8 +3335,8 @@
     },
     "306.astro": {
         "display_names": [
-            "Astro AEC",
-            "306"
+            "306",
+            "Astro AEC"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/182_144.png"
@@ -3362,8 +3362,8 @@
     },
     "310.astro": {
         "display_names": [
-            "TVB Jade",
-            "310"
+            "310",
+            "TVB Jade"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/203_144.png"
@@ -3389,8 +3389,8 @@
     },
     "317.astro": {
         "display_names": [
-            "TVB Entertainment News HD",
-            "317"
+            "317",
+            "TVB Entertainment News HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/427_144.png"
@@ -3425,8 +3425,8 @@
     },
     "325.astro": {
         "display_names": [
-            "325",
-            "Phoenix Chinese Channel HD"
+            "Phoenix Chinese Channel HD",
+            "325"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/382_144.png"
@@ -3443,8 +3443,8 @@
     },
     "333.astro": {
         "display_names": [
-            "Astro Hua Hee Dai",
-            "333"
+            "333",
+            "Astro Hua Hee Dai"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/162_144.png"
@@ -3452,8 +3452,8 @@
     },
     "335.astro": {
         "display_names": [
-            "335",
-            "CCTV4 HD"
+            "CCTV4 HD",
+            "335"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/385_144.png"
@@ -3461,8 +3461,8 @@
     },
     "392.astro": {
         "display_names": [
-            "392",
-            "KBS World HD"
+            "KBS World HD",
+            "392"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/161_144.png"
@@ -3479,8 +3479,8 @@
     },
     "395.astro": {
         "display_names": [
-            "tvN HD",
-            "395"
+            "395",
+            "tvN HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/190_144.png"
@@ -3533,8 +3533,8 @@
     },
     "412.astro": {
         "display_names": [
-            "412",
-            "Astro FAM Time"
+            "Astro FAM Time",
+            "412"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/603_144.png"
@@ -3569,8 +3569,8 @@
     },
     "416.astro": {
         "display_names": [
-            "tvN Movies HD",
-            "416"
+            "416",
+            "tvN Movies HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/274_144.png"
@@ -3587,8 +3587,8 @@
     },
     "502.astro": {
         "display_names": [
-            "502",
-            "Bernama TV"
+            "Bernama TV",
+            "502"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/160_144.png"
@@ -3596,8 +3596,8 @@
     },
     "503.astro": {
         "display_names": [
-            "CGTN HD",
-            "503"
+            "503",
+            "CGTN HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/426_144.png"
@@ -3605,8 +3605,8 @@
     },
     "505.astro": {
         "display_names": [
-            "Berita RTM",
-            "505"
+            "505",
+            "Berita RTM"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/620_144.png"
@@ -3614,8 +3614,8 @@
     },
     "511.astro": {
         "display_names": [
-            "511",
-            "CNN HD"
+            "CNN HD",
+            "511"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/336_144.png"
@@ -3623,8 +3623,8 @@
     },
     "512.astro": {
         "display_names": [
-            "512",
-            "BBC News HD"
+            "BBC News HD",
+            "512"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/366_144.png"
@@ -3632,8 +3632,8 @@
     },
     "513.astro": {
         "display_names": [
-            "513",
-            "Al Jazeera English HD"
+            "Al Jazeera English HD",
+            "513"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/374_144.png"
@@ -3659,8 +3659,8 @@
     },
     "517.astro": {
         "display_names": [
-            "Bloomberg TV HD",
-            "517"
+            "517",
+            "Bloomberg TV HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/422_144.png"
@@ -3668,8 +3668,8 @@
     },
     "518.astro": {
         "display_names": [
-            "ABC Australia HD",
-            "518"
+            "518",
+            "ABC Australia HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/461_144.png"
@@ -3677,8 +3677,8 @@
     },
     "549.astro": {
         "display_names": [
-            "549",
-            "Love Nature 4K"
+            "Love Nature 4K",
+            "549"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/472_144.png"
@@ -3686,8 +3686,8 @@
     },
     "550.astro": {
         "display_names": [
-            "Love Nature",
-            "550"
+            "550",
+            "Love Nature"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/483_144.png"
@@ -3704,8 +3704,8 @@
     },
     "553.astro": {
         "display_names": [
-            "553",
-            "Discovery Asia HD"
+            "Discovery Asia HD",
+            "553"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/136_144.png"
@@ -3758,8 +3758,8 @@
     },
     "615.astro": {
         "display_names": [
-            "Cartoon Network HD",
-            "615"
+            "615",
+            "Cartoon Network HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/371_144.png"
@@ -3767,8 +3767,8 @@
     },
     "616.astro": {
         "display_names": [
-            "Nickelodeon HD",
-            "616"
+            "616",
+            "Nickelodeon HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/370_144.png"
@@ -3803,8 +3803,8 @@
     },
     "701.astro": {
         "display_names": [
-            "701",
-            "AXN HD"
+            "AXN HD",
+            "701"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/131_144.png"
@@ -3821,8 +3821,8 @@
     },
     "703.astro": {
         "display_names": [
-            "Lifetime HD",
-            "703"
+            "703",
+            "Lifetime HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/447_144.png"
@@ -3830,8 +3830,8 @@
     },
     "706.astro": {
         "display_names": [
-            "HITS HD",
-            "706"
+            "706",
+            "HITS HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/179_144.png"
@@ -3839,8 +3839,8 @@
     },
     "707.astro": {
         "display_names": [
-            "707",
-            "TLC HD"
+            "TLC HD",
+            "707"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/338_144.png"
@@ -3848,8 +3848,8 @@
     },
     "709.astro": {
         "display_names": [
-            "Asian Food Network HD",
-            "709"
+            "709",
+            "Asian Food Network HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/91_144.png"
@@ -3866,8 +3866,8 @@
     },
     "715.astro": {
         "display_names": [
-            "715",
-            "HGTV HD"
+            "HGTV HD",
+            "715"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/198_144.png"
@@ -3884,8 +3884,8 @@
     },
     "802.astro": {
         "display_names": [
-            "Stadium Astro",
-            "802"
+            "802",
+            "Stadium Astro"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/457_144.png"
@@ -3911,8 +3911,8 @@
     },
     "805.astro": {
         "display_names": [
-            "805",
-            "Astro Sports UHD 805"
+            "Astro Sports UHD 805",
+            "805"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/308_144.png"
@@ -3920,8 +3920,8 @@
     },
     "806.astro": {
         "display_names": [
-            "Sukan+",
-            "806"
+            "806",
+            "Sukan+"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/621_144.png"
@@ -3929,8 +3929,8 @@
     },
     "808.astro": {
         "display_names": [
-            "808",
-            "Astro Premier League 4"
+            "Astro Premier League 4",
+            "808"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/568_144.png"
@@ -3938,8 +3938,8 @@
     },
     "809.astro": {
         "display_names": [
-            "Astro Premier League 5",
-            "809"
+            "809",
+            "Astro Premier League 5"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/570_144.png"
@@ -3983,8 +3983,8 @@
     },
     "814.astro": {
         "display_names": [
-            "814",
-            "Astro Football"
+            "Astro Football",
+            "814"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/539_144.png"
@@ -3992,8 +3992,8 @@
     },
     "815.astro": {
         "display_names": [
-            "Astro Badminton",
-            "815"
+            "815",
+            "Astro Badminton"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/540_144.png"
@@ -4001,8 +4001,8 @@
     },
     "817.astro": {
         "display_names": [
-            "Astro Sports Plus",
-            "817"
+            "817",
+            "Astro Sports Plus"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/542_144.png"
@@ -4028,8 +4028,8 @@
     },
     "820.astro": {
         "display_names": [
-            "beIN SPORTS 1",
-            "820"
+            "820",
+            "beIN SPORTS 1"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/236_144.png"
@@ -4037,8 +4037,8 @@
     },
     "821.astro": {
         "display_names": [
-            "821",
-            "beIN SPORTS 2"
+            "beIN SPORTS 2",
+            "821"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/466_144.png"
@@ -4064,8 +4064,8 @@
     },
     "831.astro": {
         "display_names": [
-            "831",
-            "Astro Golf"
+            "Astro Golf",
+            "831"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/189_144.png"
@@ -4100,8 +4100,8 @@
     },
     "853.astro": {
         "display_names": [
-            "853",
-            "MY FM"
+            "MY FM",
+            "853"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/15_144.png"
@@ -4118,8 +4118,8 @@
     },
     "855.astro": {
         "display_names": [
-            "855",
-            "MIX FM"
+            "MIX FM",
+            "855"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/18_144.png"
@@ -4136,8 +4136,8 @@
     },
     "857.astro": {
         "display_names": [
-            "857",
-            "SINAR FM"
+            "SINAR FM",
+            "857"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/26_144.png"
@@ -4145,8 +4145,8 @@
     },
     "858.astro": {
         "display_names": [
-            "MELODY FM",
-            "858"
+            "858",
+            "MELODY FM"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/28_144.png"
@@ -4154,8 +4154,8 @@
     },
     "859.astro": {
         "display_names": [
-            "THR RAAGA",
-            "859"
+            "859",
+            "THR RAAGA"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/30_144.png"
@@ -4172,8 +4172,8 @@
     },
     "861.astro": {
         "display_names": [
-            "GOLD",
-            "861"
+            "861",
+            "GOLD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/21_144.png"
@@ -4181,8 +4181,8 @@
     },
     "862.astro": {
         "display_names": [
-            "OPUS",
-            "862"
+            "862",
+            "OPUS"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/16_144.png"
@@ -4217,8 +4217,8 @@
     },
     "866.astro": {
         "display_names": [
-            "866",
-            "OSAI"
+            "OSAI",
+            "866"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/27_144.png"
@@ -4226,8 +4226,8 @@
     },
     "867.astro": {
         "display_names": [
-            "BAYU",
-            "867"
+            "867",
+            "BAYU"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/31_144.png"
@@ -4235,8 +4235,8 @@
     },
     "868.astro": {
         "display_names": [
-            "868",
-            "KENYALANG"
+            "KENYALANG",
+            "868"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/32_144.png"
@@ -4280,8 +4280,8 @@
     },
     "873.astro": {
         "display_names": [
-            "873",
-            "MINNAL FM"
+            "MINNAL FM",
+            "873"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/311_144.png"
@@ -4289,8 +4289,8 @@
     },
     "874.astro": {
         "display_names": [
-            "874",
-            "AI FM"
+            "AI FM",
+            "874"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/303_144.png"
@@ -4316,8 +4316,8 @@
     },
     "877.astro": {
         "display_names": [
-            "877",
-            "GOXUAN"
+            "GOXUAN",
+            "877"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/293_144.png"
@@ -4325,8 +4325,8 @@
     },
     "521.astro": {
         "display_names": [
-            "DW English",
-            "521"
+            "521",
+            "DW English"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/287_144.png"
@@ -4334,8 +4334,8 @@
     },
     "522.astro": {
         "display_names": [
-            "522",
-            "France24"
+            "France24",
+            "522"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/289_144.png"
@@ -4352,8 +4352,8 @@
     },
     "473.astro": {
         "display_names": [
-            "473",
-            "Astro First HD"
+            "Astro First HD",
+            "473"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/148_144.png"
@@ -4361,8 +4361,8 @@
     },
     "474.astro": {
         "display_names": [
-            "Astro First HD",
-            "474"
+            "474",
+            "Astro First HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/146_144.png"
@@ -4379,8 +4379,8 @@
     },
     "476.astro": {
         "display_names": [
-            "Astro First HD",
-            "476"
+            "476",
+            "Astro First HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/238_144.png"
@@ -4415,8 +4415,8 @@
     },
     "482.astro": {
         "display_names": [
-            "482",
-            "Astro First HD"
+            "Astro First HD",
+            "482"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/242_144.png"
@@ -4442,8 +4442,8 @@
     },
     "485.astro": {
         "display_names": [
-            "485",
-            "Astro First HD"
+            "Astro First HD",
+            "485"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/404_144.png"
@@ -4451,8 +4451,8 @@
     },
     "486.astro": {
         "display_names": [
-            "486",
-            "Astro First HD"
+            "Astro First HD",
+            "486"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/413_144.png"
@@ -4460,8 +4460,8 @@
     },
     "487.astro": {
         "display_names": [
-            "487",
-            "Astro First HD"
+            "Astro First HD",
+            "487"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/150_144.png"
@@ -4469,8 +4469,8 @@
     },
     "488.astro": {
         "display_names": [
-            "488",
-            "Astro First HD"
+            "Astro First HD",
+            "488"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/416_144.png"
@@ -4478,8 +4478,8 @@
     },
     "489.astro": {
         "display_names": [
-            "489",
-            "Astro First HD"
+            "Astro First HD",
+            "489"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/240_144.png"
@@ -5256,8 +5256,8 @@
             "Hub E City HD"
         ],
         "icons": [
-            "https://poster.starhubgo.com/Linear_channels2/111_1920x1080_HTV.png?w=272",
-            "https://poster.starhubgo.com/Linear_channels2/825_1920x1080_HTV.png?w=272"
+            "https://poster.starhubgo.com/Linear_channels2/825_1920x1080_HTV.png?w=272",
+            "https://poster.starhubgo.com/Linear_channels2/111_1920x1080_HTV.png?w=272"
         ]
     },
     "CelestialMoviesHD.sg": {
@@ -6442,8 +6442,8 @@
     },
     "C": {
         "display_names": [
-            "Channel[V]",
-            "C"
+            "C",
+            "Channel[V]"
         ],
         "icons": []
     },
@@ -6527,9 +6527,9 @@
     },
     "CCTV5+": {
         "display_names": [
-            "CCTV5plus",
             "CCTV5PLUS",
-            "CCTV5+"
+            "CCTV5+",
+            "CCTV5plus"
         ],
         "icons": []
     },
@@ -6956,8 +6956,8 @@
     },
     "欢笑剧场": {
         "display_names": [
-            "欢笑剧场",
-            "欢笑剧场4K"
+            "欢笑剧场4K",
+            "欢笑剧场"
         ],
         "icons": []
     },
@@ -7035,8 +7035,8 @@
     },
     "热播剧场": {
         "display_names": [
-            "热播剧场专区",
-            "热播剧场"
+            "热播剧场",
+            "热播剧场专区"
         ],
         "icons": []
     },
@@ -7157,8 +7157,8 @@
     },
     "魅力时尚": {
         "display_names": [
-            "魅力时尚专区",
-            "魅力时尚"
+            "魅力时尚",
+            "魅力时尚专区"
         ],
         "icons": []
     },
@@ -7966,6 +7966,12 @@
         ],
         "icons": []
     },
+    "349": {
+        "display_names": [
+            "江苏新闻"
+        ],
+        "icons": []
+    },
     "351": {
         "display_names": [
             "江苏综艺"
@@ -8173,12 +8179,6 @@
     "933": {
         "display_names": [
             "云南都市"
-        ],
-        "icons": []
-    },
-    "934": {
-        "display_names": [
-            "云南影视"
         ],
         "icons": []
     },
