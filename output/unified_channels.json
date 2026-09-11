@@ -4,8 +4,8 @@
             "TV1"
         ],
         "icons": [
-            "https://rtm-images.glueapi.io/480x0/live_channel/TV1.jpg",
-            "https://datastore.vr.ctrp.sooka.my/content/images/3c0107TV1_v1.png"
+            "https://datastore.vr.ctrp.sooka.my/content/images/3c0107TV1_v1.png",
+            "https://rtm-images.glueapi.io/480x0/live_channel/TV1.jpg"
         ]
     },
     "TV2": {
@@ -1307,8 +1307,7 @@
     },
     "141": {
         "display_names": [
-            "PESONA",
-            "凤凰中文"
+            "PESONA"
         ],
         "icons": [
             "https://image-resizer-cloud-cdn.api.tmcms.quickplay.com/image/4BDA018A-6442-4561-85D4-CD8333CA2560/0-16x9.png?width=160&updatedTime=0&dt=Web"
@@ -1604,7 +1603,6 @@
     },
     "556": {
         "display_names": [
-            "宁夏公共",
             "Cartoon Network"
         ],
         "icons": [
@@ -3071,8 +3069,8 @@
     },
     "102.astro": {
         "display_names": [
-            "102",
-            "TV2 HD"
+            "TV2 HD",
+            "102"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/396_144.png"
@@ -3098,8 +3096,8 @@
     },
     "105.astro": {
         "display_names": [
-            "Astro Prima",
-            "105"
+            "105",
+            "Astro Prima"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/316_144.png"
@@ -3134,8 +3132,8 @@
     },
     "113.astro": {
         "display_names": [
-            "Astro Aura",
-            "113"
+            "113",
+            "Astro Aura"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/400_144.png"
@@ -3206,8 +3204,8 @@
     },
     "148.astro": {
         "display_names": [
-            "8TV",
-            "148"
+            "148",
+            "8TV"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/115_144.png"
@@ -3215,8 +3213,8 @@
     },
     "149.astro": {
         "display_names": [
-            "149",
-            "TV9"
+            "TV9",
+            "149"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/48_144.png"
@@ -3224,8 +3222,8 @@
     },
     "201.astro": {
         "display_names": [
-            "201",
-            "Astro Vaanavil"
+            "Astro Vaanavil",
+            "201"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/397_144.png"
@@ -3242,8 +3240,8 @@
     },
     "203.astro": {
         "display_names": [
-            "203",
-            "Astro Vellithirai HD"
+            "Astro Vellithirai HD",
+            "203"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/399_144.png"
@@ -3278,8 +3276,8 @@
     },
     "215.astro": {
         "display_names": [
-            "Sun News",
-            "215"
+            "215",
+            "Sun News"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/478_144.png"
@@ -3287,8 +3285,8 @@
     },
     "216.astro": {
         "display_names": [
-            "216",
-            "KTV"
+            "KTV",
+            "216"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/477_144.png"
@@ -3296,8 +3294,8 @@
     },
     "217.astro": {
         "display_names": [
-            "Sun Life",
-            "217"
+            "217",
+            "Sun Life"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/476_144.png"
@@ -3314,8 +3312,8 @@
     },
     "222.astro": {
         "display_names": [
-            "Colors Tamil HD",
-            "222"
+            "222",
+            "Colors Tamil HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/298_144.png"
@@ -3323,8 +3321,8 @@
     },
     "223.astro": {
         "display_names": [
-            "223",
-            "Z Tamil HD"
+            "Z Tamil HD",
+            "223"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/297_144.png"
@@ -3332,8 +3330,8 @@
     },
     "241.astro": {
         "display_names": [
-            "241",
-            "Astro Thangathirai"
+            "Astro Thangathirai",
+            "241"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/177_144.png"
@@ -3341,8 +3339,8 @@
     },
     "300.astro": {
         "display_names": [
-            "iQIYI HD",
-            "300"
+            "300",
+            "iQIYI HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/355_144.png"
@@ -3359,8 +3357,8 @@
     },
     "306.astro": {
         "display_names": [
-            "306",
-            "Astro AEC"
+            "Astro AEC",
+            "306"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/182_144.png"
@@ -3377,8 +3375,8 @@
     },
     "309.astro": {
         "display_names": [
-            "309",
-            "Celestial Movies HD"
+            "Celestial Movies HD",
+            "309"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/134_144.png"
@@ -3386,8 +3384,8 @@
     },
     "310.astro": {
         "display_names": [
-            "TVB Jade",
-            "310"
+            "310",
+            "TVB Jade"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/203_144.png"
@@ -3395,8 +3393,8 @@
     },
     "311.astro": {
         "display_names": [
-            "Astro AOD",
-            "311"
+            "311",
+            "Astro AOD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/172_144.png"
@@ -3440,8 +3438,8 @@
     },
     "321.astro": {
         "display_names": [
-            "Celestial Classic Movies",
-            "321"
+            "321",
+            "Celestial Classic Movies"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/187_144.png"
@@ -3494,8 +3492,8 @@
     },
     "393.astro": {
         "display_names": [
-            "Astro Daebak",
-            "393"
+            "393",
+            "Astro Daebak"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/609_144.png"
@@ -3512,8 +3510,8 @@
     },
     "396.astro": {
         "display_names": [
-            "396",
-            "K-Plus HD"
+            "K-Plus HD",
+            "396"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/266_144.png"
@@ -3521,8 +3519,8 @@
     },
     "398.astro": {
         "display_names": [
-            "398",
-            "NHK World Premium"
+            "NHK World Premium",
+            "398"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/428_144.png"
@@ -3539,8 +3537,8 @@
     },
     "404.astro": {
         "display_names": [
-            "Astro Boo",
-            "404"
+            "404",
+            "Astro Boo"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/251_144.png"
@@ -3548,8 +3546,8 @@
     },
     "411.astro": {
         "display_names": [
-            "411",
-            "Astro Showtime"
+            "Astro Showtime",
+            "411"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/604_144.png"
@@ -3557,8 +3555,8 @@
     },
     "412.astro": {
         "display_names": [
-            "412",
-            "Astro FAM Time"
+            "Astro FAM Time",
+            "412"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/603_144.png"
@@ -3566,8 +3564,8 @@
     },
     "413.astro": {
         "display_names": [
-            "413",
-            "Astro Showcase"
+            "Astro Showcase",
+            "413"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/454_144.png"
@@ -3620,8 +3618,8 @@
     },
     "503.astro": {
         "display_names": [
-            "CGTN HD",
-            "503"
+            "503",
+            "CGTN HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/426_144.png"
@@ -3638,8 +3636,8 @@
     },
     "511.astro": {
         "display_names": [
-            "CNN HD",
-            "511"
+            "511",
+            "CNN HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/336_144.png"
@@ -3647,8 +3645,8 @@
     },
     "512.astro": {
         "display_names": [
-            "512",
-            "BBC News HD"
+            "BBC News HD",
+            "512"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/366_144.png"
@@ -3656,8 +3654,8 @@
     },
     "513.astro": {
         "display_names": [
-            "Al Jazeera English HD",
-            "513"
+            "513",
+            "Al Jazeera English HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/374_144.png"
@@ -3674,8 +3672,8 @@
     },
     "516.astro": {
         "display_names": [
-            "516",
-            "CNBC Asia HD"
+            "CNBC Asia HD",
+            "516"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/423_144.png"
@@ -3710,8 +3708,8 @@
     },
     "550.astro": {
         "display_names": [
-            "550",
-            "Love Nature"
+            "Love Nature",
+            "550"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/483_144.png"
@@ -3728,8 +3726,8 @@
     },
     "553.astro": {
         "display_names": [
-            "Discovery Asia HD",
-            "553"
+            "553",
+            "Discovery Asia HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/136_144.png"
@@ -3737,8 +3735,8 @@
     },
     "554.astro": {
         "display_names": [
-            "BBC Earth",
-            "554"
+            "554",
+            "BBC Earth"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/452_144.png"
@@ -3755,8 +3753,8 @@
     },
     "556.astro": {
         "display_names": [
-            "556",
-            "CGTN Documentary"
+            "CGTN Documentary",
+            "556"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/587_144.png"
@@ -3764,8 +3762,8 @@
     },
     "603.astro": {
         "display_names": [
-            "603",
-            "Astro Tutor TV"
+            "Astro Tutor TV",
+            "603"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/411_144.png"
@@ -3800,8 +3798,8 @@
     },
     "617.astro": {
         "display_names": [
-            "617",
-            "Nick Jr."
+            "Nick Jr.",
+            "617"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/392_144.png"
@@ -3818,8 +3816,8 @@
     },
     "619.astro": {
         "display_names": [
-            "Blippi & Friends",
-            "619"
+            "619",
+            "Blippi & Friends"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/566_144.png"
@@ -3836,8 +3834,8 @@
     },
     "702.astro": {
         "display_names": [
-            "HITS NOW",
-            "702"
+            "702",
+            "HITS NOW"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/524_144.png"
@@ -3872,8 +3870,8 @@
     },
     "709.astro": {
         "display_names": [
-            "Asian Food Network HD",
-            "709"
+            "709",
+            "Asian Food Network HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/91_144.png"
@@ -3890,8 +3888,8 @@
     },
     "715.astro": {
         "display_names": [
-            "HGTV HD",
-            "715"
+            "715",
+            "HGTV HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/198_144.png"
@@ -3908,8 +3906,8 @@
     },
     "801.astro": {
         "display_names": [
-            "Astro Arena",
-            "801"
+            "801",
+            "Astro Arena"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/235_144.png"
@@ -3926,8 +3924,8 @@
     },
     "803.astro": {
         "display_names": [
-            "Arena Bola",
-            "803"
+            "803",
+            "Arena Bola"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/486_144.png"
@@ -3953,8 +3951,8 @@
     },
     "806.astro": {
         "display_names": [
-            "Sukan+",
-            "806"
+            "806",
+            "Sukan+"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/621_144.png"
@@ -3980,8 +3978,8 @@
     },
     "810.astro": {
         "display_names": [
-            "Astro Grandstand",
-            "810"
+            "810",
+            "Astro Grandstand"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/543_144.png"
@@ -4007,8 +4005,8 @@
     },
     "813.astro": {
         "display_names": [
-            "Astro Premier League 3",
-            "813"
+            "813",
+            "Astro Premier League 3"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/538_144.png"
@@ -4052,8 +4050,8 @@
     },
     "819.astro": {
         "display_names": [
-            "819",
-            "Astro Tennis"
+            "Astro Tennis",
+            "819"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/616_144.png"
@@ -4079,8 +4077,8 @@
     },
     "822.astro": {
         "display_names": [
-            "822",
-            "beIN SPORTS 3"
+            "beIN SPORTS 3",
+            "822"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/313_144.png"
@@ -4088,8 +4086,8 @@
     },
     "826.astro": {
         "display_names": [
-            "826",
-            "W-Sport"
+            "W-Sport",
+            "826"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/503_144.png"
@@ -4097,8 +4095,8 @@
     },
     "831.astro": {
         "display_names": [
-            "Astro Golf",
-            "831"
+            "831",
+            "Astro Golf"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/189_144.png"
@@ -4142,8 +4140,8 @@
     },
     "854.astro": {
         "display_names": [
-            "LITE FM",
-            "854"
+            "854",
+            "LITE FM"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/19_144.png"
@@ -4151,8 +4149,8 @@
     },
     "855.astro": {
         "display_names": [
-            "MIX FM",
-            "855"
+            "855",
+            "MIX FM"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/18_144.png"
@@ -4169,8 +4167,8 @@
     },
     "857.astro": {
         "display_names": [
-            "857",
-            "SINAR FM"
+            "SINAR FM",
+            "857"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/26_144.png"
@@ -4178,8 +4176,8 @@
     },
     "858.astro": {
         "display_names": [
-            "858",
-            "MELODY FM"
+            "MELODY FM",
+            "858"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/28_144.png"
@@ -4214,8 +4212,8 @@
     },
     "862.astro": {
         "display_names": [
-            "862",
-            "OPUS"
+            "OPUS",
+            "862"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/16_144.png"
@@ -4223,8 +4221,8 @@
     },
     "863.astro": {
         "display_names": [
-            "863",
-            "THR GEGAR"
+            "THR GEGAR",
+            "863"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/22_144.png"
@@ -4241,8 +4239,8 @@
     },
     "865.astro": {
         "display_names": [
-            "JAZZ",
-            "865"
+            "865",
+            "JAZZ"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/24_144.png"
@@ -4259,8 +4257,8 @@
     },
     "867.astro": {
         "display_names": [
-            "867",
-            "BAYU"
+            "BAYU",
+            "867"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/31_144.png"
@@ -4286,8 +4284,8 @@
     },
     "870.astro": {
         "display_names": [
-            "V FM",
-            "870"
+            "870",
+            "V FM"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/29_144.png"
@@ -4304,8 +4302,8 @@
     },
     "872.astro": {
         "display_names": [
-            "872",
-            "TRAXX FM"
+            "TRAXX FM",
+            "872"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/312_144.png"
@@ -4322,8 +4320,8 @@
     },
     "874.astro": {
         "display_names": [
-            "874",
-            "AI FM"
+            "AI FM",
+            "874"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/303_144.png"
@@ -4331,8 +4329,8 @@
     },
     "875.astro": {
         "display_names": [
-            "875",
-            "ASYIK FM"
+            "ASYIK FM",
+            "875"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/310_144.png"
@@ -4349,8 +4347,8 @@
     },
     "877.astro": {
         "display_names": [
-            "877",
-            "GOXUAN"
+            "GOXUAN",
+            "877"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/293_144.png"
@@ -4403,8 +4401,8 @@
     },
     "475.astro": {
         "display_names": [
-            "475",
-            "Astro First HD"
+            "Astro First HD",
+            "475"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/152_144.png"
@@ -4412,8 +4410,8 @@
     },
     "476.astro": {
         "display_names": [
-            "476",
-            "Astro First HD"
+            "Astro First HD",
+            "476"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/238_144.png"
@@ -4421,8 +4419,8 @@
     },
     "477.astro": {
         "display_names": [
-            "Astro First HD",
-            "477"
+            "477",
+            "Astro First HD"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/173_144.png"
@@ -4448,8 +4446,8 @@
     },
     "482.astro": {
         "display_names": [
-            "482",
-            "Astro First HD"
+            "Astro First HD",
+            "482"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/242_144.png"
@@ -4457,8 +4455,8 @@
     },
     "483.astro": {
         "display_names": [
-            "483",
-            "Astro First HD"
+            "Astro First HD",
+            "483"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/265_144.png"
@@ -4466,8 +4464,8 @@
     },
     "484.astro": {
         "display_names": [
-            "484",
-            "Astro First HD"
+            "Astro First HD",
+            "484"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/142_144.png"
@@ -4475,8 +4473,8 @@
     },
     "485.astro": {
         "display_names": [
-            "485",
-            "Astro First HD"
+            "Astro First HD",
+            "485"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/404_144.png"
@@ -4484,8 +4482,8 @@
     },
     "486.astro": {
         "display_names": [
-            "486",
-            "Astro First HD"
+            "Astro First HD",
+            "486"
         ],
         "icons": [
             "https://divign0fdw3sv.cloudfront.net/Images/ChannelLogo/contenthub/413_144.png"
@@ -5289,8 +5287,8 @@
             "Hub E City HD"
         ],
         "icons": [
-            "https://poster.starhubgo.com/Linear_channels2/111_1920x1080_HTV.png?w=272",
-            "https://poster.starhubgo.com/Linear_channels2/825_1920x1080_HTV.png?w=272"
+            "https://poster.starhubgo.com/Linear_channels2/825_1920x1080_HTV.png?w=272",
+            "https://poster.starhubgo.com/Linear_channels2/111_1920x1080_HTV.png?w=272"
         ]
     },
     "CelestialMoviesHD.sg": {
@@ -6475,8 +6473,8 @@
     },
     "C": {
         "display_names": [
-            "C",
-            "Channel[V]"
+            "Channel[V]",
+            "C"
         ],
         "icons": []
     },
@@ -6561,8 +6559,8 @@
     "CCTV5+": {
         "display_names": [
             "CCTV5plus",
-            "CCTV5+",
-            "CCTV5PLUS"
+            "CCTV5PLUS",
+            "CCTV5+"
         ],
         "icons": []
     },
@@ -7105,8 +7103,8 @@
     },
     "经典电影": {
         "display_names": [
-            "经典电影专区",
-            "经典电影"
+            "经典电影",
+            "经典电影专区"
         ],
         "icons": []
     },
@@ -7534,1716 +7532,6 @@
     "SSPT": {
         "display_names": [
             "SSPT"
-        ],
-        "icons": []
-    },
-    "1": {
-        "display_names": [
-            "CCTV1"
-        ],
-        "icons": []
-    },
-    "2": {
-        "display_names": [
-            "CCTV2"
-        ],
-        "icons": []
-    },
-    "3": {
-        "display_names": [
-            "CCTV3"
-        ],
-        "icons": []
-    },
-    "4": {
-        "display_names": [
-            "CCTV4"
-        ],
-        "icons": []
-    },
-    "5": {
-        "display_names": [
-            "CCTV5"
-        ],
-        "icons": []
-    },
-    "6": {
-        "display_names": [
-            "CCTV5+"
-        ],
-        "icons": []
-    },
-    "7": {
-        "display_names": [
-            "CCTV6"
-        ],
-        "icons": []
-    },
-    "8": {
-        "display_names": [
-            "CCTV7"
-        ],
-        "icons": []
-    },
-    "9": {
-        "display_names": [
-            "CCTV8"
-        ],
-        "icons": []
-    },
-    "10": {
-        "display_names": [
-            "CCTV9"
-        ],
-        "icons": []
-    },
-    "11": {
-        "display_names": [
-            "CCTV10"
-        ],
-        "icons": []
-    },
-    "12": {
-        "display_names": [
-            "CCTV11"
-        ],
-        "icons": []
-    },
-    "13": {
-        "display_names": [
-            "CCTV12"
-        ],
-        "icons": []
-    },
-    "14": {
-        "display_names": [
-            "CCTV13"
-        ],
-        "icons": []
-    },
-    "15": {
-        "display_names": [
-            "CCTV14"
-        ],
-        "icons": []
-    },
-    "16": {
-        "display_names": [
-            "CCTV15"
-        ],
-        "icons": []
-    },
-    "17": {
-        "display_names": [
-            "CCTV17"
-        ],
-        "icons": []
-    },
-    "20": {
-        "display_names": [
-            "CGTN"
-        ],
-        "icons": []
-    },
-    "21": {
-        "display_names": [
-            "海峡卫视"
-        ],
-        "icons": []
-    },
-    "22": {
-        "display_names": [
-            "CCTV4EUO"
-        ],
-        "icons": []
-    },
-    "23": {
-        "display_names": [
-            "CCTV4AME"
-        ],
-        "icons": []
-    },
-    "27": {
-        "display_names": [
-            "湖南卫视"
-        ],
-        "icons": []
-    },
-    "28": {
-        "display_names": [
-            "浙江卫视"
-        ],
-        "icons": []
-    },
-    "29": {
-        "display_names": [
-            "江苏卫视"
-        ],
-        "icons": []
-    },
-    "30": {
-        "display_names": [
-            "北京卫视"
-        ],
-        "icons": []
-    },
-    "31": {
-        "display_names": [
-            "东方卫视"
-        ],
-        "icons": []
-    },
-    "32": {
-        "display_names": [
-            "安徽卫视"
-        ],
-        "icons": []
-    },
-    "33": {
-        "display_names": [
-            "广东卫视"
-        ],
-        "icons": []
-    },
-    "34": {
-        "display_names": [
-            "深圳卫视"
-        ],
-        "icons": []
-    },
-    "36": {
-        "display_names": [
-            "辽宁卫视"
-        ],
-        "icons": []
-    },
-    "37": {
-        "display_names": [
-            "旅游卫视"
-        ],
-        "icons": []
-    },
-    "38": {
-        "display_names": [
-            "山东卫视"
-        ],
-        "icons": []
-    },
-    "39": {
-        "display_names": [
-            "天津卫视"
-        ],
-        "icons": []
-    },
-    "40": {
-        "display_names": [
-            "重庆卫视"
-        ],
-        "icons": []
-    },
-    "41": {
-        "display_names": [
-            "东南卫视"
-        ],
-        "icons": []
-    },
-    "42": {
-        "display_names": [
-            "甘肃卫视"
-        ],
-        "icons": []
-    },
-    "43": {
-        "display_names": [
-            "广西卫视"
-        ],
-        "icons": []
-    },
-    "44": {
-        "display_names": [
-            "贵州卫视"
-        ],
-        "icons": []
-    },
-    "45": {
-        "display_names": [
-            "河北卫视"
-        ],
-        "icons": []
-    },
-    "46": {
-        "display_names": [
-            "黑龙江卫视"
-        ],
-        "icons": []
-    },
-    "47": {
-        "display_names": [
-            "河南卫视"
-        ],
-        "icons": []
-    },
-    "48": {
-        "display_names": [
-            "湖北卫视"
-        ],
-        "icons": []
-    },
-    "50": {
-        "display_names": [
-            "江西卫视"
-        ],
-        "icons": []
-    },
-    "51": {
-        "display_names": [
-            "吉林卫视"
-        ],
-        "icons": []
-    },
-    "52": {
-        "display_names": [
-            "内蒙古卫视"
-        ],
-        "icons": []
-    },
-    "53": {
-        "display_names": [
-            "宁夏卫视"
-        ],
-        "icons": []
-    },
-    "54": {
-        "display_names": [
-            "山西卫视"
-        ],
-        "icons": []
-    },
-    "55": {
-        "display_names": [
-            "陕西卫视"
-        ],
-        "icons": []
-    },
-    "56": {
-        "display_names": [
-            "四川卫视"
-        ],
-        "icons": []
-    },
-    "57": {
-        "display_names": [
-            "新疆卫视"
-        ],
-        "icons": []
-    },
-    "58": {
-        "display_names": [
-            "云南卫视"
-        ],
-        "icons": []
-    },
-    "59": {
-        "display_names": [
-            "青海卫视"
-        ],
-        "icons": []
-    },
-    "61": {
-        "display_names": [
-            "兵团卫视"
-        ],
-        "icons": []
-    },
-    "62": {
-        "display_names": [
-            "哈哈炫动"
-        ],
-        "icons": []
-    },
-    "63": {
-        "display_names": [
-            "延边卫视"
-        ],
-        "icons": []
-    },
-    "65": {
-        "display_names": [
-            "黄河卫视"
-        ],
-        "icons": []
-    },
-    "67": {
-        "display_names": [
-            "卡酷动画"
-        ],
-        "icons": []
-    },
-    "68": {
-        "display_names": [
-            "厦门卫视"
-        ],
-        "icons": []
-    },
-    "69": {
-        "display_names": [
-            "金鹰卡通"
-        ],
-        "icons": []
-    },
-    "70": {
-        "display_names": [
-            "康巴卫视"
-        ],
-        "icons": []
-    },
-    "71": {
-        "display_names": [
-            "西藏卫视"
-        ],
-        "icons": []
-    },
-    "72": {
-        "display_names": [
-            "三沙卫视"
-        ],
-        "icons": []
-    },
-    "73": {
-        "display_names": [
-            "中国教育1台"
-        ],
-        "icons": []
-    },
-    "74": {
-        "display_names": [
-            "中国教育2台"
-        ],
-        "icons": []
-    },
-    "75": {
-        "display_names": [
-            "中国教育3台"
-        ],
-        "icons": []
-    },
-    "106": {
-        "display_names": [
-            "CCTV4K"
-        ],
-        "icons": []
-    },
-    "142": {
-        "display_names": [
-            "凤凰资讯"
-        ],
-        "icons": []
-    },
-    "334": {
-        "display_names": [
-            "天津文艺"
-        ],
-        "icons": []
-    },
-    "335": {
-        "display_names": [
-            "天津影视"
-        ],
-        "icons": []
-    },
-    "336": {
-        "display_names": [
-            "天津都市频道"
-        ],
-        "icons": []
-    },
-    "337": {
-        "display_names": [
-            "天津体育"
-        ],
-        "icons": []
-    },
-    "340": {
-        "display_names": [
-            "天津新闻"
-        ],
-        "icons": []
-    },
-    "344": {
-        "display_names": [
-            "江苏城市"
-        ],
-        "icons": []
-    },
-    "345": {
-        "display_names": [
-            "江苏影视"
-        ],
-        "icons": []
-    },
-    "347": {
-        "display_names": [
-            "江苏休闲体育"
-        ],
-        "icons": []
-    },
-    "348": {
-        "display_names": [
-            "优漫卡通"
-        ],
-        "icons": []
-    },
-    "351": {
-        "display_names": [
-            "江苏综艺"
-        ],
-        "icons": []
-    },
-    "534": {
-        "display_names": [
-            "贵州影视"
-        ],
-        "icons": []
-    },
-    "535": {
-        "display_names": [
-            "贵州大众"
-        ],
-        "icons": []
-    },
-    "537": {
-        "display_names": [
-            "贵州科教"
-        ],
-        "icons": []
-    },
-    "555": {
-        "display_names": [
-            "宁夏经济"
-        ],
-        "icons": []
-    },
-    "557": {
-        "display_names": [
-            "宁夏少儿"
-        ],
-        "icons": []
-    },
-    "565": {
-        "display_names": [
-            "河北都市"
-        ],
-        "icons": []
-    },
-    "567": {
-        "display_names": [
-            "河北少儿"
-        ],
-        "icons": []
-    },
-    "568": {
-        "display_names": [
-            "河北经济"
-        ],
-        "icons": []
-    },
-    "609": {
-        "display_names": [
-            "新动漫"
-        ],
-        "icons": []
-    },
-    "657": {
-        "display_names": [
-            "浙江经视"
-        ],
-        "icons": []
-    },
-    "658": {
-        "display_names": [
-            "浙江钱江都市"
-        ],
-        "icons": []
-    },
-    "659": {
-        "display_names": [
-            "浙江科教影视"
-        ],
-        "icons": []
-    },
-    "660": {
-        "display_names": [
-            "浙江民生休闲"
-        ],
-        "icons": []
-    },
-    "661": {
-        "display_names": [
-            "浙江公共新闻"
-        ],
-        "icons": []
-    },
-    "662": {
-        "display_names": [
-            "浙江少儿"
-        ],
-        "icons": []
-    },
-    "728": {
-        "display_names": [
-            "山东齐鲁"
-        ],
-        "icons": []
-    },
-    "729": {
-        "display_names": [
-            "山东体育"
-        ],
-        "icons": []
-    },
-    "730": {
-        "display_names": [
-            "山东农科"
-        ],
-        "icons": []
-    },
-    "732": {
-        "display_names": [
-            "山东少儿"
-        ],
-        "icons": []
-    },
-    "734": {
-        "display_names": [
-            "山东综艺"
-        ],
-        "icons": []
-    },
-    "735": {
-        "display_names": [
-            "山东生活"
-        ],
-        "icons": []
-    },
-    "832": {
-        "display_names": [
-            "河南民生"
-        ],
-        "icons": []
-    },
-    "833": {
-        "display_names": [
-            "河南法制"
-        ],
-        "icons": []
-    },
-    "834": {
-        "display_names": [
-            "河南电视剧"
-        ],
-        "icons": []
-    },
-    "835": {
-        "display_names": [
-            "河南新闻"
-        ],
-        "icons": []
-    },
-    "837": {
-        "display_names": [
-            "河南公共"
-        ],
-        "icons": []
-    },
-    "838": {
-        "display_names": [
-            "河南新农村"
-        ],
-        "icons": []
-    },
-    "839": {
-        "display_names": [
-            "河南都市"
-        ],
-        "icons": []
-    },
-    "892": {
-        "display_names": [
-            "广西综艺"
-        ],
-        "icons": []
-    },
-    "893": {
-        "display_names": [
-            "广西都市"
-        ],
-        "icons": []
-    },
-    "895": {
-        "display_names": [
-            "广西影视"
-        ],
-        "icons": []
-    },
-    "897": {
-        "display_names": [
-            "广西新闻"
-        ],
-        "icons": []
-    },
-    "932": {
-        "display_names": [
-            "云南娱乐"
-        ],
-        "icons": []
-    },
-    "933": {
-        "display_names": [
-            "云南都市"
-        ],
-        "icons": []
-    },
-    "934": {
-        "display_names": [
-            "云南影视"
-        ],
-        "icons": []
-    },
-    "1025": {
-        "display_names": [
-            "安徽经济生活"
-        ],
-        "icons": []
-    },
-    "1026": {
-        "display_names": [
-            "安徽影视"
-        ],
-        "icons": []
-    },
-    "1027": {
-        "display_names": [
-            "安徽公共"
-        ],
-        "icons": []
-    },
-    "1028": {
-        "display_names": [
-            "安徽农业科教"
-        ],
-        "icons": []
-    },
-    "1079": {
-        "display_names": [
-            "湖北综合"
-        ],
-        "icons": []
-    },
-    "1080": {
-        "display_names": [
-            "湖北影视"
-        ],
-        "icons": []
-    },
-    "1081": {
-        "display_names": [
-            "湖北教育"
-        ],
-        "icons": []
-    },
-    "1085": {
-        "display_names": [
-            "湖北经济"
-        ],
-        "icons": []
-    },
-    "1086": {
-        "display_names": [
-            "湖北垄上"
-        ],
-        "icons": []
-    },
-    "1128": {
-        "display_names": [
-            "海南综合"
-        ],
-        "icons": []
-    },
-    "1129": {
-        "display_names": [
-            "海南新闻"
-        ],
-        "icons": []
-    },
-    "1130": {
-        "display_names": [
-            "海南公共"
-        ],
-        "icons": []
-    },
-    "1138": {
-        "display_names": [
-            "重庆影视"
-        ],
-        "icons": []
-    },
-    "1139": {
-        "display_names": [
-            "重庆新闻"
-        ],
-        "icons": []
-    },
-    "1146": {
-        "display_names": [
-            "重庆少儿"
-        ],
-        "icons": []
-    },
-    "1152": {
-        "display_names": [
-            "甘肃少儿"
-        ],
-        "icons": []
-    },
-    "1153": {
-        "display_names": [
-            "甘肃公共"
-        ],
-        "icons": []
-    },
-    "1155": {
-        "display_names": [
-            "甘肃文化"
-        ],
-        "icons": []
-    },
-    "1173": {
-        "display_names": [
-            "北京纪实"
-        ],
-        "icons": []
-    },
-    "1174": {
-        "display_names": [
-            "BTV文艺"
-        ],
-        "icons": []
-    },
-    "1176": {
-        "display_names": [
-            "BTV影视"
-        ],
-        "icons": []
-    },
-    "1177": {
-        "display_names": [
-            "BTV财经"
-        ],
-        "icons": []
-    },
-    "1178": {
-        "display_names": [
-            "BTV体育"
-        ],
-        "icons": []
-    },
-    "1179": {
-        "display_names": [
-            "BTV生活"
-        ],
-        "icons": []
-    },
-    "1181": {
-        "display_names": [
-            "BTV新闻"
-        ],
-        "icons": []
-    },
-    "1185": {
-        "display_names": [
-            "内蒙蒙语卫视"
-        ],
-        "icons": []
-    },
-    "1186": {
-        "display_names": [
-            "内蒙新闻综合"
-        ],
-        "icons": []
-    },
-    "1187": {
-        "display_names": [
-            "内蒙经济生活"
-        ],
-        "icons": []
-    },
-    "1188": {
-        "display_names": [
-            "内蒙文体娱乐"
-        ],
-        "icons": []
-    },
-    "1189": {
-        "display_names": [
-            "内蒙农牧"
-        ],
-        "icons": []
-    },
-    "1190": {
-        "display_names": [
-            "内蒙少儿"
-        ],
-        "icons": []
-    },
-    "1215": {
-        "display_names": [
-            "黑龙江影视"
-        ],
-        "icons": []
-    },
-    "1216": {
-        "display_names": [
-            "黑龙江文体"
-        ],
-        "icons": []
-    },
-    "1217": {
-        "display_names": [
-            "黑龙江都市"
-        ],
-        "icons": []
-    },
-    "1218": {
-        "display_names": [
-            "黑龙江新闻法治"
-        ],
-        "icons": []
-    },
-    "1220": {
-        "display_names": [
-            "黑龙江少儿"
-        ],
-        "icons": []
-    },
-    "1258": {
-        "display_names": [
-            "东方财经"
-        ],
-        "icons": []
-    },
-    "1263": {
-        "display_names": [
-            "新视觉"
-        ],
-        "icons": []
-    },
-    "1273": {
-        "display_names": [
-            "法治天地"
-        ],
-        "icons": []
-    },
-    "1274": {
-        "display_names": [
-            "金色"
-        ],
-        "icons": []
-    },
-    "1276": {
-        "display_names": [
-            "全纪实"
-        ],
-        "icons": []
-    },
-    "1277": {
-        "display_names": [
-            "欢笑剧场"
-        ],
-        "icons": []
-    },
-    "1279": {
-        "display_names": [
-            "动漫秀场"
-        ],
-        "icons": []
-    },
-    "1281": {
-        "display_names": [
-            "生活时尚"
-        ],
-        "icons": []
-    },
-    "1282": {
-        "display_names": [
-            "都市剧场"
-        ],
-        "icons": []
-    },
-    "1283": {
-        "display_names": [
-            "游戏风云"
-        ],
-        "icons": []
-    },
-    "1284": {
-        "display_names": [
-            "上视新闻频道"
-        ],
-        "icons": []
-    },
-    "1285": {
-        "display_names": [
-            "第一财经"
-        ],
-        "icons": []
-    },
-    "1286": {
-        "display_names": [
-            "东方影视"
-        ],
-        "icons": []
-    },
-    "1287": {
-        "display_names": [
-            "五星体育频道"
-        ],
-        "icons": []
-    },
-    "1293": {
-        "display_names": [
-            "中国交通频道"
-        ],
-        "icons": []
-    },
-    "1317": {
-        "display_names": [
-            "湖南娱乐"
-        ],
-        "icons": []
-    },
-    "1318": {
-        "display_names": [
-            "湖南电视剧"
-        ],
-        "icons": []
-    },
-    "1320": {
-        "display_names": [
-            "湖南电影"
-        ],
-        "icons": []
-    },
-    "1323": {
-        "display_names": [
-            "湖南经视"
-        ],
-        "icons": []
-    },
-    "1324": {
-        "display_names": [
-            "金鹰纪实"
-        ],
-        "icons": []
-    },
-    "1353": {
-        "display_names": [
-            "SCTV2"
-        ],
-        "icons": []
-    },
-    "1354": {
-        "display_names": [
-            "SCTV3"
-        ],
-        "icons": []
-    },
-    "1355": {
-        "display_names": [
-            "SCTV4"
-        ],
-        "icons": []
-    },
-    "1356": {
-        "display_names": [
-            "SCTV5"
-        ],
-        "icons": []
-    },
-    "1358": {
-        "display_names": [
-            "SCTV7"
-        ],
-        "icons": []
-    },
-    "1359": {
-        "display_names": [
-            "峨嵋电影"
-        ],
-        "icons": []
-    },
-    "1361": {
-        "display_names": [
-            "SCTV8"
-        ],
-        "icons": []
-    },
-    "1363": {
-        "display_names": [
-            "CDTV1"
-        ],
-        "icons": []
-    },
-    "1364": {
-        "display_names": [
-            "CDTV2"
-        ],
-        "icons": []
-    },
-    "1365": {
-        "display_names": [
-            "CDTV3"
-        ],
-        "icons": []
-    },
-    "1366": {
-        "display_names": [
-            "CDTV4"
-        ],
-        "icons": []
-    },
-    "1367": {
-        "display_names": [
-            "CDTV5"
-        ],
-        "icons": []
-    },
-    "1368": {
-        "display_names": [
-            "CDTV6"
-        ],
-        "icons": []
-    },
-    "1424": {
-        "display_names": [
-            "风云足球"
-        ],
-        "icons": []
-    },
-    "1425": {
-        "display_names": [
-            "辽宁都市"
-        ],
-        "icons": []
-    },
-    "1426": {
-        "display_names": [
-            "辽宁影视剧"
-        ],
-        "icons": []
-    },
-    "1427": {
-        "display_names": [
-            "辽宁青少"
-        ],
-        "icons": []
-    },
-    "1428": {
-        "display_names": [
-            "辽宁生活"
-        ],
-        "icons": []
-    },
-    "1429": {
-        "display_names": [
-            "辽宁公共"
-        ],
-        "icons": []
-    },
-    "1430": {
-        "display_names": [
-            "辽宁北方"
-        ],
-        "icons": []
-    },
-    "1431": {
-        "display_names": [
-            "辽宁体育"
-        ],
-        "icons": []
-    },
-    "1432": {
-        "display_names": [
-            "辽宁经济"
-        ],
-        "icons": []
-    },
-    "1434": {
-        "display_names": [
-            "嘉佳卡通"
-        ],
-        "icons": []
-    },
-    "1436": {
-        "display_names": [
-            "广东体育"
-        ],
-        "icons": []
-    },
-    "1439": {
-        "display_names": [
-            "广东新闻"
-        ],
-        "icons": []
-    },
-    "1638": {
-        "display_names": [
-            "求索科学"
-        ],
-        "icons": []
-    },
-    "1639": {
-        "display_names": [
-            "CHC高清电影"
-        ],
-        "icons": []
-    },
-    "1640": {
-        "display_names": [
-            "求索动物"
-        ],
-        "icons": []
-    },
-    "1642": {
-        "display_names": [
-            "求索记录"
-        ],
-        "icons": []
-    },
-    "1643": {
-        "display_names": [
-            "CHC动作电影"
-        ],
-        "icons": []
-    },
-    "1644": {
-        "display_names": [
-            "CHC家庭电影"
-        ],
-        "icons": []
-    },
-    "1645": {
-        "display_names": [
-            "梨园"
-        ],
-        "icons": []
-    },
-    "1646": {
-        "display_names": [
-            "风云音乐"
-        ],
-        "icons": []
-    },
-    "1647": {
-        "display_names": [
-            "第一剧场"
-        ],
-        "icons": []
-    },
-    "1648": {
-        "display_names": [
-            "风云剧场"
-        ],
-        "icons": []
-    },
-    "1649": {
-        "display_names": [
-            "世界地理"
-        ],
-        "icons": []
-    },
-    "1651": {
-        "display_names": [
-            "怀旧剧场"
-        ],
-        "icons": []
-    },
-    "1652": {
-        "display_names": [
-            "兵器科技"
-        ],
-        "icons": []
-    },
-    "1653": {
-        "display_names": [
-            "女性时尚"
-        ],
-        "icons": []
-    },
-    "1657": {
-        "display_names": [
-            "高尔夫网球"
-        ],
-        "icons": []
-    },
-    "1658": {
-        "display_names": [
-            "央视精品"
-        ],
-        "icons": []
-    },
-    "1662": {
-        "display_names": [
-            "汽摩"
-        ],
-        "icons": []
-    },
-    "1667": {
-        "display_names": [
-            "天元围棋"
-        ],
-        "icons": []
-    },
-    "1670": {
-        "display_names": [
-            "早期教育"
-        ],
-        "icons": []
-    },
-    "1671": {
-        "display_names": [
-            "证券资讯"
-        ],
-        "icons": []
-    },
-    "1673": {
-        "display_names": [
-            "央视台球"
-        ],
-        "icons": []
-    },
-    "1675": {
-        "display_names": [
-            "武术世界"
-        ],
-        "icons": []
-    },
-    "1677": {
-        "display_names": [
-            "发现之旅"
-        ],
-        "icons": []
-    },
-    "1678": {
-        "display_names": [
-            "环球奇观"
-        ],
-        "icons": []
-    },
-    "1679": {
-        "display_names": [
-            "国学"
-        ],
-        "icons": []
-    },
-    "1680": {
-        "display_names": [
-            "文物宝库"
-        ],
-        "icons": []
-    },
-    "1683": {
-        "display_names": [
-            "老故事"
-        ],
-        "icons": []
-    },
-    "1684": {
-        "display_names": [
-            "快乐垂钓"
-        ],
-        "icons": []
-    },
-    "1685": {
-        "display_names": [
-            "书画频道"
-        ],
-        "icons": []
-    },
-    "1695": {
-        "display_names": [
-            "四海钓鱼"
-        ],
-        "icons": []
-    },
-    "1697": {
-        "display_names": [
-            "环球旅游"
-        ],
-        "icons": []
-    },
-    "1712": {
-        "display_names": [
-            "财富天下"
-        ],
-        "icons": []
-    },
-    "1759": {
-        "display_names": [
-            "珠江频道"
-        ],
-        "icons": []
-    },
-    "1857": {
-        "display_names": [
-            "魅力足球"
-        ],
-        "icons": []
-    },
-    "1860": {
-        "display_names": [
-            "中国教育4台"
-        ],
-        "icons": []
-    },
-    "1864": {
-        "display_names": [
-            "CCTV16"
-        ],
-        "icons": []
-    },
-    "1865": {
-        "display_names": [
-            "广东影视"
-        ],
-        "icons": []
-    },
-    "1866": {
-        "display_names": [
-            "广东综艺"
-        ],
-        "icons": []
-    },
-    "1867": {
-        "display_names": [
-            "广东经济"
-        ],
-        "icons": []
-    },
-    "1868": {
-        "display_names": [
-            "广东少儿"
-        ],
-        "icons": []
-    },
-    "1940": {
-        "display_names": [
-            "新疆哈语"
-        ],
-        "icons": []
-    },
-    "1942": {
-        "display_names": [
-            "新疆维语"
-        ],
-        "icons": []
-    },
-    "1943": {
-        "display_names": [
-            "新疆汉语"
-        ],
-        "icons": []
-    },
-    "1944": {
-        "display_names": [
-            "新疆体育"
-        ],
-        "icons": []
-    },
-    "1945": {
-        "display_names": [
-            "新疆少儿"
-        ],
-        "icons": []
-    },
-    "1953": {
-        "display_names": [
-            "宁夏文旅"
-        ],
-        "icons": []
-    },
-    "1954": {
-        "display_names": [
-            "青海都市"
-        ],
-        "icons": []
-    },
-    "1955": {
-        "display_names": [
-            "青海经视"
-        ],
-        "icons": []
-    },
-    "1957": {
-        "display_names": [
-            "甘肃科教"
-        ],
-        "icons": []
-    },
-    "1960": {
-        "display_names": [
-            "陕西新闻"
-        ],
-        "icons": []
-    },
-    "1961": {
-        "display_names": [
-            "陕西都市"
-        ],
-        "icons": []
-    },
-    "1962": {
-        "display_names": [
-            "陕西银龄"
-        ],
-        "icons": []
-    },
-    "1963": {
-        "display_names": [
-            "陕西秦腔"
-        ],
-        "icons": []
-    },
-    "1964": {
-        "display_names": [
-            "陕西体育"
-        ],
-        "icons": []
-    },
-    "1967": {
-        "display_names": [
-            "云南康旅"
-        ],
-        "icons": []
-    },
-    "1969": {
-        "display_names": [
-            "CHC影迷电影"
-        ],
-        "icons": []
-    },
-    "1971": {
-        "display_names": [
-            "贵州生态"
-        ],
-        "icons": []
-    },
-    "1984": {
-        "display_names": [
-            "四川乡村"
-        ],
-        "icons": []
-    },
-    "1985": {
-        "display_names": [
-            "重庆社会与法"
-        ],
-        "icons": []
-    },
-    "1986": {
-        "display_names": [
-            "重庆红岩文化"
-        ],
-        "icons": []
-    },
-    "1987": {
-        "display_names": [
-            "重庆新农村"
-        ],
-        "icons": []
-    },
-    "1988": {
-        "display_names": [
-            "重庆红叶"
-        ],
-        "icons": []
-    },
-    "1990": {
-        "display_names": [
-            "海南自贸"
-        ],
-        "icons": []
-    },
-    "1991": {
-        "display_names": [
-            "海南文旅"
-        ],
-        "icons": []
-    },
-    "1992": {
-        "display_names": [
-            "海南少儿"
-        ],
-        "icons": []
-    },
-    "1995": {
-        "display_names": [
-            "大湾区卫视"
-        ],
-        "icons": []
-    },
-    "1996": {
-        "display_names": [
-            "广东民生"
-        ],
-        "icons": []
-    },
-    "2002": {
-        "display_names": [
-            "湖南爱晚"
-        ],
-        "icons": []
-    },
-    "2011": {
-        "display_names": [
-            "江西都市"
-        ],
-        "icons": []
-    },
-    "2012": {
-        "display_names": [
-            "江西经济"
-        ],
-        "icons": []
-    },
-    "2014": {
-        "display_names": [
-            "江西公共"
-        ],
-        "icons": []
-    },
-    "2015": {
-        "display_names": [
-            "江西新闻"
-        ],
-        "icons": []
-    },
-    "2019": {
-        "display_names": [
-            "江西少儿"
-        ],
-        "icons": []
-    },
-    "2020": {
-        "display_names": [
-            "福建综合"
-        ],
-        "icons": []
-    },
-    "2022": {
-        "display_names": [
-            "福建新闻"
-        ],
-        "icons": []
-    },
-    "2024": {
-        "display_names": [
-            "福建旅游"
-        ],
-        "icons": []
-    },
-    "2027": {
-        "display_names": [
-            "福建少儿"
-        ],
-        "icons": []
-    },
-    "2029": {
-        "display_names": [
-            "安徽综艺体育"
-        ],
-        "icons": []
-    },
-    "2033": {
-        "display_names": [
-            "黑龙江农业科教"
-        ],
-        "icons": []
-    },
-    "2034": {
-        "display_names": [
-            "吉视都市"
-        ],
-        "icons": []
-    },
-    "2035": {
-        "display_names": [
-            "吉视影视"
-        ],
-        "icons": []
-    },
-    "2036": {
-        "display_names": [
-            "吉视乡村"
-        ],
-        "icons": []
-    },
-    "2037": {
-        "display_names": [
-            "吉视综艺文化"
-        ],
-        "icons": []
-    },
-    "2042": {
-        "display_names": [
-            "河北文旅公共"
-        ],
-        "icons": []
-    },
-    "2043": {
-        "display_names": [
-            "河北三农"
-        ],
-        "icons": []
-    },
-    "2045": {
-        "display_names": [
-            "天津教育"
-        ],
-        "icons": []
-    },
-    "2046": {
-        "display_names": [
-            "山西经济与科技"
-        ],
-        "icons": []
-    },
-    "2047": {
-        "display_names": [
-            "山西影视"
-        ],
-        "icons": []
-    },
-    "2048": {
-        "display_names": [
-            "山西社会与法治"
-        ],
-        "icons": []
-    },
-    "2049": {
-        "display_names": [
-            "山西文体生活"
-        ],
-        "icons": []
-    },
-    "2051": {
-        "display_names": [
-            "吉视生活"
-        ],
-        "icons": []
-    },
-    "9999": {
-        "display_names": [
-            "noepg"
         ],
         "icons": []
     }
