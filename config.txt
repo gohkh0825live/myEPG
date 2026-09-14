@@ -5,6 +5,7 @@
 #https://raw.githubusercontent.com/AqFad2811/epg/refs/heads/main/singapore.xml
 
 https://raw.githubusercontent.com/AqFad2811/epg/main/rtmklik.xml
+https://github.com/gohkh0825live/epg/raw/refs/heads/main/rtmklik.xml
 https://github.com/gohkh0825live/epg/raw/refs/heads/main/mana2.xml
 https://github.com/AqFad2811/epg/raw/main/sooka.xml
 https://github.com/AqFad2811/epg/raw/main/unifitv.xml
