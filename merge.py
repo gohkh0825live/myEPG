@@ -17,7 +17,7 @@ MAX_FILE_SIZE = 98 * 1024 * 1024
 TZ_UTC8 = timezone(timedelta(hours=8))
 
 def download_or_read_xml(source_path):
-    """根据路径或 URL 获取 XML 根元素（自动支持 .gz 格式）"""
+    """根据路径或 URL 获取 XML 根元素（智能兼容 .gz 与未压缩的 XML）"""
     source_path = source_path.strip()
     if not source_path:
         return None
@@ -38,9 +38,14 @@ def download_or_read_xml(source_path):
             return None
 
         if content:
-            # 如果源文件是以 .gz 结尾，先进行 gzip 解压缩
+            # 兼容处理：尝试解压 gzip 数据，如果失败则直接作为普通 XML 解析
             if source_path.endswith(".gz"):
-                content = gzip.decompress(content)
+                try:
+                    content = gzip.decompress(content)
+                except (gzip.BadGzipFile, OSError):
+                    # 如果不是真正的 gzip 文件（例如服务器直接返回了未压缩的 XML），忽略解压错误
+                    pass
+            
             return ET.fromstring(content)
             
     except Exception as e:
