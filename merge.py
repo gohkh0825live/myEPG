@@ -1,232 +1,153 @@
 import os
-import sys
 import gzip
 import shutil
-import json
-import asyncio
-import aiohttp
+import urllib.request
 import xml.etree.ElementTree as ET
-import io
-from collections import defaultdict
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, timezone
 
-# ================= 配置常量 =================
-OUTPUT_DIR = 'output'
-CONFIG_FILE = 'config.txt'
-TZ_UTC_PLUS_8 = timezone(timedelta(hours=8))
+CONFIG_FILE = "config.txt"
+OUTPUT_DIR = "output"
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, "epg.xml")
+OUTPUT_GZ_FILE = os.path.join(OUTPUT_DIR, "epg.xml.gz")
 
-# 建议保留的天数：保留今天（当天）及未来 2 天的节目单，过滤掉过期的历史节目
-KEEP_DAYS_PAST = 0    # 0 表示不过滤过去的节目，如果设为 0 但结合 KEEP_DAYS_FUTURE 可以大幅缩减体积；建议只抓今天起的节目
-KEEP_DAYS_FUTURE = 2  # 保留未来多少天的节目单 (今天 + 未来2天 = 3天)
+# 限制解压前文件最大大小：98MB (确保完全低于 100MB 限制)
+MAX_FILE_SIZE = 98 * 1024 * 1024 
 
-# ================= 自定义名称注入字典 =================
-CUSTOM_NAME_INJECTIONS = {
-    # ⚠️ 请把下方的 "8tv_real_id" 替换成你的数据源里 8TV 真正的 id 字符串
-    "8tv_real_id": ["八度空间"], 
-}
+# 定义 UTC+8 时区
+TZ_UTC8 = timezone(timedelta(hours=8))
 
-# ================= 辅助函数 =================
-
-def parse_xmltv_date(date_str):
-    """解析 XMLTV 格式的时间字符串 (例如 20260901023000 +0800)"""
-    if not date_str or len(date_str) < 8:
+def download_or_read_xml(source_path):
+    """根据路径或 URL 获取 XML 根元素"""
+    source_path = source_path.strip()
+    if not source_path:
         return None
+    
     try:
-        # 取前 8 位年月日 YYYYMMDD
-        clean_date = date_str.split()[0][:8]
-        return datetime.strptime(clean_date, "%Y%m%d").date()
-    except Exception:
-        return None
-
-# ================= 核心处理引擎 =================
-
-async def fetch_epg(url, session):
-    """异步下载 EPG 文件，支持 GZIP 实时解压"""
-    try:
-        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
-        async with session.get(url, headers=headers, timeout=30) as response:
-            if response.status == 200:
-                data = await response.read()
-                if url.endswith('.gz') or data.startswith(b'\x1f\x8b'):
-                    return url, gzip.decompress(data).decode('utf-8', errors='ignore')
-                return url, data.decode('utf-8', errors='ignore')
-    except Exception as e:
-        print(f"❌ 下载失败 {url}: {e}")
-    return url, None
-
-def process_and_merge(results):
-    """
-    双重遍历解析器 (以 ID 为唯一标识的版本)
-    Pass 1: 以 Channel ID 为主键，收集去重所有的名称和图标，并注入自定义名称
-    Pass 2: 精准提取与有效 ID 匹配且在有效时间段内的 Programme 节点
-    """
-    channel_groups = defaultdict(lambda: {
-        "display_names": set(),
-        "icons": set()
-    })
-    
-    print("\n⚙️ [第一阶段] 正在以固定的 Channel ID 为基准聚合频道数据...")
-    
-    # --- Pass 1: 建立频道档案 ---
-    for url, content in results:
-        if not content: continue
-        
-        content = content.replace(' xmlns="', ' dummy="')
-        stream = io.BytesIO(content.encode('utf-8'))
-        
-        try:
-            context = ET.iterparse(stream, events=("end",))
-            for event, elem in context:
-                if elem.tag == 'channel':
-                    channel_id = elem.get('id')
-                    if not channel_id:
-                        elem.clear()
-                        continue
-                    
-                    for dn in elem.findall('display-name'):
-                        if dn.text:
-                            channel_groups[channel_id]["display_names"].add(dn.text.strip())
-                    
-                    icon_node = elem.find('icon')
-                    if icon_node is not None and icon_node.get('src'):
-                        channel_groups[channel_id]["icons"].add(icon_node.get('src'))
-                        
-                    elem.clear()
-        except ET.ParseError as e:
-            print(f"⚠️ XML解析跳过 ({url}): {e}")
-
-    # ================= 自动注入自定义名称 =================
-    for cid, custom_names in CUSTOM_NAME_INJECTIONS.items():
-        if cid in channel_groups: # 确保网络源里抓到了这个台
-            for name in custom_names:
-                channel_groups[cid]["display_names"].add(name)
-    # ==========================================================
-
-    unified_channels = []
-    valid_ids = set(channel_groups.keys())
-    
-    for cid, data in channel_groups.items():
-        c_elem = ET.Element("channel", id=cid)
-        
-        if not data["display_names"]:
-            disp_elem = ET.SubElement(c_elem, "display-name", lang="en")
-            disp_elem.text = cid
+        if source_path.startswith("http://") or source_path.startswith("https://"):
+            req = urllib.request.Request(source_path, headers={'User-Agent': 'Mozilla/5.0'})
+            with urllib.request.urlopen(req, timeout=15) as response:
+                return ET.fromstring(response.read())
+        elif os.path.exists(source_path):
+            return ET.parse(source_path).getroot()
         else:
-            for name in data["display_names"]:
-                lang_attr = "zh" if any('\u4e00' <= char <= '\u9fff' for char in name) else "en"
-                disp_elem = ET.SubElement(c_elem, "display-name", lang=lang_attr)
-                disp_elem.text = name
-                
-        if data["icons"]:
-            ET.SubElement(c_elem, "icon", src=list(data["icons"])[0])
-            
-        unified_channels.append(c_elem)
+            print(f"警告: 源路径不存在 - {source_path}")
+            return None
+    except Exception as e:
+        print(f"解析 XML 失败 ({source_path}): {e}")
+        return None
 
-    print("\n⚙️ [第二阶段] 正在提取并过滤合法的节目单 (含过期节目清理)...")
+def is_within_two_days_utc8(start_str):
+    """判断节目开始时间是否在 UTC+8 的【今天】或【明天】"""
+    if not start_str or len(start_str) < 8:
+        return True  # 格式异常时默认保留
     
-    # 计算有效节目单的时间区间
-    today = datetime.now(TZ_UTC_PLUS_8).date()
-    min_date = today - timedelta(days=KEEP_DAYS_PAST)
-    max_date = today + timedelta(days=KEEP_DAYS_FUTURE)
-    
-    # --- Pass 2: 提取 Programme 并过滤时间 ---
-    unified_programmes = []
-    
-    for url, content in results:
-        if not content: continue
-        content = content.replace(' xmlns="', ' dummy="')
-        stream = io.BytesIO(content.encode('utf-8'))
+    try:
+        # 获取当前 UTC+8 的日期与次日日期
+        now_utc8 = datetime.now(timezone.utc).astimezone(TZ_UTC8)
+        today_utc8 = now_utc8.date()
+        tomorrow_utc8 = today_utc8 + timedelta(days=1)
         
-        try:
-            context = ET.iterparse(stream, events=("end",))
-            for event, elem in context:
-                if elem.tag == 'programme':
-                    prog_channel_id = elem.get('channel')
-                    start_str = elem.get('start')
-                    
-                    # 校验 1: 必须是有效频道 ID
-                    if prog_channel_id in valid_ids:
-                        # 校验 2: 过滤过期或过远的节目单
-                        prog_date = parse_xmltv_date(start_str)
-                        if prog_date and (min_date <= prog_date <= max_date):
-                            unified_programmes.append(elem)
-                        else:
-                            elem.clear()
-                    else:
-                        elem.clear() 
-        except ET.ParseError:
-            pass
-
-    return channel_groups, unified_channels, unified_programmes
-
-def export_results(channel_groups, channels, programmes):
-    """序列化导出引擎"""
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-    json_file = os.path.join(OUTPUT_DIR, 'unified_channels.json')
-    xml_file = os.path.join(OUTPUT_DIR, 'epg.xml')
-    gz_file = os.path.join(OUTPUT_DIR, 'epg.xml.gz')
-
-    # 1. 导出 JSON 映射表
-    json_export_data = {}
-    for cid, data in channel_groups.items():
-        json_export_data[cid] = {
-            "display_names": list(data["display_names"]),
-            "icons": list(data["icons"])
-        }
-    with open(json_file, 'w', encoding='utf-8') as jf:
-        json.dump(json_export_data, jf, indent=4, ensure_ascii=False)
-    
-    # 2. 导出合并后的 XML（移除 ET.indent 以极大减小 XML 体积）
-    current_time = datetime.now(TZ_UTC_PLUS_8).strftime("%Y%m%d%H%M%S %z")
-    root = ET.Element('tv', attrib={
-        'date': current_time, 
-        'generator-info-name': "Python-ID-Driven-EPG-Aggregator"
-    })
-    
-    for c in channels:
-        root.append(c)
-    for p in programmes:
-        root.append(p)
+        # 提取 XML 中节目的年月日 (YYYYMMDD)
+        prog_date = datetime.strptime(start_str[:8], "%Y%m%d").date()
         
-    tree = ET.ElementTree(root)
-    # 取消 ET.indent(tree, space="\t", level=0)，避免写入数百万个缩进换行符
-    tree.write(xml_file, encoding='utf-8', xml_declaration=True)
+        # 仅保留 UTC+8 时区下今明两天的节目
+        return today_utc8 <= prog_date <= tomorrow_utc8
+    except ValueError:
+        return True
 
-    # 3. 生成 GZ 压缩包
-    with open(xml_file, 'rb') as f_in, gzip.open(gz_file, 'wb') as f_out:
-        shutil.copyfileobj(f_in, f_out)
-
-    print(f"\n✅ 处理完成!")
-    print(f"📊 唯一频道 ID 数: {len(channels)}")
-    print(f"🎬 合规节目单数: {len(programmes)}")
-    print(f"💾 XML 文件大小: {os.path.getsize(xml_file)/1024/1024:.2f} MB")
-    print(f"📂 输出目录: ./{OUTPUT_DIR}/")
-
-async def main():
+def merge_epg():
     if not os.path.exists(CONFIG_FILE):
-        print(f"❌ 找不到配置文件: {CONFIG_FILE}")
+        print(f"错误: 找不到配置文件 {CONFIG_FILE}")
         return
-        
-    with open(CONFIG_FILE, 'r', encoding='utf-8') as f:
-        urls = [line.strip() for line in f if line.strip() and not line.startswith('#')]
 
-    print("📡 正在并发获取 EPG 数据...")
-    async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(ssl=False)) as session:
-        tasks = [fetch_epg(url, session) for url in urls]
-        results = await asyncio.gather(*tasks)
+    # 按 config.txt 顺序读取源
+    with open(CONFIG_FILE, "r", encoding="utf-8") as f:
+        sources = [line.strip() for line in f if line.strip() and not line.startswith("#")]
 
-    channel_groups, final_channels, final_programmes = process_and_merge(results)
-    
-    if final_channels:
-        print("\n💾 正在输出文件...")
-        export_results(channel_groups, final_channels, final_programmes)
-    else:
-        print("\n⚠️ 没有提取到任何有效频道，中止输出。")
+    if not sources:
+        print("警告: config.txt 中未找到有效的 EPG 源")
+        return
 
-if __name__ == '__main__':
-    print("==================================================")
-    print("      EPG 聚合器 - 终极版 (固定 ID + 名称注入)      ")
-    print("==================================================")
-    if sys.platform == 'win32':
-        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
-    asyncio.run(main())
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+    seen_channel_ids = set()   # 记录已添加的频道 ID
+    seen_programmes = set()    # 记录已添加的节目 (channel_id, start, stop)
+
+    parsed_sources = []
+    for source in sources:
+        root = download_or_read_xml(source)
+        if root is not None:
+            parsed_sources.append(root)
+
+    # 1. 流式写入未压缩的 XML 文件
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f_out:
+        header = '<?xml version="1.0" encoding="utf-8"?>\n<tv generator-info-name="myEPG-Merger">\n'
+        f_out.write(header)
+        current_bytes = len(header.encode("utf-8"))
+
+        # 优先按 config.txt 顺序写入频道列表
+        for root in parsed_sources:
+            for channel in root.findall("channel"):
+                channel_id = channel.attrib.get("id")
+                if channel_id and channel_id not in seen_channel_ids:
+                    seen_channel_ids.add(channel_id)
+                    
+                    xml_str = ET.tostring(channel, encoding="utf-8").decode("utf-8") + "\n"
+                    encoded_bytes = xml_str.encode("utf-8")
+                    
+                    if current_bytes + len(encoded_bytes) >= MAX_FILE_SIZE:
+                        print("警告: 写入频道列表时已达到文件大小上限！")
+                        f_out.write("</tv>\n")
+                        break
+                    
+                    f_out.write(xml_str)
+                    current_bytes += len(encoded_bytes)
+
+        # 优先按 config.txt 顺序写入节目列表 (仅限 UTC+8 今明两天)
+        is_truncated = False
+        for root in parsed_sources:
+            if is_truncated:
+                break
+            for programme in root.findall("programme"):
+                channel_id = programme.attrib.get("channel")
+                start = programme.attrib.get("start")
+                stop = programme.attrib.get("stop")
+
+                if not channel_id or not start:
+                    continue
+
+                # UTC+8 今明两天过滤
+                if not is_within_two_days_utc8(start):
+                    continue
+
+                prog_key = (channel_id, start, stop)
+                if prog_key not in seen_programmes:
+                    seen_programmes.add(prog_key)
+                    
+                    xml_str = ET.tostring(programme, encoding="utf-8").decode("utf-8") + "\n"
+                    encoded_bytes = xml_str.encode("utf-8")
+                    
+                    # 精确控制解压前文件不超过 100MB
+                    if current_bytes + len(encoded_bytes) >= MAX_FILE_SIZE:
+                        print("提示: 文件大小接近 100MB 限制，已截断后续节目。")
+                        is_truncated = True
+                        break
+                    
+                    f_out.write(xml_str)
+                    current_bytes += len(encoded_bytes)
+
+        f_out.write("</tv>\n")
+
+    xml_size_mb = os.path.getsize(OUTPUT_FILE) / (1024 * 1024)
+    print(f"XML 文件已生成: {OUTPUT_FILE} ({xml_size_mb:.2f} MB)")
+
+    # 2. 生成 epg.xml.gz 压缩文件
+    with open(OUTPUT_FILE, 'rb') as f_in:
+        with gzip.open(OUTPUT_GZ_FILE, 'wb', compresslevel=9) as f_out:
+            shutil.copyfileobj(f_in, f_out)
+            
+    gz_size_mb = os.path.getsize(OUTPUT_GZ_FILE) / (1024 * 1024)
+    print(f"GZ 压缩文件已生成: {OUTPUT_GZ_FILE} ({gz_size_mb:.2f} MB)")
+
+if __name__ == "__main__":
+    merge_epg()
